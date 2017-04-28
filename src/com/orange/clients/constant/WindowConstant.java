@@ -8,6 +8,7 @@ public class WindowConstant {
 	public final static String MAIN_WINDOW_NAME = "Request Send Window"; 
 	public final static String MAIN_WINDOW_BUTTON_SEND = "Send";
 	public final static String MAIN_WINDOW_BUTTON_RESET = "Clear";
+	public final static String MAIN_WINDOW_BUTTON_STOP = "Stop";
 	public final static String MAIN_WINDOW_BUTTON_CHOOSE_FILE = "Choose Files...";
 	public final static String MAIN_WINDOW_BUTTON_COPY_RESPONSE = "Copy Response";
 	
@@ -18,9 +19,11 @@ public class WindowConstant {
 	public final static String MAIN_WINDOW_LABEL_URL = "URL:";
 	public final static String MAIN_WINDOW_LABEL_FILES = "Files:";
 	public final static String MAIN_WINDOW_LABEL_BODY = "Body:";
-	
+	public final static String MAIN_WINDOW_LABEL_PING = "Ping:";
 	
 	public final static RGB MAIN_BACkGROUND_COLOR = new RGB(240, 240, 240);
+	public final static RGB MAIN_WHITE_COLOR = new RGB(255, 255, 255);
+	public final static RGB MAIN_RED_COLOR = new RGB(255, 0, 0);
 	
 	public final static String REQUEST_GET = "GET";
 	public final static String REQUEST_POST = "POST"; 
@@ -28,4 +31,7 @@ public class WindowConstant {
 	
 	public final static String REQUEST_HTTP = "HTTP";
 	public final static String REQUEST_HTTPS = "HTTPS";
+	
+	public final static String PING = "Ping";
+	public final static String TELNET = "Telnet";
 }
