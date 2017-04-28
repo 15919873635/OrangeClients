@@ -316,22 +316,20 @@ public class FtpWindow {
 		int screenH = ClientUtil.getScreenHeight();
 		int screenW = ClientUtil.getScreenWidth();
 		
-		//获取对象窗口高度和宽度
         int shellH = shell.getBounds().height;
         int shellW = shell.getBounds().width;
-        //如果对象窗口高度超出屏幕高度，则强制其与屏幕等高
+        
         if(shellH > screenH)
             shellH = screenH;
-        //如果对象窗口宽度超出屏幕宽度，则强制其与屏幕等宽
+        
         if(shellW > screenW)
             shellW = screenW;
-        //定位对象窗口坐标
+        
         shell.setLocation(((screenW - shellW) / 2), ((screenH - shellH) / 2));
 	}
 	
 	private void initTray(){
 		final Menu trayMenu = new Menu(shell,SWT.POP_UP);
-		//定义菜单中的选项
 		final MenuItem showOrHideItem = new MenuItem(trayMenu, SWT.PUSH);
 		showOrHideItem.setText("Hide");
 		showOrHideItem.setImage(hide);
@@ -359,10 +357,9 @@ public class FtpWindow {
 				closeWindow();
 			}
 		});
-		//创建系统托盘的工作项
 		TrayItem item = new TrayItem(tray, SWT.NONE);
 		item.setImage(image);
-		item.setToolTipText("这是一个TrayItem");
+		item.setToolTipText("This is aTrayItem");
 		item.addMenuDetectListener(new MenuDetectListener() {
 			@Override
 			public void menuDetected(MenuDetectEvent arg0) {

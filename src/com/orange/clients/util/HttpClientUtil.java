@@ -32,11 +32,6 @@ public class HttpClientUtil {
 		baseHeaderMap.put("user-agent","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.59 Safari/537.36");
 	}
 	
-	/**
-	 * 发送HTTP GET请求
-	 * 所使用的java库为 HttpClient
-	 * 
-	 */
 	public static String sendGetRequest(String postUrl,Map<String,String> customHeaderMap){
 		String respContent = "";
 		RequestConfig requestConfig = RequestConfig.custom()  
@@ -80,11 +75,6 @@ public class HttpClientUtil {
 		return respContent;
 	}
 	
-	/**
-	 * 发送HTTP POST请求
-	 * 所使用的java库为 HttpClient
-	 * 
-	 */
 	public static String sendPostRequest(String postUrl,Map<String,Object> bodyContent,Map<String,String> customHeaderMap){
 		String respContent = "";
 		RequestConfig requestConfig = RequestConfig.custom()  
@@ -186,11 +176,6 @@ public class HttpClientUtil {
 		return respContent;
 	}
 	
-	/**
-	 * 发送HTTP POST请求
-	 * 所使用的java库为 HttpClient
-	 * 
-	 */
 	public static String sendPutRequest(String postUrl,Map<String,Object> bodyContent,Map<String,String> customHeaderMap){
 		String respContent = "";
 		RequestConfig requestConfig = RequestConfig.custom()  
@@ -264,7 +249,7 @@ public class HttpClientUtil {
 						Object obj = bodyContent.get(key);
 						if(obj instanceof File){
 							File file = (File)obj;
-							builder.addBinaryBody(key, file, ContentType.MULTIPART_FORM_DATA, file.getName());// 文件流
+							builder.addBinaryBody(key, file, ContentType.MULTIPART_FORM_DATA, file.getName());// 锟侥硷拷锟斤拷
 						}
 					}
 				}
