@@ -33,8 +33,8 @@ public class HttpClientUtil {
 	}
 	
 	/**
-	 * ·¢ËÍHTTP GETÇëÇó
-	 * ËùÊ¹ÓÃµÄjava¿âÎª HttpClient
+	 * å‘é€HTTP GETè¯·æ±‚
+	 * æ‰€ä½¿ç”¨çš„javaåº“ä¸º HttpClient
 	 * 
 	 */
 	public static String sendGetRequest(String postUrl,Map<String,String> customHeaderMap){
@@ -81,8 +81,8 @@ public class HttpClientUtil {
 	}
 	
 	/**
-	 * ·¢ËÍHTTP POSTÇëÇó
-	 * ËùÊ¹ÓÃµÄjava¿âÎª HttpClient
+	 * å‘é€HTTP POSTè¯·æ±‚
+	 * æ‰€ä½¿ç”¨çš„javaåº“ä¸º HttpClient
 	 * 
 	 */
 	public static String sendPostRequest(String postUrl,Map<String,Object> bodyContent,Map<String,String> customHeaderMap){
@@ -187,8 +187,8 @@ public class HttpClientUtil {
 	}
 	
 	/**
-	 * ·¢ËÍHTTP POSTÇëÇó
-	 * ËùÊ¹ÓÃµÄjava¿âÎª HttpClient
+	 * å‘é€HTTP POSTè¯·æ±‚
+	 * æ‰€ä½¿ç”¨çš„javaåº“ä¸º HttpClient
 	 * 
 	 */
 	public static String sendPutRequest(String postUrl,Map<String,Object> bodyContent,Map<String,String> customHeaderMap){
@@ -264,7 +264,7 @@ public class HttpClientUtil {
 						Object obj = bodyContent.get(key);
 						if(obj instanceof File){
 							File file = (File)obj;
-							builder.addBinaryBody(key, file, ContentType.MULTIPART_FORM_DATA, file.getName());// ÎÄ¼şÁ÷
+							builder.addBinaryBody(key, file, ContentType.MULTIPART_FORM_DATA, file.getName());// æ–‡ä»¶æµ
 						}
 					}
 				}
