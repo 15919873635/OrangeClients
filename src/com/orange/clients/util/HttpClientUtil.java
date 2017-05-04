@@ -1,6 +1,7 @@
 package com.orange.clients.util;
 
 import java.io.File;
+import java.nio.charset.Charset;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -28,7 +29,6 @@ public class HttpClientUtil {
 		baseHeaderMap.put("accept","*/*");
 		baseHeaderMap.put("content-type","application/json");
 		baseHeaderMap.put("accept-encoding","UTF-8");
-		baseHeaderMap.put("accept-language","zh-CN,en;q=0.9");
 		baseHeaderMap.put("user-agent","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.59 Safari/537.36");
 	}
 	
@@ -111,6 +111,7 @@ public class HttpClientUtil {
 			HttpEntity requestEntity = null;
 			if(bodyContent != null && bodyContent.size() > 0){
 				MultipartEntityBuilder builder = MultipartEntityBuilder.create();
+				builder.setCharset(Charset.forName("UTF-8"));
 				int fileCount = 0;
 				for(Object obj : bodyContent.values()){
 					if(obj instanceof File)
@@ -217,6 +218,7 @@ public class HttpClientUtil {
 			HttpEntity requestEntity = null;
 			if(bodyContent != null && bodyContent.size() > 0){
 				MultipartEntityBuilder builder = MultipartEntityBuilder.create();
+				builder.setCharset(Charset.forName("UTF-8"));
 				int fileCount = 0;
 				for(Object obj : bodyContent.values()){
 					if(obj instanceof File)
