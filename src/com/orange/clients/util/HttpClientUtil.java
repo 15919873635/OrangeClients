@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
+import org.apache.http.Consts;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -127,12 +128,12 @@ public class HttpClientUtil {
 				            	if(jsonArray.isArray() && !jsonArray.isEmpty()){
 				            		for(int index = 0 ; index < jsonArray.size() ; index ++){
 				            			String indexName = jsonArray.getString(index);
-				            			builder.addTextBody(indexName, bodyJson.getString(indexName));
+				            			builder.addTextBody(indexName, bodyJson.getString(indexName),ContentType.APPLICATION_JSON);
 				            		}
 				            	}
 				            }
 						}else{
-							builder.addTextBody("body", body);
+							builder.addTextBody("body", body,ContentType.APPLICATION_JSON);
 						}
 					}
 				}else{
@@ -145,19 +146,20 @@ public class HttpClientUtil {
 				            	if(jsonArray.isArray() && !jsonArray.isEmpty()){
 				            		for(int index = 0 ; index < jsonArray.size() ; index ++){
 				            			String indexName = jsonArray.getString(index);
-				            			builder.addTextBody(indexName, bodyJson.getString(indexName));
+				            			builder.addTextBody(indexName, bodyJson.getString(indexName),ContentType.APPLICATION_JSON);
 				            		}
 				            	}
 				            }
 						}else{
-							builder.addTextBody("body", body);
+							builder.addTextBody("body", body,ContentType.APPLICATION_JSON);
 						}
 					}
 					for(String key : bodyContent.keySet()){
 						Object obj = bodyContent.get(key);
 						if(obj instanceof File){
 							File file = (File)obj;
-							builder.addBinaryBody(key, file);
+							ContentType contentType = ContentType.create("application/octet-stream", Consts.UTF_8);
+							builder.addBinaryBody(key, file, contentType, file.getName());// 文件流
 						}
 					}
 				}
@@ -235,12 +237,12 @@ public class HttpClientUtil {
 				            	if(jsonArray.isArray() && !jsonArray.isEmpty()){
 				            		for(int index = 0 ; index < jsonArray.size() ; index ++){
 				            			String indexName = jsonArray.getString(index);
-				            			builder.addTextBody(indexName, bodyJson.getString(indexName));
+				            			builder.addTextBody(indexName, bodyJson.getString(indexName),ContentType.APPLICATION_JSON);
 				            		}
 				            	}
 				            }
 						}else{
-							builder.addTextBody("body", body);
+							builder.addTextBody("body", body,ContentType.APPLICATION_JSON);
 						}
 					}
 				}else{
@@ -254,19 +256,20 @@ public class HttpClientUtil {
 				            	if(jsonArray.isArray() && !jsonArray.isEmpty()){
 				            		for(int index = 0 ; index < jsonArray.size() ; index ++){
 				            			String indexName = jsonArray.getString(index);
-				            			builder.addTextBody(indexName, bodyJson.getString(indexName));
+				            			builder.addTextBody(indexName, bodyJson.getString(indexName),ContentType.APPLICATION_JSON);
 				            		}
 				            	}
 				            }
 						}else{
-							builder.addTextBody("body", body);
+							builder.addTextBody("body", body,ContentType.APPLICATION_JSON);
 						}
 					}
 					for(String key : bodyContent.keySet()){
 						Object obj = bodyContent.get(key);
 						if(obj instanceof File){
 							File file = (File)obj;
-							builder.addBinaryBody(key, file, ContentType.MULTIPART_FORM_DATA, file.getName());// 文件流
+							ContentType contentType = ContentType.create("application/octet-stream", Consts.UTF_8);
+							builder.addBinaryBody(key, file, contentType, file.getName());// 文件流
 						}
 					}
 				}
