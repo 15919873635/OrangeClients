@@ -212,8 +212,8 @@ public class MainWindow {
 				Map<String,String> headerMapper = null;
 				String headertext = headerText.getText().trim();
 				String bodytext = bodyText.getText().trim();
-				String protocol = StringUtils.isBlank(protocolCombo.getText()) ? "Http" : protocolCombo.getText();
-				String method = StringUtils.isBlank(methodCombo.getText()) ? "GET" : methodCombo.getText();
+				String protocol = StringUtils.isBlank(protocolCombo.getText()) ? WindowConstant.REQUEST_HTTP : protocolCombo.getText();
+				String method = StringUtils.isBlank(methodCombo.getText()) ? WindowConstant.REQUEST_GET : methodCombo.getText();
 				String urltext = urlText.getText();
 				String response = "";
 				String filePaths = filePathLabel.getText();
@@ -332,17 +332,17 @@ public class MainWindow {
 	private void initTray(){
 		final Menu trayMenu = new Menu(shell,SWT.POP_UP);
 		final MenuItem showOrHideItem = new MenuItem(trayMenu, SWT.PUSH);
-		showOrHideItem.setText("Hide");
+		showOrHideItem.setText(WindowConstant.MAIN_WINDOW_HIDE);
 		showOrHideItem.setImage(hide);
 		showOrHideItem.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent arg0) {
 				if(shell.isVisible()){
-					showOrHideItem.setText("Show Home");
+					showOrHideItem.setText(WindowConstant.MAIN_WINDOW_SHOW);
 					showOrHideItem.setImage(showView);
 					shell.setVisible(false);
 				}else{
-					showOrHideItem.setText("Hide");
+					showOrHideItem.setText(WindowConstant.MAIN_WINDOW_HIDE);
 					showOrHideItem.setImage(hide);
 					shell.setVisible(true);
 				}
@@ -350,7 +350,7 @@ public class MainWindow {
 		});
 		new MenuItem(trayMenu, SWT.SEPARATOR);
 		final MenuItem exitItem = new MenuItem(trayMenu, SWT.PUSH);
-		exitItem.setText("Exit");
+		exitItem.setText(WindowConstant.MAIN_WINDOW_EXIT);
 		exitItem.setImage(exit);
 		exitItem.addSelectionListener(new SelectionAdapter() {
 			@Override
@@ -360,7 +360,7 @@ public class MainWindow {
 		});
 		TrayItem item = new TrayItem(tray, SWT.NONE);
 		item.setImage(image);
-		item.setToolTipText("This is a TrayItem");
+		item.setToolTipText(WindowConstant.MAIN_WINDOW_TRAY_TOOLTIP);
 		item.addMenuDetectListener(new MenuDetectListener() {
 			@Override
 			public void menuDetected(MenuDetectEvent arg0) {

@@ -19,6 +19,12 @@ public class WindowConstant {
 	public final static String MAIN_WINDOW_LABEL_FILES = "Files:";
 	public final static String MAIN_WINDOW_LABEL_BODY = "Body:";
 	
+	public final static String MAIN_WINDOW_HIDE = "Hide Window";
+	public final static String MAIN_WINDOW_SHOW = "Show Window";
+	public final static String MAIN_WINDOW_EXIT = "Show Window";
+	
+	public final static String MAIN_WINDOW_TRAY_TOOLTIP = "Http Request Client";
+	
 	
 	public final static RGB MAIN_BACkGROUND_COLOR = new RGB(240, 240, 240);
 	
