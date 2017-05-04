@@ -14,10 +14,5 @@
 	<classpathentry kind="lib" path="lib/swt.jar"/>
 	<classpathentry kind="lib" path="lib/commons-beanutils-1.9.2.jar"/>
 	<classpathentry kind="lib" path="lib/httpmime-4.5.2.jar"/>
-	<classpathentry kind="lib" path="lib/jetty-io-9.3.15.v20161220.jar"/>
-	<classpathentry kind="lib" path="lib/jetty-util-9.3.15.v20161220.jar"/>
-	<classpathentry kind="lib" path="lib/websocket-api-9.3.15.v20161220.jar"/>
-	<classpathentry kind="lib" path="lib/websocket-client-9.3.15.v20161220.jar"/>
-	<classpathentry kind="lib" path="lib/websocket-common-9.3.15.v20161220.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
