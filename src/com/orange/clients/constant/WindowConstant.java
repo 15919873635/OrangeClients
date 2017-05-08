@@ -21,7 +21,7 @@ public class WindowConstant {
 	
 	public final static String MAIN_WINDOW_HIDE = "Hide Window";
 	public final static String MAIN_WINDOW_SHOW = "Show Window";
-	public final static String MAIN_WINDOW_EXIT = "Show Window";
+	public final static String MAIN_WINDOW_EXIT = "Exit";
 	
 	public final static String MAIN_WINDOW_TRAY_TOOLTIP = "Http Request Client";
 	
