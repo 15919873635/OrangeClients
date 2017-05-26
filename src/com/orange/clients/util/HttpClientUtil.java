@@ -2,21 +2,27 @@ package com.orange.clients.util;
 
 import java.io.File;
 import java.nio.charset.Charset;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 import org.apache.http.Consts;
 import org.apache.http.HttpEntity;
+import org.apache.http.NameValuePair;
 import org.apache.http.client.config.RequestConfig;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
 import org.apache.http.entity.ContentType;
+import org.apache.http.entity.StringEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.apache.log4j.Logger;
 
@@ -111,8 +117,6 @@ public class HttpClientUtil {
 			}
 			HttpEntity requestEntity = null;
 			if(bodyContent != null && bodyContent.size() > 0){
-				MultipartEntityBuilder builder = MultipartEntityBuilder.create();
-				builder.setCharset(Charset.forName("UTF-8"));
 				int fileCount = 0;
 				for(Object obj : bodyContent.values()){
 					if(obj instanceof File)
@@ -126,17 +130,21 @@ public class HttpClientUtil {
 				            if(!bodyJson.isNullObject() && !bodyJson.isEmpty()){
 				            	JSONArray jsonArray = bodyJson.names();
 				            	if(jsonArray.isArray() && !jsonArray.isEmpty()){
+				            		List<NameValuePair> params = new ArrayList<NameValuePair>();
 				            		for(int index = 0 ; index < jsonArray.size() ; index ++){
 				            			String indexName = jsonArray.getString(index);
-				            			builder.addTextBody(indexName, bodyJson.getString(indexName),ContentType.APPLICATION_JSON);
+				            			params.add(new BasicNameValuePair(indexName,bodyJson.getString(indexName))); 
 				            		}
+				            		requestEntity = new UrlEncodedFormEntity(params,"UTF-8");
 				            	}
 				            }
 						}else{
-							builder.addTextBody("body", body,ContentType.APPLICATION_JSON);
+							requestEntity = new StringEntity(body, Charset.forName("UTF-8"));
 						}
 					}
 				}else{
+					MultipartEntityBuilder builder = MultipartEntityBuilder.create();
+					builder.setCharset(Charset.forName("UTF-8"));
 					String body = (String)bodyContent.get("body");
 					if(body != null && body.length() > 0){
 						if(body.startsWith("{") && body.endsWith("}")){
@@ -146,7 +154,8 @@ public class HttpClientUtil {
 				            	if(jsonArray.isArray() && !jsonArray.isEmpty()){
 				            		for(int index = 0 ; index < jsonArray.size() ; index ++){
 				            			String indexName = jsonArray.getString(index);
-				            			builder.addTextBody(indexName, bodyJson.getString(indexName),ContentType.APPLICATION_JSON);
+				            			ContentType contentType = ContentType.create("application/x-www-form-urlencoded", Consts.UTF_8);
+				            			builder.addTextBody(indexName, bodyJson.getString(indexName),contentType);
 				            		}
 				            	}
 				            }
@@ -162,8 +171,8 @@ public class HttpClientUtil {
 							builder.addBinaryBody(key, file, contentType, file.getName());// 文件流
 						}
 					}
+					requestEntity = builder.build();
 				}
-				requestEntity = builder.build();
 			}
 			if(requestEntity != null){
 				httpPost.setEntity(requestEntity);
