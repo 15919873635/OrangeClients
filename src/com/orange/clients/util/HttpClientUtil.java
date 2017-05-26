@@ -135,16 +135,16 @@ public class HttpClientUtil {
 				            			String indexName = jsonArray.getString(index);
 				            			params.add(new BasicNameValuePair(indexName,bodyJson.getString(indexName))); 
 				            		}
-				            		requestEntity = new UrlEncodedFormEntity(params,"UTF-8");
+				            		requestEntity = new UrlEncodedFormEntity(params, Consts.UTF_8);
 				            	}
 				            }
 						}else{
-							requestEntity = new StringEntity(body, Charset.forName("UTF-8"));
+							requestEntity = new StringEntity(body, Consts.UTF_8);
 						}
 					}
 				}else{
 					MultipartEntityBuilder builder = MultipartEntityBuilder.create();
-					builder.setCharset(Charset.forName("UTF-8"));
+					builder.setCharset(Consts.UTF_8);
 					String body = (String)bodyContent.get("body");
 					if(body != null && body.length() > 0){
 						if(body.startsWith("{") && body.endsWith("}")){
@@ -154,8 +154,7 @@ public class HttpClientUtil {
 				            	if(jsonArray.isArray() && !jsonArray.isEmpty()){
 				            		for(int index = 0 ; index < jsonArray.size() ; index ++){
 				            			String indexName = jsonArray.getString(index);
-				            			ContentType contentType = ContentType.create("application/x-www-form-urlencoded", Consts.UTF_8);
-				            			builder.addTextBody(indexName, bodyJson.getString(indexName),contentType);
+				            			builder.addTextBody(indexName, bodyJson.getString(indexName),ContentType.APPLICATION_JSON);
 				            		}
 				            	}
 				            }
@@ -182,7 +181,7 @@ public class HttpClientUtil {
 			httpClient = HttpClients.createDefault(); 
 			response = httpClient.execute(httpPost);  
 			entity = response.getEntity();
-			respContent = EntityUtils.toString(entity, "UTF-8");
+			respContent = EntityUtils.toString(entity, Consts.UTF_8);
 		}catch (Exception e) {
 			logger.error("send Http Request to:"+postUrl+" ,has errors:"+e.getMessage());
 		}finally {
@@ -228,8 +227,6 @@ public class HttpClientUtil {
 			}
 			HttpEntity requestEntity = null;
 			if(bodyContent != null && bodyContent.size() > 0){
-				MultipartEntityBuilder builder = MultipartEntityBuilder.create();
-				builder.setCharset(Charset.forName("UTF-8"));
 				int fileCount = 0;
 				for(Object obj : bodyContent.values()){
 					if(obj instanceof File)
@@ -239,33 +236,36 @@ public class HttpClientUtil {
 					String body = (String)bodyContent.get("body");
 					if(body != null){
 						if(body.startsWith("{") && body.endsWith("}")){
-							httpPut.setHeader("content-type", ContentType.APPLICATION_FORM_URLENCODED.toString());
 				            JSONObject bodyJson = JSONObject.fromObject(body);
 				            if(!bodyJson.isNullObject() && !bodyJson.isEmpty()){
 				            	JSONArray jsonArray = bodyJson.names();
 				            	if(jsonArray.isArray() && !jsonArray.isEmpty()){
+				            		List<NameValuePair> params = new ArrayList<NameValuePair>();
 				            		for(int index = 0 ; index < jsonArray.size() ; index ++){
 				            			String indexName = jsonArray.getString(index);
-				            			builder.addTextBody(indexName, bodyJson.getString(indexName),ContentType.APPLICATION_JSON);
+				            			params.add(new BasicNameValuePair(indexName,bodyJson.getString(indexName))); 
 				            		}
+				            		requestEntity = new UrlEncodedFormEntity(params, Consts.UTF_8);
 				            	}
 				            }
 						}else{
-							builder.addTextBody("body", body,ContentType.APPLICATION_JSON);
+							requestEntity = new StringEntity(body, Consts.UTF_8);
 						}
 					}
 				}else{
+					MultipartEntityBuilder builder = MultipartEntityBuilder.create();
+					builder.setCharset(Consts.UTF_8);
 					String body = (String)bodyContent.get("body");
-					if(body != null){
+					if(body != null && body.length() > 0){
 						if(body.startsWith("{") && body.endsWith("}")){
-							newHeaderMapper.put("content-type", ContentType.APPLICATION_FORM_URLENCODED.toString());
 				            JSONObject bodyJson = JSONObject.fromObject(body);
 				            if(!bodyJson.isNullObject() && !bodyJson.isEmpty()){
 				            	JSONArray jsonArray = bodyJson.names();
 				            	if(jsonArray.isArray() && !jsonArray.isEmpty()){
 				            		for(int index = 0 ; index < jsonArray.size() ; index ++){
 				            			String indexName = jsonArray.getString(index);
-				            			builder.addTextBody(indexName, bodyJson.getString(indexName),ContentType.APPLICATION_JSON);
+				            			ContentType contentType = ContentType.create("application/x-www-form-urlencoded", Consts.UTF_8);
+				            			builder.addTextBody(indexName, bodyJson.getString(indexName),contentType);
 				            		}
 				            	}
 				            }
@@ -281,8 +281,8 @@ public class HttpClientUtil {
 							builder.addBinaryBody(key, file, contentType, file.getName());// 文件流
 						}
 					}
+					requestEntity = builder.build();
 				}
-				requestEntity = builder.build();
 			}
 			if(requestEntity != null){
 				httpPut.setEntity(requestEntity);
@@ -292,7 +292,7 @@ public class HttpClientUtil {
 			httpClient = HttpClients.createDefault(); 
 			response = httpClient.execute(httpPut);  
 			entity = response.getEntity();
-			respContent = EntityUtils.toString(entity, "UTF-8");
+			respContent = EntityUtils.toString(entity, Consts.UTF_8);
 		}catch (Exception e) {
 			logger.error("send Http Request to:"+postUrl+" ,has errors:"+e.getMessage());
 		}finally {
