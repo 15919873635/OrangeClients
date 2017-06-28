@@ -55,6 +55,8 @@ public class MainWindow {
 	private Text urlText;
 	private Cursor cursor;
 	
+	private int SHEELH;
+	private int SHEELW;
 	private int BUTTON_WIDTH_1;
 	private int COMBOBOX_WIDTH;
 	private int URLTEXT_WIDTH;
@@ -101,7 +103,7 @@ public class MainWindow {
 
 		int protocolComboLeft = protocolLabel.getBounds().x + protocolLabel.getBounds().width + 10;
 		protocolCombo = new Combo(shell, SWT.NONE | SWT.DROP_DOWN | SWT.READ_ONLY);
-		protocolCombo.setBounds(protocolComboLeft, 10, COMBOBOX_WIDTH, 25);
+		protocolCombo.setBounds(protocolComboLeft, 10, COMBOBOX_WIDTH, WindowConstant.BUTTON_HEIGHT);
 		protocolCombo.add(WindowConstant.REQUEST_HTTP);
 		protocolCombo.add(WindowConstant.REQUEST_HTTPS);
 		protocolCombo.setText(WindowConstant.REQUEST_HTTP);
@@ -115,7 +117,7 @@ public class MainWindow {
 		
 		int methodComboLeft = methodLabel.getBounds().x + methodLabel.getBounds().width + 10;
 		methodCombo = new Combo(shell, SWT.NONE | SWT.DROP_DOWN | SWT.READ_ONLY);
-		methodCombo.setBounds(methodComboLeft, 10, COMBOBOX_WIDTH, 25);
+		methodCombo.setBounds(methodComboLeft, 10, COMBOBOX_WIDTH, WindowConstant.BUTTON_HEIGHT);
 		methodCombo.add(WindowConstant.REQUEST_GET);
 		methodCombo.add(WindowConstant.REQUEST_POST);
 		methodCombo.add(WindowConstant.REQUEST_PUT);
@@ -123,13 +125,13 @@ public class MainWindow {
 		
 		int sendButtonLeft = methodCombo.getBounds().x + methodCombo.getBounds().width + 10;
 		Button sendButton = new Button(shell,SWT.NONE);
-		sendButton.setBounds(sendButtonLeft, 10, BUTTON_WIDTH_1, 25);
+		sendButton.setBounds(sendButtonLeft, 10, BUTTON_WIDTH_1, WindowConstant.BUTTON_HEIGHT);
 		sendButton.setText(WindowConstant.MAIN_WINDOW_BUTTON_SEND);
 		sendButton.setCursor(cursor);
 		
 		int resetButtonLeft = sendButton.getBounds().x + sendButton.getBounds().width + 10;
 		Button resetButton = new Button(shell, SWT.NONE);
-		resetButton.setBounds(resetButtonLeft, 10, BUTTON_WIDTH_1, 25);
+		resetButton.setBounds(resetButtonLeft, 10, BUTTON_WIDTH_1, WindowConstant.BUTTON_HEIGHT);
 		resetButton.setText(WindowConstant.MAIN_WINDOW_BUTTON_RESET);
 		resetButton.setCursor(cursor);
 		
@@ -140,7 +142,7 @@ public class MainWindow {
 		
 		int urlTextLeft = urlLabel.getBounds().x + urlLabel.getBounds().width + 10;
 		urlText = new Text(shell, SWT.BORDER);
-		urlText.setBounds(urlTextLeft, 45, URLTEXT_WIDTH, 23);
+		urlText.setBounds(urlTextLeft, 45, URLTEXT_WIDTH, WindowConstant.BUTTON_HEIGHT);
 		
 		Label fileLabel = new Label(shell, SWT.NONE);
 		fileLabel.setBounds(0, 80, WindowConstant.LABEL_WIDTH, 17);
@@ -149,7 +151,7 @@ public class MainWindow {
 		
 		int fileChooseButtonLeft = fileLabel.getBounds().x + fileLabel.getBounds().width + 10;
 		Button fileChooseButton = new Button(shell, SWT.NONE);
-		fileChooseButton.setBounds(fileChooseButtonLeft, 75, WindowConstant.FILE_CHOOSE_BUTTON_WIDTH, 27);
+		fileChooseButton.setBounds(fileChooseButtonLeft, 75, WindowConstant.FILE_CHOOSE_BUTTON_WIDTH, WindowConstant.BUTTON_HEIGHT);
 		fileChooseButton.setText(WindowConstant.MAIN_WINDOW_BUTTON_CHOOSE_FILE);
 		fileChooseButton.setEnabled(false);
 		
@@ -158,8 +160,9 @@ public class MainWindow {
 		filePathLabel.setBounds(filePathLabelLeft, 80, FILE_PATH_WIDTH, 17);
 		filePathLabel.setBackground(mainColor);
 		
+		int textTop = HEADER_OR_BODY_TEXT_HEIGHT / 2 + filePathLabel.getBounds().y + 20;
 		Label headersLabel = new Label(shell, SWT.NONE);
-		headersLabel.setBounds(0, 141, WindowConstant.LABEL_WIDTH, 17);
+		headersLabel.setBounds(0, textTop, WindowConstant.LABEL_WIDTH, 17);
 		headersLabel.setText(WindowConstant.MAIN_WINDOW_LABEL_HEADERS);
 		headersLabel.setBackground(mainColor);
 		
@@ -169,7 +172,7 @@ public class MainWindow {
 		
 		int bodyLabelLeft = headerText.getBounds().x + headerText.getBounds().width + 10;
 		Label bodyLabel = new Label(shell, SWT.NONE);
-		bodyLabel.setBounds(bodyLabelLeft, 141, WindowConstant.LABEL_WIDTH, 17);
+		bodyLabel.setBounds(bodyLabelLeft, textTop, WindowConstant.LABEL_WIDTH, 17);
 		bodyLabel.setText(WindowConstant.MAIN_WINDOW_LABEL_BODY);
 		bodyLabel.setBackground(mainColor);
 		
@@ -178,8 +181,9 @@ public class MainWindow {
 		bodyText.setBounds(bodyTextLeft, 110, HEADER_OR_BODY_TEXT_WIDTH, HEADER_OR_BODY_TEXT_HEIGHT);
 		bodyText.setEnabled(false);
 		
+		int responseLabelTop = bodyText.getBounds().y + bodyText.getBounds().height + RESPONSE_TEXT_HEIGHT / 2 + 10;
 		Label responseLabel = new Label(shell, SWT.NONE);
-		responseLabel.setBounds(0, 249, WindowConstant.LABEL_WIDTH_2, 17);
+		responseLabel.setBounds(0, responseLabelTop, WindowConstant.LABEL_WIDTH_2, 17);
 		responseLabel.setText(WindowConstant.MAIN_WINDOW_LABEL_RESPONSE);
 		responseLabel.setBackground(mainColor);
 		
@@ -193,8 +197,10 @@ public class MainWindow {
 		responseText = new Text(shell, SWT.BORDER  | SWT.WRAP | SWT.MULTI | SWT.READ_ONLY);
 		responseText.setBounds(responseTextLeft, responseTextTop, RESPONSE_TEXT_WIDTH, RESPONSE_TEXT_HEIGHT);
 		
+		int copyResponseTextLeft = (SHEELW - WindowConstant.COPY_RESPONSE_BUTTON_WIDTH) / 2;
+		int copyResponseTextTop = SHEELH - WindowConstant.BUTTON_HEIGHT - 40;
 		Button copyResponseText2Clipboard = new Button(shell, SWT.NONE);
-		copyResponseText2Clipboard.setBounds(448, 335, 115, 25);
+		copyResponseText2Clipboard.setBounds(copyResponseTextLeft, copyResponseTextTop, WindowConstant.COPY_RESPONSE_BUTTON_WIDTH, WindowConstant.BUTTON_HEIGHT);
 		copyResponseText2Clipboard.setText(WindowConstant.MAIN_WINDOW_BUTTON_COPY_RESPONSE);
 		copyResponseText2Clipboard.setEnabled(false);
 		copyResponseText2Clipboard.setCursor(cursor);
@@ -340,29 +346,29 @@ public class MainWindow {
 		int screenH = (int)ClientUtil.getScreenHeight();
 		int screenW = (int)ClientUtil.getScreenWidth();
 		
-		int shellH = screenH * 4 / 5;
-		int shellW = screenW * 4 / 5;
-		shellH = (shellH >= WindowConstant.MIN_WINDOW_HEIGHT) ? shellH : WindowConstant.MIN_WINDOW_HEIGHT;
-		shellW = (shellW >= WindowConstant.MIN_WINDOW_WIDTH) ? shellW : WindowConstant.MIN_WINDOW_WIDTH;
+		SHEELH = screenH * 4 / 5;
+		SHEELW = screenW * 4 / 5;
+		SHEELH = (SHEELH >= WindowConstant.MIN_WINDOW_HEIGHT) ? SHEELH : WindowConstant.MIN_WINDOW_HEIGHT;
+		SHEELW = (SHEELW >= WindowConstant.MIN_WINDOW_WIDTH) ? SHEELW : WindowConstant.MIN_WINDOW_WIDTH;
 		
-		BUTTON_WIDTH_1 = ((shellW * 8 / 100) > WindowConstant.MIN_BUTTON_WIDTH_1) ? (shellW * 8 / 100) : WindowConstant.MIN_BUTTON_WIDTH_1;
+		BUTTON_WIDTH_1 = ((SHEELW * 8 / 100) > WindowConstant.MIN_BUTTON_WIDTH_1) ? (SHEELW * 8 / 100) : WindowConstant.MIN_BUTTON_WIDTH_1;
 		
-		COMBOBOX_WIDTH = (shellW - WindowConstant.LABEL_WIDTH *2 - BUTTON_WIDTH_1 * 2 - 70) / 2;
+		COMBOBOX_WIDTH = (SHEELW - WindowConstant.LABEL_WIDTH *2 - BUTTON_WIDTH_1 * 2 - 70) / 2;
 		
-		URLTEXT_WIDTH = shellW - WindowConstant.LABEL_WIDTH - BUTTON_WIDTH_1 * 2 - 50 ;
+		URLTEXT_WIDTH = SHEELW - WindowConstant.LABEL_WIDTH - BUTTON_WIDTH_1 * 2 - 50 ;
 		
 		FILE_PATH_WIDTH = URLTEXT_WIDTH - WindowConstant.FILE_CHOOSE_BUTTON_WIDTH -10;
 		
-		HEADER_OR_BODY_TEXT_WIDTH = (shellW - WindowConstant.LABEL_WIDTH * 2 - 40) / 2;
+		HEADER_OR_BODY_TEXT_WIDTH = (SHEELW - WindowConstant.LABEL_WIDTH * 2 - 40) / 2;
 		
-		HEADER_OR_BODY_TEXT_HEIGHT = (shellH - 200) * 4 / 10;
+		HEADER_OR_BODY_TEXT_HEIGHT = (SHEELH - 200) * 4 / 10;
 		
-		RESPONSE_TEXT_WIDTH = shellW - WindowConstant.LABEL_WIDTH - 30;
+		RESPONSE_TEXT_WIDTH = SHEELW - WindowConstant.LABEL_WIDTH - 30;
 		
-		RESPONSE_TEXT_HEIGHT = (shellH - 200) * 6 / 10;
+		RESPONSE_TEXT_HEIGHT = (SHEELH - 200) * 6 / 10;
 		
-        shell.setSize(shellW, shellH);
-        shell.setLocation(((screenW - shellW) / 2), ((screenH - shellH) / 2));
+        shell.setSize(SHEELW, SHEELH);
+        shell.setLocation((screenW - SHEELW) / 2, (screenH - SHEELH) / 2);
 	}
 	
 	private void initTray(){
