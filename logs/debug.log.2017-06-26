@@ -1,0 +1,686 @@
+[DEBUG] [18:39:11] org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+  [DEBUG] [18:39:11] org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+  [DEBUG] [18:39:11] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://192.168.1.201:12051][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+  [DEBUG] [18:39:11] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 0][route: {}->http://192.168.1.201:12051][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+  [DEBUG] [18:39:11] org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://192.168.1.201:12051
+  [DEBUG] [18:39:11] org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to /192.168.1.201:12051
+  [DEBUG] [18:39:11] org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 192.168.1.127:58796<->192.168.1.201:12051
+  [DEBUG] [18:39:11] org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-0: set socket timeout to 15000
+  [DEBUG] [18:39:11] org.apache.http.impl.execchain.MainClientExec - Executing request POST /task/getWindchillTasks HTTP/1.1
+  [DEBUG] [18:39:11] org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+  [DEBUG] [18:39:11] org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+  [DEBUG] [18:39:11] org.apache.http.headers - http-outgoing-0 >> POST /task/getWindchillTasks HTTP/1.1
+  [DEBUG] [18:39:11] org.apache.http.headers - http-outgoing-0 >> content-type: application/x-www-form-urlencoded; charset=UTF-8
+  [DEBUG] [18:39:11] org.apache.http.headers - http-outgoing-0 >> accept-encoding: UTF-8
+  [DEBUG] [18:39:11] org.apache.http.headers - http-outgoing-0 >> accept: */*
+  [DEBUG] [18:39:11] org.apache.http.headers - http-outgoing-0 >> user-agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.59 Safari/537.36
+  [DEBUG] [18:39:11] org.apache.http.headers - http-outgoing-0 >> Content-Length: 19
+  [DEBUG] [18:39:11] org.apache.http.headers - http-outgoing-0 >> Host: 192.168.1.201:12051
+  [DEBUG] [18:39:11] org.apache.http.headers - http-outgoing-0 >> Connection: Keep-Alive
+  [DEBUG] [18:39:11] org.apache.http.wire - http-outgoing-0 >> "POST /task/getWindchillTasks HTTP/1.1[\r][\n]"
+  [DEBUG] [18:39:11] org.apache.http.wire - http-outgoing-0 >> "content-type: application/x-www-form-urlencoded; charset=UTF-8[\r][\n]"
+  [DEBUG] [18:39:11] org.apache.http.wire - http-outgoing-0 >> "accept-encoding: UTF-8[\r][\n]"
+  [DEBUG] [18:39:11] org.apache.http.wire - http-outgoing-0 >> "accept: */*[\r][\n]"
+  [DEBUG] [18:39:11] org.apache.http.wire - http-outgoing-0 >> "user-agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.59 Safari/537.36[\r][\n]"
+  [DEBUG] [18:39:11] org.apache.http.wire - http-outgoing-0 >> "Content-Length: 19[\r][\n]"
+  [DEBUG] [18:39:11] org.apache.http.wire - http-outgoing-0 >> "Host: 192.168.1.201:12051[\r][\n]"
+  [DEBUG] [18:39:11] org.apache.http.wire - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+  [DEBUG] [18:39:11] org.apache.http.wire - http-outgoing-0 >> "[\r][\n]"
+  [DEBUG] [18:39:11] org.apache.http.wire - http-outgoing-0 >> "taskname=%22null%22"
+  [DEBUG] [18:39:11] org.apache.http.wire - http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
+  [DEBUG] [18:39:11] org.apache.http.wire - http-outgoing-0 << "Server: Apache-Coyote/1.1[\r][\n]"
+  [DEBUG] [18:39:11] org.apache.http.wire - http-outgoing-0 << "Content-Type: application/json;charset=UTF-8[\r][\n]"
+  [DEBUG] [18:39:11] org.apache.http.wire - http-outgoing-0 << "Transfer-Encoding: chunked[\r][\n]"
+  [DEBUG] [18:39:11] org.apache.http.wire - http-outgoing-0 << "Date: Mon, 26 Jun 2017 10:38:32 GMT[\r][\n]"
+  [DEBUG] [18:39:11] org.apache.http.wire - http-outgoing-0 << "[\r][\n]"
+  [DEBUG] [18:39:11] org.apache.http.headers - http-outgoing-0 << HTTP/1.1 200 OK
+  [DEBUG] [18:39:11] org.apache.http.headers - http-outgoing-0 << Server: Apache-Coyote/1.1
+  [DEBUG] [18:39:11] org.apache.http.headers - http-outgoing-0 << Content-Type: application/json;charset=UTF-8
+  [DEBUG] [18:39:11] org.apache.http.headers - http-outgoing-0 << Transfer-Encoding: chunked
+  [DEBUG] [18:39:11] org.apache.http.headers - http-outgoing-0 << Date: Mon, 26 Jun 2017 10:38:32 GMT
+  [DEBUG] [18:39:11] org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
+  [DEBUG] [18:39:11] org.apache.http.wire - http-outgoing-0 << "16[\r][\n]"
+  [DEBUG] [18:39:11] org.apache.http.wire - http-outgoing-0 << "{"code":0,"result":[]}[\r][\n]"
+  [DEBUG] [18:39:11] org.apache.http.wire - http-outgoing-0 << "0[\r][\n]"
+  [DEBUG] [18:39:11] org.apache.http.wire - http-outgoing-0 << "[\r][\n]"
+  [DEBUG] [18:39:11] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection [id: 0][route: {}->http://192.168.1.201:12051] can be kept alive indefinitely
+  [DEBUG] [18:39:11] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 0][route: {}->http://192.168.1.201:12051][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+  [DEBUG] [18:39:11] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager is shutting down
+  [DEBUG] [18:39:11] org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-0: Close connection
+  [DEBUG] [18:39:11] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager shut down
+  [DEBUG] [18:39:41] org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+  [DEBUG] [18:39:41] org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+  [DEBUG] [18:39:41] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://192.168.1.127:12051][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+  [DEBUG] [18:39:41] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 1][route: {}->http://192.168.1.127:12051][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+  [DEBUG] [18:39:41] org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://192.168.1.127:12051
+  [DEBUG] [18:39:41] org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to /192.168.1.127:12051
+  [DEBUG] [18:39:42] org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-1: Shutdown connection
+  [DEBUG] [18:39:42] org.apache.http.impl.execchain.MainClientExec - Connection discarded
+  [DEBUG] [18:39:42] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 1][route: {}->http://192.168.1.127:12051][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+  [ERROR] [18:39:42] com.orange.clients.util.HttpClientUtil - send Http Request to:HTTP://192.168.1.127:12051/task/getWindchillTasks ,has errors:Connect to 192.168.1.127:12051 [/192.168.1.127] failed: Connection refused: connect
+  [DEBUG] [18:39:42] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager is shutting down
+  [DEBUG] [18:39:42] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager shut down
+  [DEBUG] [18:40:01] org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+  [DEBUG] [18:40:01] org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+  [DEBUG] [18:40:01] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://192.168.1.127:12051][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+  [DEBUG] [18:40:01] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 2][route: {}->http://192.168.1.127:12051][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+  [DEBUG] [18:40:01] org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://192.168.1.127:12051
+  [DEBUG] [18:40:01] org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to /192.168.1.127:12051
+  [DEBUG] [18:40:01] org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 192.168.1.127:58811<->192.168.1.127:12051
+  [DEBUG] [18:40:01] org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-2: set socket timeout to 15000
+  [DEBUG] [18:40:01] org.apache.http.impl.execchain.MainClientExec - Executing request POST /task/getWindchillTasks HTTP/1.1
+  [DEBUG] [18:40:01] org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+  [DEBUG] [18:40:01] org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+  [DEBUG] [18:40:01] org.apache.http.headers - http-outgoing-2 >> POST /task/getWindchillTasks HTTP/1.1
+  [DEBUG] [18:40:01] org.apache.http.headers - http-outgoing-2 >> content-type: application/x-www-form-urlencoded; charset=UTF-8
+  [DEBUG] [18:40:01] org.apache.http.headers - http-outgoing-2 >> accept-encoding: UTF-8
+  [DEBUG] [18:40:01] org.apache.http.headers - http-outgoing-2 >> accept: */*
+  [DEBUG] [18:40:01] org.apache.http.headers - http-outgoing-2 >> user-agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.59 Safari/537.36
+  [DEBUG] [18:40:01] org.apache.http.headers - http-outgoing-2 >> Content-Length: 19
+  [DEBUG] [18:40:01] org.apache.http.headers - http-outgoing-2 >> Host: 192.168.1.127:12051
+  [DEBUG] [18:40:01] org.apache.http.headers - http-outgoing-2 >> Connection: Keep-Alive
+  [DEBUG] [18:40:01] org.apache.http.wire - http-outgoing-2 >> "POST /task/getWindchillTasks HTTP/1.1[\r][\n]"
+  [DEBUG] [18:40:01] org.apache.http.wire - http-outgoing-2 >> "content-type: application/x-www-form-urlencoded; charset=UTF-8[\r][\n]"
+  [DEBUG] [18:40:01] org.apache.http.wire - http-outgoing-2 >> "accept-encoding: UTF-8[\r][\n]"
+  [DEBUG] [18:40:01] org.apache.http.wire - http-outgoing-2 >> "accept: */*[\r][\n]"
+  [DEBUG] [18:40:01] org.apache.http.wire - http-outgoing-2 >> "user-agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.59 Safari/537.36[\r][\n]"
+  [DEBUG] [18:40:01] org.apache.http.wire - http-outgoing-2 >> "Content-Length: 19[\r][\n]"
+  [DEBUG] [18:40:01] org.apache.http.wire - http-outgoing-2 >> "Host: 192.168.1.127:12051[\r][\n]"
+  [DEBUG] [18:40:01] org.apache.http.wire - http-outgoing-2 >> "Connection: Keep-Alive[\r][\n]"
+  [DEBUG] [18:40:01] org.apache.http.wire - http-outgoing-2 >> "[\r][\n]"
+  [DEBUG] [18:40:01] org.apache.http.wire - http-outgoing-2 >> "taskname=%22null%22"
+  [DEBUG] [18:40:02] org.apache.http.wire - http-outgoing-2 << "HTTP/1.1 200 OK[\r][\n]"
+  [DEBUG] [18:40:02] org.apache.http.wire - http-outgoing-2 << "Server: Apache-Coyote/1.1[\r][\n]"
+  [DEBUG] [18:40:02] org.apache.http.wire - http-outgoing-2 << "Content-Type: application/json;charset=UTF-8[\r][\n]"
+  [DEBUG] [18:40:02] org.apache.http.wire - http-outgoing-2 << "Transfer-Encoding: chunked[\r][\n]"
+  [DEBUG] [18:40:02] org.apache.http.wire - http-outgoing-2 << "Date: Mon, 26 Jun 2017 10:40:02 GMT[\r][\n]"
+  [DEBUG] [18:40:02] org.apache.http.wire - http-outgoing-2 << "[\r][\n]"
+  [DEBUG] [18:40:02] org.apache.http.headers - http-outgoing-2 << HTTP/1.1 200 OK
+  [DEBUG] [18:40:02] org.apache.http.headers - http-outgoing-2 << Server: Apache-Coyote/1.1
+  [DEBUG] [18:40:02] org.apache.http.headers - http-outgoing-2 << Content-Type: application/json;charset=UTF-8
+  [DEBUG] [18:40:02] org.apache.http.headers - http-outgoing-2 << Transfer-Encoding: chunked
+  [DEBUG] [18:40:02] org.apache.http.headers - http-outgoing-2 << Date: Mon, 26 Jun 2017 10:40:02 GMT
+  [DEBUG] [18:40:02] org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
+  [DEBUG] [18:40:02] org.apache.http.wire - http-outgoing-2 << "16[\r][\n]"
+  [DEBUG] [18:40:02] org.apache.http.wire - http-outgoing-2 << "{"code":0,"result":[]}[\r][\n]"
+  [DEBUG] [18:40:02] org.apache.http.wire - http-outgoing-2 << "0[\r][\n]"
+  [DEBUG] [18:40:02] org.apache.http.wire - http-outgoing-2 << "[\r][\n]"
+  [DEBUG] [18:40:02] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection [id: 2][route: {}->http://192.168.1.127:12051] can be kept alive indefinitely
+  [DEBUG] [18:40:02] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 2][route: {}->http://192.168.1.127:12051][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+  [DEBUG] [18:40:02] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager is shutting down
+  [DEBUG] [18:40:02] org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-2: Close connection
+  [DEBUG] [18:40:02] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager shut down
+  [DEBUG] [18:40:23] org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+  [DEBUG] [18:40:23] org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+  [DEBUG] [18:40:23] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://192.168.1.127:12051][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+  [DEBUG] [18:40:23] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 3][route: {}->http://192.168.1.127:12051][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+  [DEBUG] [18:40:23] org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://192.168.1.127:12051
+  [DEBUG] [18:40:23] org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to /192.168.1.127:12051
+  [DEBUG] [18:40:23] org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 192.168.1.127:58823<->192.168.1.127:12051
+  [DEBUG] [18:40:23] org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-3: set socket timeout to 15000
+  [DEBUG] [18:40:23] org.apache.http.impl.execchain.MainClientExec - Executing request POST /task/getWindchillTasks HTTP/1.1
+  [DEBUG] [18:40:23] org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+  [DEBUG] [18:40:23] org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+  [DEBUG] [18:40:23] org.apache.http.headers - http-outgoing-3 >> POST /task/getWindchillTasks HTTP/1.1
+  [DEBUG] [18:40:23] org.apache.http.headers - http-outgoing-3 >> content-type: application/x-www-form-urlencoded; charset=UTF-8
+  [DEBUG] [18:40:23] org.apache.http.headers - http-outgoing-3 >> accept-encoding: UTF-8
+  [DEBUG] [18:40:23] org.apache.http.headers - http-outgoing-3 >> accept: */*
+  [DEBUG] [18:40:23] org.apache.http.headers - http-outgoing-3 >> user-agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.59 Safari/537.36
+  [DEBUG] [18:40:23] org.apache.http.headers - http-outgoing-3 >> Content-Length: 19
+  [DEBUG] [18:40:23] org.apache.http.headers - http-outgoing-3 >> Host: 192.168.1.127:12051
+  [DEBUG] [18:40:23] org.apache.http.headers - http-outgoing-3 >> Connection: Keep-Alive
+  [DEBUG] [18:40:23] org.apache.http.wire - http-outgoing-3 >> "POST /task/getWindchillTasks HTTP/1.1[\r][\n]"
+  [DEBUG] [18:40:23] org.apache.http.wire - http-outgoing-3 >> "content-type: application/x-www-form-urlencoded; charset=UTF-8[\r][\n]"
+  [DEBUG] [18:40:23] org.apache.http.wire - http-outgoing-3 >> "accept-encoding: UTF-8[\r][\n]"
+  [DEBUG] [18:40:23] org.apache.http.wire - http-outgoing-3 >> "accept: */*[\r][\n]"
+  [DEBUG] [18:40:23] org.apache.http.wire - http-outgoing-3 >> "user-agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.59 Safari/537.36[\r][\n]"
+  [DEBUG] [18:40:23] org.apache.http.wire - http-outgoing-3 >> "Content-Length: 19[\r][\n]"
+  [DEBUG] [18:40:23] org.apache.http.wire - http-outgoing-3 >> "Host: 192.168.1.127:12051[\r][\n]"
+  [DEBUG] [18:40:23] org.apache.http.wire - http-outgoing-3 >> "Connection: Keep-Alive[\r][\n]"
+  [DEBUG] [18:40:23] org.apache.http.wire - http-outgoing-3 >> "[\r][\n]"
+  [DEBUG] [18:40:23] org.apache.http.wire - http-outgoing-3 >> "taskname=%22null%22"
+  [DEBUG] [18:40:38] org.apache.http.wire - http-outgoing-3 << "[read] I/O error: Read timed out"
+  [DEBUG] [18:40:38] org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-3: Close connection
+  [DEBUG] [18:40:38] org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-3: Shutdown connection
+  [DEBUG] [18:40:38] org.apache.http.impl.execchain.MainClientExec - Connection discarded
+  [DEBUG] [18:40:38] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 3][route: {}->http://192.168.1.127:12051][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+  [ERROR] [18:40:38] com.orange.clients.util.HttpClientUtil - send Http Request to:HTTP://192.168.1.127:12051/task/getWindchillTasks ,has errors:Read timed out
+  [DEBUG] [18:40:38] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager is shutting down
+  [DEBUG] [18:40:38] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager shut down
+  [DEBUG] [18:43:19] org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+  [DEBUG] [18:43:19] org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+  [DEBUG] [18:43:19] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://192.168.1.127:12051][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+  [DEBUG] [18:43:19] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 4][route: {}->http://192.168.1.127:12051][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+  [DEBUG] [18:43:19] org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://192.168.1.127:12051
+  [DEBUG] [18:43:19] org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to /192.168.1.127:12051
+  [DEBUG] [18:43:19] org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 192.168.1.127:58859<->192.168.1.127:12051
+  [DEBUG] [18:43:19] org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-4: set socket timeout to 15000
+  [DEBUG] [18:43:19] org.apache.http.impl.execchain.MainClientExec - Executing request POST /task/getWindchillTasks HTTP/1.1
+  [DEBUG] [18:43:19] org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+  [DEBUG] [18:43:19] org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+  [DEBUG] [18:43:19] org.apache.http.headers - http-outgoing-4 >> POST /task/getWindchillTasks HTTP/1.1
+  [DEBUG] [18:43:19] org.apache.http.headers - http-outgoing-4 >> content-type: application/x-www-form-urlencoded; charset=UTF-8
+  [DEBUG] [18:43:19] org.apache.http.headers - http-outgoing-4 >> accept-encoding: UTF-8
+  [DEBUG] [18:43:19] org.apache.http.headers - http-outgoing-4 >> accept: */*
+  [DEBUG] [18:43:19] org.apache.http.headers - http-outgoing-4 >> user-agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.59 Safari/537.36
+  [DEBUG] [18:43:19] org.apache.http.headers - http-outgoing-4 >> Content-Length: 19
+  [DEBUG] [18:43:19] org.apache.http.headers - http-outgoing-4 >> Host: 192.168.1.127:12051
+  [DEBUG] [18:43:19] org.apache.http.headers - http-outgoing-4 >> Connection: Keep-Alive
+  [DEBUG] [18:43:19] org.apache.http.wire - http-outgoing-4 >> "POST /task/getWindchillTasks HTTP/1.1[\r][\n]"
+  [DEBUG] [18:43:19] org.apache.http.wire - http-outgoing-4 >> "content-type: application/x-www-form-urlencoded; charset=UTF-8[\r][\n]"
+  [DEBUG] [18:43:19] org.apache.http.wire - http-outgoing-4 >> "accept-encoding: UTF-8[\r][\n]"
+  [DEBUG] [18:43:19] org.apache.http.wire - http-outgoing-4 >> "accept: */*[\r][\n]"
+  [DEBUG] [18:43:19] org.apache.http.wire - http-outgoing-4 >> "user-agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.59 Safari/537.36[\r][\n]"
+  [DEBUG] [18:43:19] org.apache.http.wire - http-outgoing-4 >> "Content-Length: 19[\r][\n]"
+  [DEBUG] [18:43:19] org.apache.http.wire - http-outgoing-4 >> "Host: 192.168.1.127:12051[\r][\n]"
+  [DEBUG] [18:43:19] org.apache.http.wire - http-outgoing-4 >> "Connection: Keep-Alive[\r][\n]"
+  [DEBUG] [18:43:19] org.apache.http.wire - http-outgoing-4 >> "[\r][\n]"
+  [DEBUG] [18:43:19] org.apache.http.wire - http-outgoing-4 >> "taskname=%22null%22"
+  [DEBUG] [18:43:19] org.apache.http.wire - http-outgoing-4 << "HTTP/1.1 200 OK[\r][\n]"
+  [DEBUG] [18:43:19] org.apache.http.wire - http-outgoing-4 << "Server: Apache-Coyote/1.1[\r][\n]"
+  [DEBUG] [18:43:19] org.apache.http.wire - http-outgoing-4 << "Content-Type: application/json;charset=UTF-8[\r][\n]"
+  [DEBUG] [18:43:19] org.apache.http.wire - http-outgoing-4 << "Transfer-Encoding: chunked[\r][\n]"
+  [DEBUG] [18:43:19] org.apache.http.wire - http-outgoing-4 << "Date: Mon, 26 Jun 2017 10:43:19 GMT[\r][\n]"
+  [DEBUG] [18:43:19] org.apache.http.wire - http-outgoing-4 << "[\r][\n]"
+  [DEBUG] [18:43:19] org.apache.http.headers - http-outgoing-4 << HTTP/1.1 200 OK
+  [DEBUG] [18:43:19] org.apache.http.headers - http-outgoing-4 << Server: Apache-Coyote/1.1
+  [DEBUG] [18:43:19] org.apache.http.headers - http-outgoing-4 << Content-Type: application/json;charset=UTF-8
+  [DEBUG] [18:43:19] org.apache.http.headers - http-outgoing-4 << Transfer-Encoding: chunked
+  [DEBUG] [18:43:19] org.apache.http.headers - http-outgoing-4 << Date: Mon, 26 Jun 2017 10:43:19 GMT
+  [DEBUG] [18:43:19] org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
+  [DEBUG] [18:43:19] org.apache.http.wire - http-outgoing-4 << "16[\r][\n]"
+  [DEBUG] [18:43:19] org.apache.http.wire - http-outgoing-4 << "{"code":0,"result":[]}[\r][\n]"
+  [DEBUG] [18:43:19] org.apache.http.wire - http-outgoing-4 << "0[\r][\n]"
+  [DEBUG] [18:43:19] org.apache.http.wire - http-outgoing-4 << "[\r][\n]"
+  [DEBUG] [18:43:19] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection [id: 4][route: {}->http://192.168.1.127:12051] can be kept alive indefinitely
+  [DEBUG] [18:43:19] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 4][route: {}->http://192.168.1.127:12051][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+  [DEBUG] [18:43:19] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager is shutting down
+  [DEBUG] [18:43:19] org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-4: Close connection
+  [DEBUG] [18:43:19] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager shut down
+  [DEBUG] [18:43:49] org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+  [DEBUG] [18:43:49] org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+  [DEBUG] [18:43:49] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://192.168.1.127:12051][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+  [DEBUG] [18:43:49] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 5][route: {}->http://192.168.1.127:12051][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+  [DEBUG] [18:43:49] org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://192.168.1.127:12051
+  [DEBUG] [18:43:49] org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to /192.168.1.127:12051
+  [DEBUG] [18:43:49] org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 192.168.1.127:58871<->192.168.1.127:12051
+  [DEBUG] [18:43:49] org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-5: set socket timeout to 15000
+  [DEBUG] [18:43:49] org.apache.http.impl.execchain.MainClientExec - Executing request POST /task/getWindchillTasks HTTP/1.1
+  [DEBUG] [18:43:49] org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+  [DEBUG] [18:43:49] org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+  [DEBUG] [18:43:49] org.apache.http.headers - http-outgoing-5 >> POST /task/getWindchillTasks HTTP/1.1
+  [DEBUG] [18:43:49] org.apache.http.headers - http-outgoing-5 >> content-type: application/x-www-form-urlencoded; charset=UTF-8
+  [DEBUG] [18:43:49] org.apache.http.headers - http-outgoing-5 >> accept-encoding: UTF-8
+  [DEBUG] [18:43:49] org.apache.http.headers - http-outgoing-5 >> accept: */*
+  [DEBUG] [18:43:49] org.apache.http.headers - http-outgoing-5 >> user-agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.59 Safari/537.36
+  [DEBUG] [18:43:49] org.apache.http.headers - http-outgoing-5 >> Content-Length: 19
+  [DEBUG] [18:43:49] org.apache.http.headers - http-outgoing-5 >> Host: 192.168.1.127:12051
+  [DEBUG] [18:43:49] org.apache.http.headers - http-outgoing-5 >> Connection: Keep-Alive
+  [DEBUG] [18:43:49] org.apache.http.wire - http-outgoing-5 >> "POST /task/getWindchillTasks HTTP/1.1[\r][\n]"
+  [DEBUG] [18:43:49] org.apache.http.wire - http-outgoing-5 >> "content-type: application/x-www-form-urlencoded; charset=UTF-8[\r][\n]"
+  [DEBUG] [18:43:49] org.apache.http.wire - http-outgoing-5 >> "accept-encoding: UTF-8[\r][\n]"
+  [DEBUG] [18:43:49] org.apache.http.wire - http-outgoing-5 >> "accept: */*[\r][\n]"
+  [DEBUG] [18:43:49] org.apache.http.wire - http-outgoing-5 >> "user-agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.59 Safari/537.36[\r][\n]"
+  [DEBUG] [18:43:49] org.apache.http.wire - http-outgoing-5 >> "Content-Length: 19[\r][\n]"
+  [DEBUG] [18:43:49] org.apache.http.wire - http-outgoing-5 >> "Host: 192.168.1.127:12051[\r][\n]"
+  [DEBUG] [18:43:49] org.apache.http.wire - http-outgoing-5 >> "Connection: Keep-Alive[\r][\n]"
+  [DEBUG] [18:43:49] org.apache.http.wire - http-outgoing-5 >> "[\r][\n]"
+  [DEBUG] [18:43:49] org.apache.http.wire - http-outgoing-5 >> "taskname=%22null%22"
+  [DEBUG] [18:44:04] org.apache.http.wire - http-outgoing-5 << "[read] I/O error: Read timed out"
+  [DEBUG] [18:44:04] org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-5: Close connection
+  [DEBUG] [18:44:04] org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-5: Shutdown connection
+  [DEBUG] [18:44:04] org.apache.http.impl.execchain.MainClientExec - Connection discarded
+  [DEBUG] [18:44:04] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 5][route: {}->http://192.168.1.127:12051][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+  [ERROR] [18:44:04] com.orange.clients.util.HttpClientUtil - send Http Request to:HTTP://192.168.1.127:12051/task/getWindchillTasks ,has errors:Read timed out
+  [DEBUG] [18:44:04] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager is shutting down
+  [DEBUG] [18:44:04] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager shut down
+  [DEBUG] [18:45:49] org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+  [DEBUG] [18:45:49] org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+  [DEBUG] [18:45:49] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://192.168.1.127:12051][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+  [DEBUG] [18:45:49] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 6][route: {}->http://192.168.1.127:12051][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+  [DEBUG] [18:45:49] org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://192.168.1.127:12051
+  [DEBUG] [18:45:49] org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to /192.168.1.127:12051
+  [DEBUG] [18:45:49] org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 192.168.1.127:58883<->192.168.1.127:12051
+  [DEBUG] [18:45:49] org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-6: set socket timeout to 15000
+  [DEBUG] [18:45:49] org.apache.http.impl.execchain.MainClientExec - Executing request POST /task/getWindchillTasks HTTP/1.1
+  [DEBUG] [18:45:49] org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+  [DEBUG] [18:45:49] org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+  [DEBUG] [18:45:49] org.apache.http.headers - http-outgoing-6 >> POST /task/getWindchillTasks HTTP/1.1
+  [DEBUG] [18:45:49] org.apache.http.headers - http-outgoing-6 >> content-type: application/x-www-form-urlencoded; charset=UTF-8
+  [DEBUG] [18:45:49] org.apache.http.headers - http-outgoing-6 >> accept-encoding: UTF-8
+  [DEBUG] [18:45:49] org.apache.http.headers - http-outgoing-6 >> accept: */*
+  [DEBUG] [18:45:49] org.apache.http.headers - http-outgoing-6 >> user-agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.59 Safari/537.36
+  [DEBUG] [18:45:49] org.apache.http.headers - http-outgoing-6 >> Content-Length: 19
+  [DEBUG] [18:45:49] org.apache.http.headers - http-outgoing-6 >> Host: 192.168.1.127:12051
+  [DEBUG] [18:45:49] org.apache.http.headers - http-outgoing-6 >> Connection: Keep-Alive
+  [DEBUG] [18:45:49] org.apache.http.wire - http-outgoing-6 >> "POST /task/getWindchillTasks HTTP/1.1[\r][\n]"
+  [DEBUG] [18:45:49] org.apache.http.wire - http-outgoing-6 >> "content-type: application/x-www-form-urlencoded; charset=UTF-8[\r][\n]"
+  [DEBUG] [18:45:49] org.apache.http.wire - http-outgoing-6 >> "accept-encoding: UTF-8[\r][\n]"
+  [DEBUG] [18:45:49] org.apache.http.wire - http-outgoing-6 >> "accept: */*[\r][\n]"
+  [DEBUG] [18:45:49] org.apache.http.wire - http-outgoing-6 >> "user-agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.59 Safari/537.36[\r][\n]"
+  [DEBUG] [18:45:49] org.apache.http.wire - http-outgoing-6 >> "Content-Length: 19[\r][\n]"
+  [DEBUG] [18:45:49] org.apache.http.wire - http-outgoing-6 >> "Host: 192.168.1.127:12051[\r][\n]"
+  [DEBUG] [18:45:49] org.apache.http.wire - http-outgoing-6 >> "Connection: Keep-Alive[\r][\n]"
+  [DEBUG] [18:45:49] org.apache.http.wire - http-outgoing-6 >> "[\r][\n]"
+  [DEBUG] [18:45:49] org.apache.http.wire - http-outgoing-6 >> "taskname=%22null%22"
+  [DEBUG] [18:46:04] org.apache.http.wire - http-outgoing-6 << "[read] I/O error: Read timed out"
+  [DEBUG] [18:46:04] org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-6: Close connection
+  [DEBUG] [18:46:04] org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-6: Shutdown connection
+  [DEBUG] [18:46:04] org.apache.http.impl.execchain.MainClientExec - Connection discarded
+  [DEBUG] [18:46:04] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 6][route: {}->http://192.168.1.127:12051][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+  [ERROR] [18:46:04] com.orange.clients.util.HttpClientUtil - send Http Request to:HTTP://192.168.1.127:12051/task/getWindchillTasks ,has errors:Read timed out
+  [DEBUG] [18:46:04] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager is shutting down
+  [DEBUG] [18:46:04] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager shut down
+  [DEBUG] [18:46:42] org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+  [DEBUG] [18:46:42] org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+  [DEBUG] [18:46:42] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://192.168.1.127:12051][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+  [DEBUG] [18:46:42] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 7][route: {}->http://192.168.1.127:12051][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+  [DEBUG] [18:46:42] org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://192.168.1.127:12051
+  [DEBUG] [18:46:42] org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to /192.168.1.127:12051
+  [DEBUG] [18:46:42] org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 192.168.1.127:58885<->192.168.1.127:12051
+  [DEBUG] [18:46:42] org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-7: set socket timeout to 15000
+  [DEBUG] [18:46:42] org.apache.http.impl.execchain.MainClientExec - Executing request POST /task/getWindchillTasks HTTP/1.1
+  [DEBUG] [18:46:42] org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+  [DEBUG] [18:46:42] org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+  [DEBUG] [18:46:42] org.apache.http.headers - http-outgoing-7 >> POST /task/getWindchillTasks HTTP/1.1
+  [DEBUG] [18:46:42] org.apache.http.headers - http-outgoing-7 >> content-type: application/x-www-form-urlencoded; charset=UTF-8
+  [DEBUG] [18:46:42] org.apache.http.headers - http-outgoing-7 >> accept-encoding: UTF-8
+  [DEBUG] [18:46:42] org.apache.http.headers - http-outgoing-7 >> accept: */*
+  [DEBUG] [18:46:42] org.apache.http.headers - http-outgoing-7 >> user-agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.59 Safari/537.36
+  [DEBUG] [18:46:42] org.apache.http.headers - http-outgoing-7 >> Content-Length: 19
+  [DEBUG] [18:46:42] org.apache.http.headers - http-outgoing-7 >> Host: 192.168.1.127:12051
+  [DEBUG] [18:46:42] org.apache.http.headers - http-outgoing-7 >> Connection: Keep-Alive
+  [DEBUG] [18:46:42] org.apache.http.wire - http-outgoing-7 >> "POST /task/getWindchillTasks HTTP/1.1[\r][\n]"
+  [DEBUG] [18:46:42] org.apache.http.wire - http-outgoing-7 >> "content-type: application/x-www-form-urlencoded; charset=UTF-8[\r][\n]"
+  [DEBUG] [18:46:42] org.apache.http.wire - http-outgoing-7 >> "accept-encoding: UTF-8[\r][\n]"
+  [DEBUG] [18:46:42] org.apache.http.wire - http-outgoing-7 >> "accept: */*[\r][\n]"
+  [DEBUG] [18:46:42] org.apache.http.wire - http-outgoing-7 >> "user-agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.59 Safari/537.36[\r][\n]"
+  [DEBUG] [18:46:42] org.apache.http.wire - http-outgoing-7 >> "Content-Length: 19[\r][\n]"
+  [DEBUG] [18:46:42] org.apache.http.wire - http-outgoing-7 >> "Host: 192.168.1.127:12051[\r][\n]"
+  [DEBUG] [18:46:42] org.apache.http.wire - http-outgoing-7 >> "Connection: Keep-Alive[\r][\n]"
+  [DEBUG] [18:46:42] org.apache.http.wire - http-outgoing-7 >> "[\r][\n]"
+  [DEBUG] [18:46:42] org.apache.http.wire - http-outgoing-7 >> "taskname=%22null%22"
+  [DEBUG] [18:46:57] org.apache.http.wire - http-outgoing-7 << "[read] I/O error: Read timed out"
+  [DEBUG] [18:46:57] org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-7: Close connection
+  [DEBUG] [18:46:57] org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-7: Shutdown connection
+  [DEBUG] [18:46:57] org.apache.http.impl.execchain.MainClientExec - Connection discarded
+  [DEBUG] [18:46:57] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 7][route: {}->http://192.168.1.127:12051][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+  [ERROR] [18:46:57] com.orange.clients.util.HttpClientUtil - send Http Request to:HTTP://192.168.1.127:12051/task/getWindchillTasks ,has errors:Read timed out
+  [DEBUG] [18:46:57] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager is shutting down
+  [DEBUG] [18:46:57] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager shut down
+  [DEBUG] [18:48:37] org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+  [DEBUG] [18:48:37] org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+  [DEBUG] [18:48:37] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://192.168.1.127:12051][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+  [DEBUG] [18:48:37] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 8][route: {}->http://192.168.1.127:12051][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+  [DEBUG] [18:48:37] org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://192.168.1.127:12051
+  [DEBUG] [18:48:37] org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to /192.168.1.127:12051
+  [DEBUG] [18:48:37] org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 192.168.1.127:58896<->192.168.1.127:12051
+  [DEBUG] [18:48:37] org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-8: set socket timeout to 15000
+  [DEBUG] [18:48:37] org.apache.http.impl.execchain.MainClientExec - Executing request POST /task/getWindchillTasks HTTP/1.1
+  [DEBUG] [18:48:37] org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+  [DEBUG] [18:48:37] org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+  [DEBUG] [18:48:37] org.apache.http.headers - http-outgoing-8 >> POST /task/getWindchillTasks HTTP/1.1
+  [DEBUG] [18:48:37] org.apache.http.headers - http-outgoing-8 >> content-type: application/x-www-form-urlencoded; charset=UTF-8
+  [DEBUG] [18:48:37] org.apache.http.headers - http-outgoing-8 >> accept-encoding: UTF-8
+  [DEBUG] [18:48:37] org.apache.http.headers - http-outgoing-8 >> accept: */*
+  [DEBUG] [18:48:37] org.apache.http.headers - http-outgoing-8 >> user-agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.59 Safari/537.36
+  [DEBUG] [18:48:37] org.apache.http.headers - http-outgoing-8 >> Content-Length: 19
+  [DEBUG] [18:48:37] org.apache.http.headers - http-outgoing-8 >> Host: 192.168.1.127:12051
+  [DEBUG] [18:48:37] org.apache.http.headers - http-outgoing-8 >> Connection: Keep-Alive
+  [DEBUG] [18:48:37] org.apache.http.wire - http-outgoing-8 >> "POST /task/getWindchillTasks HTTP/1.1[\r][\n]"
+  [DEBUG] [18:48:37] org.apache.http.wire - http-outgoing-8 >> "content-type: application/x-www-form-urlencoded; charset=UTF-8[\r][\n]"
+  [DEBUG] [18:48:37] org.apache.http.wire - http-outgoing-8 >> "accept-encoding: UTF-8[\r][\n]"
+  [DEBUG] [18:48:37] org.apache.http.wire - http-outgoing-8 >> "accept: */*[\r][\n]"
+  [DEBUG] [18:48:37] org.apache.http.wire - http-outgoing-8 >> "user-agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.59 Safari/537.36[\r][\n]"
+  [DEBUG] [18:48:37] org.apache.http.wire - http-outgoing-8 >> "Content-Length: 19[\r][\n]"
+  [DEBUG] [18:48:37] org.apache.http.wire - http-outgoing-8 >> "Host: 192.168.1.127:12051[\r][\n]"
+  [DEBUG] [18:48:37] org.apache.http.wire - http-outgoing-8 >> "Connection: Keep-Alive[\r][\n]"
+  [DEBUG] [18:48:37] org.apache.http.wire - http-outgoing-8 >> "[\r][\n]"
+  [DEBUG] [18:48:37] org.apache.http.wire - http-outgoing-8 >> "taskname=%22null%22"
+  [DEBUG] [18:48:44] org.apache.http.wire - http-outgoing-8 << "HTTP/1.1 200 OK[\r][\n]"
+  [DEBUG] [18:48:44] org.apache.http.wire - http-outgoing-8 << "Server: Apache-Coyote/1.1[\r][\n]"
+  [DEBUG] [18:48:44] org.apache.http.wire - http-outgoing-8 << "Content-Type: application/json;charset=UTF-8[\r][\n]"
+  [DEBUG] [18:48:44] org.apache.http.wire - http-outgoing-8 << "Transfer-Encoding: chunked[\r][\n]"
+  [DEBUG] [18:48:44] org.apache.http.wire - http-outgoing-8 << "Date: Mon, 26 Jun 2017 10:48:44 GMT[\r][\n]"
+  [DEBUG] [18:48:44] org.apache.http.wire - http-outgoing-8 << "[\r][\n]"
+  [DEBUG] [18:48:44] org.apache.http.headers - http-outgoing-8 << HTTP/1.1 200 OK
+  [DEBUG] [18:48:44] org.apache.http.headers - http-outgoing-8 << Server: Apache-Coyote/1.1
+  [DEBUG] [18:48:44] org.apache.http.headers - http-outgoing-8 << Content-Type: application/json;charset=UTF-8
+  [DEBUG] [18:48:44] org.apache.http.headers - http-outgoing-8 << Transfer-Encoding: chunked
+  [DEBUG] [18:48:44] org.apache.http.headers - http-outgoing-8 << Date: Mon, 26 Jun 2017 10:48:44 GMT
+  [DEBUG] [18:48:44] org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
+  [DEBUG] [18:48:44] org.apache.http.wire - http-outgoing-8 << "16[\r][\n]"
+  [DEBUG] [18:48:44] org.apache.http.wire - http-outgoing-8 << "{"code":0,"result":[]}[\r][\n]"
+  [DEBUG] [18:48:44] org.apache.http.wire - http-outgoing-8 << "0[\r][\n]"
+  [DEBUG] [18:48:44] org.apache.http.wire - http-outgoing-8 << "[\r][\n]"
+  [DEBUG] [18:48:44] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection [id: 8][route: {}->http://192.168.1.127:12051] can be kept alive indefinitely
+  [DEBUG] [18:48:44] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 8][route: {}->http://192.168.1.127:12051][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+  [DEBUG] [18:48:44] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager is shutting down
+  [DEBUG] [18:48:44] org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-8: Close connection
+  [DEBUG] [18:48:44] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager shut down
+  [DEBUG] [18:50:02] org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+  [DEBUG] [18:50:02] org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+  [DEBUG] [18:50:02] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://192.168.1.127:12051][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+  [DEBUG] [18:50:02] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 9][route: {}->http://192.168.1.127:12051][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+  [DEBUG] [18:50:02] org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://192.168.1.127:12051
+  [DEBUG] [18:50:02] org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to /192.168.1.127:12051
+  [DEBUG] [18:50:02] org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 192.168.1.127:58907<->192.168.1.127:12051
+  [DEBUG] [18:50:02] org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-9: set socket timeout to 15000
+  [DEBUG] [18:50:02] org.apache.http.impl.execchain.MainClientExec - Executing request POST /task/getWindchillTasks HTTP/1.1
+  [DEBUG] [18:50:02] org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+  [DEBUG] [18:50:02] org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+  [DEBUG] [18:50:02] org.apache.http.headers - http-outgoing-9 >> POST /task/getWindchillTasks HTTP/1.1
+  [DEBUG] [18:50:02] org.apache.http.headers - http-outgoing-9 >> content-type: application/x-www-form-urlencoded; charset=UTF-8
+  [DEBUG] [18:50:02] org.apache.http.headers - http-outgoing-9 >> accept-encoding: UTF-8
+  [DEBUG] [18:50:02] org.apache.http.headers - http-outgoing-9 >> accept: */*
+  [DEBUG] [18:50:02] org.apache.http.headers - http-outgoing-9 >> user-agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.59 Safari/537.36
+  [DEBUG] [18:50:02] org.apache.http.headers - http-outgoing-9 >> Content-Length: 19
+  [DEBUG] [18:50:02] org.apache.http.headers - http-outgoing-9 >> Host: 192.168.1.127:12051
+  [DEBUG] [18:50:02] org.apache.http.headers - http-outgoing-9 >> Connection: Keep-Alive
+  [DEBUG] [18:50:02] org.apache.http.wire - http-outgoing-9 >> "POST /task/getWindchillTasks HTTP/1.1[\r][\n]"
+  [DEBUG] [18:50:02] org.apache.http.wire - http-outgoing-9 >> "content-type: application/x-www-form-urlencoded; charset=UTF-8[\r][\n]"
+  [DEBUG] [18:50:02] org.apache.http.wire - http-outgoing-9 >> "accept-encoding: UTF-8[\r][\n]"
+  [DEBUG] [18:50:02] org.apache.http.wire - http-outgoing-9 >> "accept: */*[\r][\n]"
+  [DEBUG] [18:50:02] org.apache.http.wire - http-outgoing-9 >> "user-agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.59 Safari/537.36[\r][\n]"
+  [DEBUG] [18:50:02] org.apache.http.wire - http-outgoing-9 >> "Content-Length: 19[\r][\n]"
+  [DEBUG] [18:50:02] org.apache.http.wire - http-outgoing-9 >> "Host: 192.168.1.127:12051[\r][\n]"
+  [DEBUG] [18:50:02] org.apache.http.wire - http-outgoing-9 >> "Connection: Keep-Alive[\r][\n]"
+  [DEBUG] [18:50:02] org.apache.http.wire - http-outgoing-9 >> "[\r][\n]"
+  [DEBUG] [18:50:02] org.apache.http.wire - http-outgoing-9 >> "taskname=%22null%22"
+  [DEBUG] [18:50:10] org.apache.http.wire - http-outgoing-9 << "HTTP/1.1 200 OK[\r][\n]"
+  [DEBUG] [18:50:10] org.apache.http.wire - http-outgoing-9 << "Server: Apache-Coyote/1.1[\r][\n]"
+  [DEBUG] [18:50:10] org.apache.http.wire - http-outgoing-9 << "Content-Type: application/json;charset=UTF-8[\r][\n]"
+  [DEBUG] [18:50:10] org.apache.http.wire - http-outgoing-9 << "Transfer-Encoding: chunked[\r][\n]"
+  [DEBUG] [18:50:10] org.apache.http.wire - http-outgoing-9 << "Date: Mon, 26 Jun 2017 10:50:10 GMT[\r][\n]"
+  [DEBUG] [18:50:10] org.apache.http.wire - http-outgoing-9 << "[\r][\n]"
+  [DEBUG] [18:50:10] org.apache.http.headers - http-outgoing-9 << HTTP/1.1 200 OK
+  [DEBUG] [18:50:10] org.apache.http.headers - http-outgoing-9 << Server: Apache-Coyote/1.1
+  [DEBUG] [18:50:10] org.apache.http.headers - http-outgoing-9 << Content-Type: application/json;charset=UTF-8
+  [DEBUG] [18:50:10] org.apache.http.headers - http-outgoing-9 << Transfer-Encoding: chunked
+  [DEBUG] [18:50:10] org.apache.http.headers - http-outgoing-9 << Date: Mon, 26 Jun 2017 10:50:10 GMT
+  [DEBUG] [18:50:10] org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
+  [DEBUG] [18:50:10] org.apache.http.wire - http-outgoing-9 << "16[\r][\n]"
+  [DEBUG] [18:50:10] org.apache.http.wire - http-outgoing-9 << "{"code":0,"result":[]}[\r][\n]"
+  [DEBUG] [18:50:10] org.apache.http.wire - http-outgoing-9 << "0[\r][\n]"
+  [DEBUG] [18:50:10] org.apache.http.wire - http-outgoing-9 << "[\r][\n]"
+  [DEBUG] [18:50:10] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection [id: 9][route: {}->http://192.168.1.127:12051] can be kept alive indefinitely
+  [DEBUG] [18:50:10] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 9][route: {}->http://192.168.1.127:12051][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+  [DEBUG] [18:50:10] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager is shutting down
+  [DEBUG] [18:50:10] org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-9: Close connection
+  [DEBUG] [18:50:10] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager shut down
+  [DEBUG] [18:50:27] org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+  [DEBUG] [18:50:27] org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+  [DEBUG] [18:50:27] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://192.168.1.127:12051][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+  [DEBUG] [18:50:27] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 10][route: {}->http://192.168.1.127:12051][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+  [DEBUG] [18:50:27] org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://192.168.1.127:12051
+  [DEBUG] [18:50:27] org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to /192.168.1.127:12051
+  [DEBUG] [18:50:27] org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 192.168.1.127:58909<->192.168.1.127:12051
+  [DEBUG] [18:50:27] org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-10: set socket timeout to 15000
+  [DEBUG] [18:50:27] org.apache.http.impl.execchain.MainClientExec - Executing request POST /task/getWindchillTasks HTTP/1.1
+  [DEBUG] [18:50:27] org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+  [DEBUG] [18:50:27] org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+  [DEBUG] [18:50:27] org.apache.http.headers - http-outgoing-10 >> POST /task/getWindchillTasks HTTP/1.1
+  [DEBUG] [18:50:27] org.apache.http.headers - http-outgoing-10 >> content-type: application/x-www-form-urlencoded; charset=UTF-8
+  [DEBUG] [18:50:27] org.apache.http.headers - http-outgoing-10 >> accept-encoding: UTF-8
+  [DEBUG] [18:50:27] org.apache.http.headers - http-outgoing-10 >> accept: */*
+  [DEBUG] [18:50:27] org.apache.http.headers - http-outgoing-10 >> user-agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.59 Safari/537.36
+  [DEBUG] [18:50:27] org.apache.http.headers - http-outgoing-10 >> Content-Length: 19
+  [DEBUG] [18:50:27] org.apache.http.headers - http-outgoing-10 >> Host: 192.168.1.127:12051
+  [DEBUG] [18:50:27] org.apache.http.headers - http-outgoing-10 >> Connection: Keep-Alive
+  [DEBUG] [18:50:27] org.apache.http.wire - http-outgoing-10 >> "POST /task/getWindchillTasks HTTP/1.1[\r][\n]"
+  [DEBUG] [18:50:27] org.apache.http.wire - http-outgoing-10 >> "content-type: application/x-www-form-urlencoded; charset=UTF-8[\r][\n]"
+  [DEBUG] [18:50:27] org.apache.http.wire - http-outgoing-10 >> "accept-encoding: UTF-8[\r][\n]"
+  [DEBUG] [18:50:27] org.apache.http.wire - http-outgoing-10 >> "accept: */*[\r][\n]"
+  [DEBUG] [18:50:27] org.apache.http.wire - http-outgoing-10 >> "user-agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.59 Safari/537.36[\r][\n]"
+  [DEBUG] [18:50:27] org.apache.http.wire - http-outgoing-10 >> "Content-Length: 19[\r][\n]"
+  [DEBUG] [18:50:27] org.apache.http.wire - http-outgoing-10 >> "Host: 192.168.1.127:12051[\r][\n]"
+  [DEBUG] [18:50:27] org.apache.http.wire - http-outgoing-10 >> "Connection: Keep-Alive[\r][\n]"
+  [DEBUG] [18:50:27] org.apache.http.wire - http-outgoing-10 >> "[\r][\n]"
+  [DEBUG] [18:50:27] org.apache.http.wire - http-outgoing-10 >> "taskname=%22null%22"
+  [DEBUG] [18:50:42] org.apache.http.wire - http-outgoing-10 << "[read] I/O error: Read timed out"
+  [DEBUG] [18:50:42] org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-10: Close connection
+  [DEBUG] [18:50:42] org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-10: Shutdown connection
+  [DEBUG] [18:50:42] org.apache.http.impl.execchain.MainClientExec - Connection discarded
+  [DEBUG] [18:50:42] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 10][route: {}->http://192.168.1.127:12051][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+  [ERROR] [18:50:42] com.orange.clients.util.HttpClientUtil - send Http Request to:HTTP://192.168.1.127:12051/task/getWindchillTasks ,has errors:Read timed out
+  [DEBUG] [18:50:42] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager is shutting down
+  [DEBUG] [18:50:42] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager shut down
+  [DEBUG] [18:52:01] org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+  [DEBUG] [18:52:01] org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+  [DEBUG] [18:52:01] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://192.168.1.127:12051][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+  [DEBUG] [18:52:01] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 11][route: {}->http://192.168.1.127:12051][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+  [DEBUG] [18:52:01] org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://192.168.1.127:12051
+  [DEBUG] [18:52:01] org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to /192.168.1.127:12051
+  [DEBUG] [18:52:01] org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 192.168.1.127:58916<->192.168.1.127:12051
+  [DEBUG] [18:52:01] org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-11: set socket timeout to 15000
+  [DEBUG] [18:52:01] org.apache.http.impl.execchain.MainClientExec - Executing request POST /task/getWindchillTasks HTTP/1.1
+  [DEBUG] [18:52:01] org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+  [DEBUG] [18:52:01] org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+  [DEBUG] [18:52:01] org.apache.http.headers - http-outgoing-11 >> POST /task/getWindchillTasks HTTP/1.1
+  [DEBUG] [18:52:01] org.apache.http.headers - http-outgoing-11 >> content-type: application/x-www-form-urlencoded; charset=UTF-8
+  [DEBUG] [18:52:01] org.apache.http.headers - http-outgoing-11 >> accept-encoding: UTF-8
+  [DEBUG] [18:52:01] org.apache.http.headers - http-outgoing-11 >> accept: */*
+  [DEBUG] [18:52:01] org.apache.http.headers - http-outgoing-11 >> user-agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.59 Safari/537.36
+  [DEBUG] [18:52:01] org.apache.http.headers - http-outgoing-11 >> Content-Length: 19
+  [DEBUG] [18:52:01] org.apache.http.headers - http-outgoing-11 >> Host: 192.168.1.127:12051
+  [DEBUG] [18:52:01] org.apache.http.headers - http-outgoing-11 >> Connection: Keep-Alive
+  [DEBUG] [18:52:01] org.apache.http.wire - http-outgoing-11 >> "POST /task/getWindchillTasks HTTP/1.1[\r][\n]"
+  [DEBUG] [18:52:01] org.apache.http.wire - http-outgoing-11 >> "content-type: application/x-www-form-urlencoded; charset=UTF-8[\r][\n]"
+  [DEBUG] [18:52:01] org.apache.http.wire - http-outgoing-11 >> "accept-encoding: UTF-8[\r][\n]"
+  [DEBUG] [18:52:01] org.apache.http.wire - http-outgoing-11 >> "accept: */*[\r][\n]"
+  [DEBUG] [18:52:01] org.apache.http.wire - http-outgoing-11 >> "user-agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.59 Safari/537.36[\r][\n]"
+  [DEBUG] [18:52:01] org.apache.http.wire - http-outgoing-11 >> "Content-Length: 19[\r][\n]"
+  [DEBUG] [18:52:01] org.apache.http.wire - http-outgoing-11 >> "Host: 192.168.1.127:12051[\r][\n]"
+  [DEBUG] [18:52:01] org.apache.http.wire - http-outgoing-11 >> "Connection: Keep-Alive[\r][\n]"
+  [DEBUG] [18:52:01] org.apache.http.wire - http-outgoing-11 >> "[\r][\n]"
+  [DEBUG] [18:52:01] org.apache.http.wire - http-outgoing-11 >> "taskname=%22null%22"
+  [DEBUG] [18:52:16] org.apache.http.wire - http-outgoing-11 << "[read] I/O error: Read timed out"
+  [DEBUG] [18:52:16] org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-11: Close connection
+  [DEBUG] [18:52:16] org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-11: Shutdown connection
+  [DEBUG] [18:52:16] org.apache.http.impl.execchain.MainClientExec - Connection discarded
+  [DEBUG] [18:52:16] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 11][route: {}->http://192.168.1.127:12051][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+  [ERROR] [18:52:16] com.orange.clients.util.HttpClientUtil - send Http Request to:HTTP://192.168.1.127:12051/task/getWindchillTasks ,has errors:Read timed out
+  [DEBUG] [18:52:16] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager is shutting down
+  [DEBUG] [18:52:16] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager shut down
+  [DEBUG] [18:52:55] org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+  [DEBUG] [18:52:55] org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+  [DEBUG] [18:52:55] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://192.168.1.127:12051][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+  [DEBUG] [18:52:55] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 12][route: {}->http://192.168.1.127:12051][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+  [DEBUG] [18:52:55] org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://192.168.1.127:12051
+  [DEBUG] [18:52:55] org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to /192.168.1.127:12051
+  [DEBUG] [18:52:55] org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 192.168.1.127:58919<->192.168.1.127:12051
+  [DEBUG] [18:52:55] org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-12: set socket timeout to 15000
+  [DEBUG] [18:52:55] org.apache.http.impl.execchain.MainClientExec - Executing request POST /task/getWindchillTasks HTTP/1.1
+  [DEBUG] [18:52:55] org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+  [DEBUG] [18:52:55] org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+  [DEBUG] [18:52:55] org.apache.http.headers - http-outgoing-12 >> POST /task/getWindchillTasks HTTP/1.1
+  [DEBUG] [18:52:55] org.apache.http.headers - http-outgoing-12 >> content-type: application/x-www-form-urlencoded; charset=UTF-8
+  [DEBUG] [18:52:55] org.apache.http.headers - http-outgoing-12 >> accept-encoding: UTF-8
+  [DEBUG] [18:52:55] org.apache.http.headers - http-outgoing-12 >> accept: */*
+  [DEBUG] [18:52:55] org.apache.http.headers - http-outgoing-12 >> user-agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.59 Safari/537.36
+  [DEBUG] [18:52:55] org.apache.http.headers - http-outgoing-12 >> Content-Length: 13
+  [DEBUG] [18:52:55] org.apache.http.headers - http-outgoing-12 >> Host: 192.168.1.127:12051
+  [DEBUG] [18:52:55] org.apache.http.headers - http-outgoing-12 >> Connection: Keep-Alive
+  [DEBUG] [18:52:55] org.apache.http.wire - http-outgoing-12 >> "POST /task/getWindchillTasks HTTP/1.1[\r][\n]"
+  [DEBUG] [18:52:55] org.apache.http.wire - http-outgoing-12 >> "content-type: application/x-www-form-urlencoded; charset=UTF-8[\r][\n]"
+  [DEBUG] [18:52:55] org.apache.http.wire - http-outgoing-12 >> "accept-encoding: UTF-8[\r][\n]"
+  [DEBUG] [18:52:55] org.apache.http.wire - http-outgoing-12 >> "accept: */*[\r][\n]"
+  [DEBUG] [18:52:55] org.apache.http.wire - http-outgoing-12 >> "user-agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.59 Safari/537.36[\r][\n]"
+  [DEBUG] [18:52:55] org.apache.http.wire - http-outgoing-12 >> "Content-Length: 13[\r][\n]"
+  [DEBUG] [18:52:55] org.apache.http.wire - http-outgoing-12 >> "Host: 192.168.1.127:12051[\r][\n]"
+  [DEBUG] [18:52:55] org.apache.http.wire - http-outgoing-12 >> "Connection: Keep-Alive[\r][\n]"
+  [DEBUG] [18:52:55] org.apache.http.wire - http-outgoing-12 >> "[\r][\n]"
+  [DEBUG] [18:52:55] org.apache.http.wire - http-outgoing-12 >> "taskname=null"
+  [DEBUG] [18:52:55] org.apache.http.wire - http-outgoing-12 << "HTTP/1.1 200 OK[\r][\n]"
+  [DEBUG] [18:52:55] org.apache.http.wire - http-outgoing-12 << "Server: Apache-Coyote/1.1[\r][\n]"
+  [DEBUG] [18:52:55] org.apache.http.wire - http-outgoing-12 << "Content-Type: application/json;charset=UTF-8[\r][\n]"
+  [DEBUG] [18:52:55] org.apache.http.wire - http-outgoing-12 << "Transfer-Encoding: chunked[\r][\n]"
+  [DEBUG] [18:52:55] org.apache.http.wire - http-outgoing-12 << "Date: Mon, 26 Jun 2017 10:52:55 GMT[\r][\n]"
+  [DEBUG] [18:52:55] org.apache.http.wire - http-outgoing-12 << "[\r][\n]"
+  [DEBUG] [18:52:55] org.apache.http.wire - http-outgoing-12 << "3ba[\r][\n]"
+  [DEBUG] [18:52:55] org.apache.http.wire - http-outgoing-12 << "{"code":0,"result":[{"id":null,"parent_id":0,"task_name":"[0xe9][0xa1][0xb9][0xe7][0x9b][0xae][0xe5][0xbc][0x80][0xe5][0xa7][0x8b]","task_type":0,"task_desc":"","start_time":null,"end_time":null,"priority":null,"creator_account":null,"associat_id":null,"group_id":null,"participant":null,"task_status":null,"start_time_format":"01-10","end_time_format":"01-10","childtasks":null,"tagList":null},{"id":null,"parent_id":0,"task_name":"[0xe8][0x8c][0x83][0xe5][0x9b][0xb4]","task_type":0,"task_desc":"[0xe8][0x8c][0x83][0xe5][0x9b][0xb4]","start_time":null,"end_time":null,"priority":null,"creator_account":null,"associat_id":null,"group_id":null,"participant":null,"task_status":null,"start_time_format":null,"end_time_format":null,"childtasks":null,"tagList":null},{"id":null,"parent_id":0,"task_name":"[0xe6][0x80][0xbb][0xe7][0xbb][0x93]","task_type":0,"task_desc":"[0xe6][0x80][0xbb][0xe7][0xbb][0x93]","start_time":null,"end_time":null,"priority":null,"creator_account":null,"associat_id":null,"group_id":null,"participant":null,"task_status":null,"start_time_format":null,"end_time_format":null,"childtasks":null,"tagList":null}]}[\r][\n]"
+  [DEBUG] [18:52:55] org.apache.http.wire - http-outgoing-12 << "0[\r][\n]"
+  [DEBUG] [18:52:55] org.apache.http.wire - http-outgoing-12 << "[\r][\n]"
+  [DEBUG] [18:52:55] org.apache.http.headers - http-outgoing-12 << HTTP/1.1 200 OK
+  [DEBUG] [18:52:55] org.apache.http.headers - http-outgoing-12 << Server: Apache-Coyote/1.1
+  [DEBUG] [18:52:55] org.apache.http.headers - http-outgoing-12 << Content-Type: application/json;charset=UTF-8
+  [DEBUG] [18:52:55] org.apache.http.headers - http-outgoing-12 << Transfer-Encoding: chunked
+  [DEBUG] [18:52:55] org.apache.http.headers - http-outgoing-12 << Date: Mon, 26 Jun 2017 10:52:55 GMT
+  [DEBUG] [18:52:55] org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
+  [DEBUG] [18:52:55] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection [id: 12][route: {}->http://192.168.1.127:12051] can be kept alive indefinitely
+  [DEBUG] [18:52:55] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 12][route: {}->http://192.168.1.127:12051][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+  [DEBUG] [18:52:55] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager is shutting down
+  [DEBUG] [18:52:55] org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-12: Close connection
+  [DEBUG] [18:52:55] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager shut down
+  [DEBUG] [18:55:54] org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+  [DEBUG] [18:55:54] org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+  [DEBUG] [18:55:54] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://192.168.1.127:12051][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+  [DEBUG] [18:55:54] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 13][route: {}->http://192.168.1.127:12051][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+  [DEBUG] [18:55:54] org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://192.168.1.127:12051
+  [DEBUG] [18:55:54] org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to /192.168.1.127:12051
+  [DEBUG] [18:55:54] org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 192.168.1.127:58942<->192.168.1.127:12051
+  [DEBUG] [18:55:54] org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-13: set socket timeout to 15000
+  [DEBUG] [18:55:54] org.apache.http.impl.execchain.MainClientExec - Executing request POST /task/getWindchillTasks HTTP/1.1
+  [DEBUG] [18:55:54] org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+  [DEBUG] [18:55:54] org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+  [DEBUG] [18:55:54] org.apache.http.headers - http-outgoing-13 >> POST /task/getWindchillTasks HTTP/1.1
+  [DEBUG] [18:55:54] org.apache.http.headers - http-outgoing-13 >> content-type: application/x-www-form-urlencoded; charset=UTF-8
+  [DEBUG] [18:55:54] org.apache.http.headers - http-outgoing-13 >> accept-encoding: UTF-8
+  [DEBUG] [18:55:54] org.apache.http.headers - http-outgoing-13 >> accept: */*
+  [DEBUG] [18:55:54] org.apache.http.headers - http-outgoing-13 >> user-agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.59 Safari/537.36
+  [DEBUG] [18:55:54] org.apache.http.headers - http-outgoing-13 >> Content-Length: 13
+  [DEBUG] [18:55:54] org.apache.http.headers - http-outgoing-13 >> Host: 192.168.1.127:12051
+  [DEBUG] [18:55:54] org.apache.http.headers - http-outgoing-13 >> Connection: Keep-Alive
+  [DEBUG] [18:55:54] org.apache.http.wire - http-outgoing-13 >> "POST /task/getWindchillTasks HTTP/1.1[\r][\n]"
+  [DEBUG] [18:55:54] org.apache.http.wire - http-outgoing-13 >> "content-type: application/x-www-form-urlencoded; charset=UTF-8[\r][\n]"
+  [DEBUG] [18:55:54] org.apache.http.wire - http-outgoing-13 >> "accept-encoding: UTF-8[\r][\n]"
+  [DEBUG] [18:55:54] org.apache.http.wire - http-outgoing-13 >> "accept: */*[\r][\n]"
+  [DEBUG] [18:55:54] org.apache.http.wire - http-outgoing-13 >> "user-agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.59 Safari/537.36[\r][\n]"
+  [DEBUG] [18:55:54] org.apache.http.wire - http-outgoing-13 >> "Content-Length: 13[\r][\n]"
+  [DEBUG] [18:55:54] org.apache.http.wire - http-outgoing-13 >> "Host: 192.168.1.127:12051[\r][\n]"
+  [DEBUG] [18:55:54] org.apache.http.wire - http-outgoing-13 >> "Connection: Keep-Alive[\r][\n]"
+  [DEBUG] [18:55:54] org.apache.http.wire - http-outgoing-13 >> "[\r][\n]"
+  [DEBUG] [18:55:54] org.apache.http.wire - http-outgoing-13 >> "taskname=null"
+  [DEBUG] [18:55:55] org.apache.http.wire - http-outgoing-13 << "HTTP/1.1 200 OK[\r][\n]"
+  [DEBUG] [18:55:55] org.apache.http.wire - http-outgoing-13 << "Server: Apache-Coyote/1.1[\r][\n]"
+  [DEBUG] [18:55:55] org.apache.http.wire - http-outgoing-13 << "Content-Type: application/json;charset=UTF-8[\r][\n]"
+  [DEBUG] [18:55:55] org.apache.http.wire - http-outgoing-13 << "Transfer-Encoding: chunked[\r][\n]"
+  [DEBUG] [18:55:55] org.apache.http.wire - http-outgoing-13 << "Date: Mon, 26 Jun 2017 10:55:55 GMT[\r][\n]"
+  [DEBUG] [18:55:55] org.apache.http.wire - http-outgoing-13 << "[\r][\n]"
+  [DEBUG] [18:55:55] org.apache.http.headers - http-outgoing-13 << HTTP/1.1 200 OK
+  [DEBUG] [18:55:55] org.apache.http.headers - http-outgoing-13 << Server: Apache-Coyote/1.1
+  [DEBUG] [18:55:55] org.apache.http.headers - http-outgoing-13 << Content-Type: application/json;charset=UTF-8
+  [DEBUG] [18:55:55] org.apache.http.headers - http-outgoing-13 << Transfer-Encoding: chunked
+  [DEBUG] [18:55:55] org.apache.http.headers - http-outgoing-13 << Date: Mon, 26 Jun 2017 10:55:55 GMT
+  [DEBUG] [18:55:55] org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
+  [DEBUG] [18:55:55] org.apache.http.wire - http-outgoing-13 << "3ba[\r][\n]"
+  [DEBUG] [18:55:55] org.apache.http.wire - http-outgoing-13 << "{"code":0,"result":[{"id":null,"parent_id":0,"task_name":"[0xe9][0xa1][0xb9][0xe7][0x9b][0xae][0xe5][0xbc][0x80][0xe5][0xa7][0x8b]","task_type":0,"task_desc":"","start_time":null,"end_time":null,"priority":null,"creator_account":null,"associat_id":null,"group_id":null,"participant":null,"task_status":null,"start_time_format":"01-10","end_time_format":"01-10","childtasks":null,"tagList":null},{"id":null,"parent_id":0,"task_name":"[0xe8][0x8c][0x83][0xe5][0x9b][0xb4]","task_type":0,"task_desc":"[0xe8][0x8c][0x83][0xe5][0x9b][0xb4]","start_time":null,"end_time":null,"priority":null,"creator_account":null,"associat_id":null,"group_id":null,"participant":null,"task_status":null,"start_time_format":null,"end_time_format":null,"childtasks":null,"tagList":null},{"id":null,"parent_id":0,"task_name":"[0xe6][0x80][0xbb][0xe7][0xbb][0x93]","task_type":0,"task_desc":"[0xe6][0x80][0xbb][0xe7][0xbb][0x93]","start_time":null,"end_time":null,"priority":null,"creator_account":null,"associat_id":null,"group_id":null,"participant":null,"task_status":null,"start_time_format":null,"end_time_format":null,"childtasks":null,"tagList":null}]}[\r][\n]"
+  [DEBUG] [18:55:55] org.apache.http.wire - http-outgoing-13 << "0[\r][\n]"
+  [DEBUG] [18:55:55] org.apache.http.wire - http-outgoing-13 << "[\r][\n]"
+  [DEBUG] [18:55:55] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection [id: 13][route: {}->http://192.168.1.127:12051] can be kept alive indefinitely
+  [DEBUG] [18:55:55] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 13][route: {}->http://192.168.1.127:12051][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+  [DEBUG] [18:55:55] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager is shutting down
+  [DEBUG] [18:55:55] org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-13: Close connection
+  [DEBUG] [18:55:55] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager shut down
+  [DEBUG] [18:56:10] org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+  [DEBUG] [18:56:10] org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+  [DEBUG] [18:56:10] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://192.168.1.127:12051][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+  [DEBUG] [18:56:10] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 14][route: {}->http://192.168.1.127:12051][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+  [DEBUG] [18:56:10] org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://192.168.1.127:12051
+  [DEBUG] [18:56:10] org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to /192.168.1.127:12051
+  [DEBUG] [18:56:10] org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 192.168.1.127:58944<->192.168.1.127:12051
+  [DEBUG] [18:56:10] org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-14: set socket timeout to 15000
+  [DEBUG] [18:56:10] org.apache.http.impl.execchain.MainClientExec - Executing request POST /task/getWindchillTasks HTTP/1.1
+  [DEBUG] [18:56:10] org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+  [DEBUG] [18:56:10] org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+  [DEBUG] [18:56:10] org.apache.http.headers - http-outgoing-14 >> POST /task/getWindchillTasks HTTP/1.1
+  [DEBUG] [18:56:10] org.apache.http.headers - http-outgoing-14 >> content-type: application/x-www-form-urlencoded; charset=UTF-8
+  [DEBUG] [18:56:10] org.apache.http.headers - http-outgoing-14 >> accept-encoding: UTF-8
+  [DEBUG] [18:56:10] org.apache.http.headers - http-outgoing-14 >> accept: */*
+  [DEBUG] [18:56:10] org.apache.http.headers - http-outgoing-14 >> user-agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.59 Safari/537.36
+  [DEBUG] [18:56:10] org.apache.http.headers - http-outgoing-14 >> Content-Length: 13
+  [DEBUG] [18:56:10] org.apache.http.headers - http-outgoing-14 >> Host: 192.168.1.127:12051
+  [DEBUG] [18:56:10] org.apache.http.headers - http-outgoing-14 >> Connection: Keep-Alive
+  [DEBUG] [18:56:10] org.apache.http.wire - http-outgoing-14 >> "POST /task/getWindchillTasks HTTP/1.1[\r][\n]"
+  [DEBUG] [18:56:10] org.apache.http.wire - http-outgoing-14 >> "content-type: application/x-www-form-urlencoded; charset=UTF-8[\r][\n]"
+  [DEBUG] [18:56:10] org.apache.http.wire - http-outgoing-14 >> "accept-encoding: UTF-8[\r][\n]"
+  [DEBUG] [18:56:10] org.apache.http.wire - http-outgoing-14 >> "accept: */*[\r][\n]"
+  [DEBUG] [18:56:10] org.apache.http.wire - http-outgoing-14 >> "user-agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.59 Safari/537.36[\r][\n]"
+  [DEBUG] [18:56:10] org.apache.http.wire - http-outgoing-14 >> "Content-Length: 13[\r][\n]"
+  [DEBUG] [18:56:10] org.apache.http.wire - http-outgoing-14 >> "Host: 192.168.1.127:12051[\r][\n]"
+  [DEBUG] [18:56:10] org.apache.http.wire - http-outgoing-14 >> "Connection: Keep-Alive[\r][\n]"
+  [DEBUG] [18:56:10] org.apache.http.wire - http-outgoing-14 >> "[\r][\n]"
+  [DEBUG] [18:56:10] org.apache.http.wire - http-outgoing-14 >> "taskname=null"
+  [DEBUG] [18:56:10] org.apache.http.wire - http-outgoing-14 << "HTTP/1.1 200 OK[\r][\n]"
+  [DEBUG] [18:56:10] org.apache.http.wire - http-outgoing-14 << "Server: Apache-Coyote/1.1[\r][\n]"
+  [DEBUG] [18:56:10] org.apache.http.wire - http-outgoing-14 << "Content-Type: application/json;charset=UTF-8[\r][\n]"
+  [DEBUG] [18:56:10] org.apache.http.wire - http-outgoing-14 << "Transfer-Encoding: chunked[\r][\n]"
+  [DEBUG] [18:56:10] org.apache.http.wire - http-outgoing-14 << "Date: Mon, 26 Jun 2017 10:56:10 GMT[\r][\n]"
+  [DEBUG] [18:56:10] org.apache.http.wire - http-outgoing-14 << "[\r][\n]"
+  [DEBUG] [18:56:10] org.apache.http.wire - http-outgoing-14 << "3ba[\r][\n]"
+  [DEBUG] [18:56:10] org.apache.http.headers - http-outgoing-14 << HTTP/1.1 200 OK
+  [DEBUG] [18:56:10] org.apache.http.headers - http-outgoing-14 << Server: Apache-Coyote/1.1
+  [DEBUG] [18:56:10] org.apache.http.headers - http-outgoing-14 << Content-Type: application/json;charset=UTF-8
+  [DEBUG] [18:56:10] org.apache.http.headers - http-outgoing-14 << Transfer-Encoding: chunked
+  [DEBUG] [18:56:10] org.apache.http.headers - http-outgoing-14 << Date: Mon, 26 Jun 2017 10:56:10 GMT
+  [DEBUG] [18:56:10] org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
+  [DEBUG] [18:56:10] org.apache.http.wire - http-outgoing-14 << "{"code":0,"result":[{"id":null,"parent_id":0,"task_name":"[0xe9][0xa1][0xb9][0xe7][0x9b][0xae][0xe5][0xbc][0x80][0xe5][0xa7][0x8b]","task_type":0,"task_desc":"","start_time":null,"end_time":null,"priority":null,"creator_account":null,"associat_id":null,"group_id":null,"participant":null,"task_status":null,"start_time_format":"01-10","end_time_format":"01-10","childtasks":null,"tagList":null},{"id":null,"parent_id":0,"task_name":"[0xe8][0x8c][0x83][0xe5][0x9b][0xb4]","task_type":0,"task_desc":"[0xe8][0x8c][0x83][0xe5][0x9b][0xb4]","start_time":null,"end_time":null,"priority":null,"creator_account":null,"associat_id":null,"group_id":null,"participant":null,"task_status":null,"start_time_format":null,"end_time_format":null,"childtasks":null,"tagList":null},{"id":null,"parent_id":0,"task_name":"[0xe6][0x80][0xbb][0xe7][0xbb][0x93]","task_type":0,"task_desc":"[0xe6][0x80][0xbb][0xe7][0xbb][0x93]","start_time":null,"end_time":null,"priority":null,"creator_account":null,"associat_id":null,"group_id":null,"participant":null,"task_status":null,"start_time_format":null,"end_time_format":null,"childtasks":null,"tagList":null}]}"
+  [DEBUG] [18:56:10] org.apache.http.wire - http-outgoing-14 << "[\r][\n]"
+  [DEBUG] [18:56:10] org.apache.http.wire - http-outgoing-14 << "0[\r][\n]"
+  [DEBUG] [18:56:10] org.apache.http.wire - http-outgoing-14 << "[\r][\n]"
+  [DEBUG] [18:56:10] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection [id: 14][route: {}->http://192.168.1.127:12051] can be kept alive indefinitely
+  [DEBUG] [18:56:10] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 14][route: {}->http://192.168.1.127:12051][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+  [DEBUG] [18:56:10] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager is shutting down
+  [DEBUG] [18:56:10] org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-14: Close connection
+  [DEBUG] [18:56:10] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager shut down
+  [DEBUG] [19:01:02] org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+  [DEBUG] [19:01:02] org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+  [DEBUG] [19:01:02] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://192.168.1.201:12051][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+  [DEBUG] [19:01:02] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 0][route: {}->http://192.168.1.201:12051][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+  [DEBUG] [19:01:02] org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://192.168.1.201:12051
+  [DEBUG] [19:01:02] org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to /192.168.1.201:12051
+  [DEBUG] [19:01:02] org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 192.168.1.127:58961<->192.168.1.201:12051
+  [DEBUG] [19:01:02] org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-0: set socket timeout to 15000
+  [DEBUG] [19:01:02] org.apache.http.impl.execchain.MainClientExec - Executing request POST /task/getWindchillTasks HTTP/1.1
+  [DEBUG] [19:01:02] org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+  [DEBUG] [19:01:02] org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+  [DEBUG] [19:01:02] org.apache.http.headers - http-outgoing-0 >> POST /task/getWindchillTasks HTTP/1.1
+  [DEBUG] [19:01:02] org.apache.http.headers - http-outgoing-0 >> content-type: application/x-www-form-urlencoded; charset=UTF-8
+  [DEBUG] [19:01:02] org.apache.http.headers - http-outgoing-0 >> accept-encoding: UTF-8
+  [DEBUG] [19:01:02] org.apache.http.headers - http-outgoing-0 >> accept: */*
+  [DEBUG] [19:01:02] org.apache.http.headers - http-outgoing-0 >> user-agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.59 Safari/537.36
+  [DEBUG] [19:01:02] org.apache.http.headers - http-outgoing-0 >> Content-Length: 13
+  [DEBUG] [19:01:02] org.apache.http.headers - http-outgoing-0 >> Host: 192.168.1.201:12051
+  [DEBUG] [19:01:02] org.apache.http.headers - http-outgoing-0 >> Connection: Keep-Alive
+  [DEBUG] [19:01:02] org.apache.http.wire - http-outgoing-0 >> "POST /task/getWindchillTasks HTTP/1.1[\r][\n]"
+  [DEBUG] [19:01:02] org.apache.http.wire - http-outgoing-0 >> "content-type: application/x-www-form-urlencoded; charset=UTF-8[\r][\n]"
+  [DEBUG] [19:01:02] org.apache.http.wire - http-outgoing-0 >> "accept-encoding: UTF-8[\r][\n]"
+  [DEBUG] [19:01:02] org.apache.http.wire - http-outgoing-0 >> "accept: */*[\r][\n]"
+  [DEBUG] [19:01:02] org.apache.http.wire - http-outgoing-0 >> "user-agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.59 Safari/537.36[\r][\n]"
+  [DEBUG] [19:01:02] org.apache.http.wire - http-outgoing-0 >> "Content-Length: 13[\r][\n]"
+  [DEBUG] [19:01:02] org.apache.http.wire - http-outgoing-0 >> "Host: 192.168.1.201:12051[\r][\n]"
+  [DEBUG] [19:01:02] org.apache.http.wire - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+  [DEBUG] [19:01:02] org.apache.http.wire - http-outgoing-0 >> "[\r][\n]"
+  [DEBUG] [19:01:02] org.apache.http.wire - http-outgoing-0 >> "taskname=null"
+  [DEBUG] [19:01:02] org.apache.http.wire - http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
+  [DEBUG] [19:01:02] org.apache.http.wire - http-outgoing-0 << "Server: Apache-Coyote/1.1[\r][\n]"
+  [DEBUG] [19:01:02] org.apache.http.wire - http-outgoing-0 << "Content-Type: application/json;charset=UTF-8[\r][\n]"
+  [DEBUG] [19:01:02] org.apache.http.wire - http-outgoing-0 << "Transfer-Encoding: chunked[\r][\n]"
+  [DEBUG] [19:01:02] org.apache.http.wire - http-outgoing-0 << "Date: Mon, 26 Jun 2017 11:00:23 GMT[\r][\n]"
+  [DEBUG] [19:01:02] org.apache.http.wire - http-outgoing-0 << "[\r][\n]"
+  [DEBUG] [19:01:02] org.apache.http.headers - http-outgoing-0 << HTTP/1.1 200 OK
+  [DEBUG] [19:01:02] org.apache.http.headers - http-outgoing-0 << Server: Apache-Coyote/1.1
+  [DEBUG] [19:01:02] org.apache.http.headers - http-outgoing-0 << Content-Type: application/json;charset=UTF-8
+  [DEBUG] [19:01:02] org.apache.http.headers - http-outgoing-0 << Transfer-Encoding: chunked
+  [DEBUG] [19:01:02] org.apache.http.headers - http-outgoing-0 << Date: Mon, 26 Jun 2017 11:00:23 GMT
+  [DEBUG] [19:01:02] org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
+  [DEBUG] [19:01:02] org.apache.http.wire - http-outgoing-0 << "3ba[\r][\n]"
+  [DEBUG] [19:01:02] org.apache.http.wire - http-outgoing-0 << "{"code":0,"result":[{"id":null,"parent_id":0,"task_name":"[0xe9][0xa1][0xb9][0xe7][0x9b][0xae][0xe5][0xbc][0x80][0xe5][0xa7][0x8b]","task_type":0,"task_desc":"","start_time":null,"end_time":null,"priority":null,"creator_account":null,"associat_id":null,"group_id":null,"participant":null,"task_status":null,"start_time_format":"01-10","end_time_format":"01-10","childtasks":null,"tagList":null},{"id":null,"parent_id":0,"task_name":"[0xe8][0x8c][0x83][0xe5][0x9b][0xb4]","task_type":0,"task_desc":"[0xe8][0x8c][0x83][0xe5][0x9b][0xb4]","start_time":null,"end_time":null,"priority":null,"creator_account":null,"associat_id":null,"group_id":null,"participant":null,"task_status":null,"start_time_format":null,"end_time_format":null,"childtasks":null,"tagList":null},{"id":null,"parent_id":0,"task_name":"[0xe6][0x80][0xbb][0xe7][0xbb][0x93]","task_type":0,"task_desc":"[0xe6][0x80][0xbb][0xe7][0xbb][0x93]","start_time":null,"end_time":null,"priority":null,"creator_account":null,"associat_id":null,"group_id":null,"participant":null,"task_status":null,"start_time_format":null,"end_time_format":null,"childtasks":null,"tagList":null}]}[\r][\n]"
+  [DEBUG] [19:01:02] org.apache.http.wire - http-outgoing-0 << "0[\r][\n]"
+  [DEBUG] [19:01:02] org.apache.http.wire - http-outgoing-0 << "[\r][\n]"
+  [DEBUG] [19:01:02] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection [id: 0][route: {}->http://192.168.1.201:12051] can be kept alive indefinitely
+  [DEBUG] [19:01:02] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 0][route: {}->http://192.168.1.201:12051][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+  [DEBUG] [19:01:02] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager is shutting down
+  [DEBUG] [19:01:02] org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-0: Close connection
+  [DEBUG] [19:01:02] org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager shut down
+  

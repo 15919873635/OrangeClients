@@ -3,8 +3,14 @@ package com.orange.clients.constant;
 import org.eclipse.swt.graphics.RGB;
 
 public class WindowConstant {
-	public final static int MAIN_WINDOW_WIDTH = 600;
-	public final static int MAIN_WINDOW_HEIGHT = 400;
+	public final static int MIN_WINDOW_WIDTH = 800;
+	public final static int MIN_WINDOW_HEIGHT = 500;
+	public final static int MIN_BUTTON_WIDTH_1 = 50;
+	public final static int FILE_CHOOSE_BUTTON_WIDTH = 105;
+	
+	public final static int LABEL_WIDTH = 55; 
+	public final static int LABEL_WIDTH_2 = 60;
+	
 	public final static String MAIN_WINDOW_NAME = "Request Send Window"; 
 	public final static String MAIN_WINDOW_BUTTON_SEND = "Send";
 	public final static String MAIN_WINDOW_BUTTON_RESET = "Clear";

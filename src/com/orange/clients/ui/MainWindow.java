@@ -54,7 +54,15 @@ public class MainWindow {
 	private Text responseText;
 	private Text urlText;
 	private Cursor cursor;
-
+	
+	private int BUTTON_WIDTH_1;
+	private int COMBOBOX_WIDTH;
+	private int URLTEXT_WIDTH;
+	private int FILE_PATH_WIDTH;
+	private int HEADER_OR_BODY_TEXT_WIDTH;
+	private int HEADER_OR_BODY_TEXT_HEIGHT;
+	private int RESPONSE_TEXT_WIDTH;
+	private int RESPONSE_TEXT_HEIGHT;
 	/**
 	 * Open the window.
 	 */
@@ -87,72 +95,103 @@ public class MainWindow {
 	
 	private void initWinContent(){
 		Label protocolLabel = new Label(shell, SWT.NONE);
-		protocolLabel.setBounds(0, 13, 52, 17);
+		protocolLabel.setBounds(0, 13, WindowConstant.LABEL_WIDTH, 17);
 		protocolLabel.setText(WindowConstant.MAIN_WINDOW_LABEL_PROTOCOL);
 		protocolLabel.setBackground(mainColor);
-		
+
+		int protocolComboLeft = protocolLabel.getBounds().x + protocolLabel.getBounds().width + 10;
 		protocolCombo = new Combo(shell, SWT.NONE | SWT.DROP_DOWN | SWT.READ_ONLY);
-		protocolCombo.setBounds(64, 10, 113, 25);
+		protocolCombo.setBounds(protocolComboLeft, 10, COMBOBOX_WIDTH, 25);
 		protocolCombo.add(WindowConstant.REQUEST_HTTP);
 		protocolCombo.add(WindowConstant.REQUEST_HTTPS);
 		protocolCombo.setText(WindowConstant.REQUEST_HTTP);
 		protocolCombo.setCursor(cursor);
 		
+		int methodLabelLeft = protocolCombo.getBounds().x + protocolCombo.getBounds().width + 10;
 		Label methodLabel = new Label(shell, SWT.NONE);
-		methodLabel.setBounds(214, 13, 49, 17);
+		methodLabel.setBounds(methodLabelLeft, 13, WindowConstant.LABEL_WIDTH, 17);
 		methodLabel.setText(WindowConstant.MAIN_WINDOW_LABEL_METHOD);
 		methodLabel.setBackground(mainColor);
 		
+		int methodComboLeft = methodLabel.getBounds().x + methodLabel.getBounds().width + 10;
 		methodCombo = new Combo(shell, SWT.NONE | SWT.DROP_DOWN | SWT.READ_ONLY);
-		methodCombo.setBounds(269, 10, 113, 25);
+		methodCombo.setBounds(methodComboLeft, 10, COMBOBOX_WIDTH, 25);
 		methodCombo.add(WindowConstant.REQUEST_GET);
 		methodCombo.add(WindowConstant.REQUEST_POST);
 		methodCombo.add(WindowConstant.REQUEST_PUT);
 		methodCombo.setCursor(cursor);
 		
+		int sendButtonLeft = methodCombo.getBounds().x + methodCombo.getBounds().width + 10;
+		Button sendButton = new Button(shell,SWT.NONE);
+		sendButton.setBounds(sendButtonLeft, 10, BUTTON_WIDTH_1, 25);
+		sendButton.setText(WindowConstant.MAIN_WINDOW_BUTTON_SEND);
+		sendButton.setCursor(cursor);
+		
+		int resetButtonLeft = sendButton.getBounds().x + sendButton.getBounds().width + 10;
+		Button resetButton = new Button(shell, SWT.NONE);
+		resetButton.setBounds(resetButtonLeft, 10, BUTTON_WIDTH_1, 25);
+		resetButton.setText(WindowConstant.MAIN_WINDOW_BUTTON_RESET);
+		resetButton.setCursor(cursor);
+		
 		Label urlLabel = new Label(shell, SWT.NONE);
-		urlLabel.setBounds(26, 48, 26, 17);
+		urlLabel.setBounds(0, 48, WindowConstant.LABEL_WIDTH, 17);
 		urlLabel.setText(WindowConstant.MAIN_WINDOW_LABEL_URL);
 		urlLabel.setBackground(mainColor);
 		
+		int urlTextLeft = urlLabel.getBounds().x + urlLabel.getBounds().width + 10;
 		urlText = new Text(shell, SWT.BORDER);
-		urlText.setBounds(64, 45, 510, 23);
+		urlText.setBounds(urlTextLeft, 45, URLTEXT_WIDTH, 23);
 		
 		Label fileLabel = new Label(shell, SWT.NONE);
-		fileLabel.setBounds(23, 80, 30, 17);
+		fileLabel.setBounds(0, 80, WindowConstant.LABEL_WIDTH, 17);
 		fileLabel.setText(WindowConstant.MAIN_WINDOW_LABEL_FILES);
 		fileLabel.setBackground(mainColor);
+		
+		int fileChooseButtonLeft = fileLabel.getBounds().x + fileLabel.getBounds().width + 10;
+		Button fileChooseButton = new Button(shell, SWT.NONE);
+		fileChooseButton.setBounds(fileChooseButtonLeft, 75, WindowConstant.FILE_CHOOSE_BUTTON_WIDTH, 27);
+		fileChooseButton.setText(WindowConstant.MAIN_WINDOW_BUTTON_CHOOSE_FILE);
+		fileChooseButton.setEnabled(false);
+		
+		int filePathLabelLeft = fileChooseButton.getBounds().x + fileChooseButton.getBounds().width + 10;
+		Label filePathLabel = new Label(shell, SWT.NONE);
+		filePathLabel.setBounds(filePathLabelLeft, 80, FILE_PATH_WIDTH, 17);
+		filePathLabel.setBackground(mainColor);
+		
+		Label headersLabel = new Label(shell, SWT.NONE);
+		headersLabel.setBounds(0, 141, WindowConstant.LABEL_WIDTH, 17);
+		headersLabel.setText(WindowConstant.MAIN_WINDOW_LABEL_HEADERS);
+		headersLabel.setBackground(mainColor);
+		
+		int headerTextLeft = headersLabel.getBounds().x + headersLabel.getBounds().width + 10;
+		headerText = new Text(shell, SWT.BORDER|SWT.MULTI|SWT.WRAP);
+		headerText.setBounds(headerTextLeft, 110, HEADER_OR_BODY_TEXT_WIDTH, HEADER_OR_BODY_TEXT_HEIGHT);
+		
+		int bodyLabelLeft = headerText.getBounds().x + headerText.getBounds().width + 10;
+		Label bodyLabel = new Label(shell, SWT.NONE);
+		bodyLabel.setBounds(bodyLabelLeft, 141, WindowConstant.LABEL_WIDTH, 17);
+		bodyLabel.setText(WindowConstant.MAIN_WINDOW_LABEL_BODY);
+		bodyLabel.setBackground(mainColor);
+		
+		int bodyTextLeft = bodyLabel.getBounds().x + bodyLabel.getBounds().width;
+		bodyText = new Text(shell, SWT.BORDER|SWT.MULTI|SWT.WRAP);
+		bodyText.setBounds(bodyTextLeft, 110, HEADER_OR_BODY_TEXT_WIDTH, HEADER_OR_BODY_TEXT_HEIGHT);
+		bodyText.setEnabled(false);
+		
+		Label responseLabel = new Label(shell, SWT.NONE);
+		responseLabel.setBounds(0, 249, WindowConstant.LABEL_WIDTH_2, 17);
+		responseLabel.setText(WindowConstant.MAIN_WINDOW_LABEL_RESPONSE);
+		responseLabel.setBackground(mainColor);
 		
 		FileDialog dialog = new FileDialog (shell, SWT.OPEN|SWT.MULTI);
 		dialog.setFilterNames (new String [] {"All Files (*.*)"});
 		dialog.setFilterExtensions (new String [] {"*.*"}); //Windows wild cards
 		dialog.setFilterPath ("c:\\"); //Windows path
 		
-		Button fileChooseButton = new Button(shell, SWT.NONE);
-		fileChooseButton.setBounds(64, 75, 105, 27);
-		fileChooseButton.setText(WindowConstant.MAIN_WINDOW_BUTTON_CHOOSE_FILE);
-		fileChooseButton.setEnabled(false);
-		
-		Label filePathLabel = new Label(shell, SWT.NONE);
-		filePathLabel.setBounds(175, 80, 399, 17);
-		filePathLabel.setBackground(mainColor);
-		
-		Label headersLabel = new Label(shell, SWT.NONE);
-		headersLabel.setBounds(0, 141, 52, 17);
-		headersLabel.setText(WindowConstant.MAIN_WINDOW_LABEL_HEADERS);
-		headersLabel.setBackground(mainColor);
-		
-		headerText = new Text(shell, SWT.BORDER|SWT.MULTI|SWT.WRAP);
-		headerText.setBounds(64, 110, 226, 84);
-		
-		Label bodyLabel = new Label(shell, SWT.NONE);
-		bodyLabel.setBounds(316, 141, 33, 17);
-		bodyLabel.setText(WindowConstant.MAIN_WINDOW_LABEL_BODY);
-		bodyLabel.setBackground(mainColor);
-		
-		bodyText = new Text(shell, SWT.BORDER|SWT.MULTI|SWT.WRAP);
-		bodyText.setBounds(355, 110, 219, 84);
-		bodyText.setEnabled(false);
+		int responseTextLeft = responseLabel.getBounds().x + responseLabel.getBounds().width + 5;
+		int responseTextTop = bodyText.getBounds().y + bodyText.getBounds().height + 10;
+		responseText = new Text(shell, SWT.BORDER  | SWT.WRAP | SWT.MULTI | SWT.READ_ONLY);
+		responseText.setBounds(responseTextLeft, responseTextTop, RESPONSE_TEXT_WIDTH, RESPONSE_TEXT_HEIGHT);
 		
 		Button copyResponseText2Clipboard = new Button(shell, SWT.NONE);
 		copyResponseText2Clipboard.setBounds(448, 335, 115, 25);
@@ -160,23 +199,6 @@ public class MainWindow {
 		copyResponseText2Clipboard.setEnabled(false);
 		copyResponseText2Clipboard.setCursor(cursor);
 		
-		Button sendButton = new Button(shell,SWT.NONE);
-		sendButton.setBounds(448, 8, 52, 27);
-		sendButton.setText(WindowConstant.MAIN_WINDOW_BUTTON_SEND);
-		sendButton.setCursor(cursor);
-		
-		Button resetButton = new Button(shell, SWT.NONE);
-		resetButton.setBounds(513, 8, 49, 27);
-		resetButton.setText(WindowConstant.MAIN_WINDOW_BUTTON_RESET);
-		resetButton.setCursor(cursor);
-		
-		Label responseLabel = new Label(shell, SWT.NONE);
-		responseLabel.setBounds(0, 249, 60, 17);
-		responseLabel.setText(WindowConstant.MAIN_WINDOW_LABEL_RESPONSE);
-		responseLabel.setBackground(mainColor);
-		
-		responseText = new Text(shell, SWT.BORDER  | SWT.WRAP | SWT.MULTI | SWT.READ_ONLY);
-		responseText.setBounds(63, 205, 511, 122);
 		urlText.setFocus();
 		
 		methodCombo.addSelectionListener(new SelectionAdapter() {
@@ -312,20 +334,34 @@ public class MainWindow {
 	}
 	
 	private void initWindow(){
-		shell.setSize(WindowConstant.MAIN_WINDOW_WIDTH, WindowConstant.MAIN_WINDOW_HEIGHT);
 		shell.setText(WindowConstant.MAIN_WINDOW_NAME);
 		shell.setBackground(mainColor);
 		shell.setImage(image);
-		int screenH = ClientUtil.getScreenHeight();
-		int screenW = ClientUtil.getScreenWidth();
+		int screenH = (int)ClientUtil.getScreenHeight();
+		int screenW = (int)ClientUtil.getScreenWidth();
 		
-        int shellH = shell.getBounds().height;
-        int shellW = shell.getBounds().width;
-        if(shellH > screenH)
-            shellH = screenH;
-        if(shellW > screenW)
-            shellW = screenW;
-        
+		int shellH = screenH * 4 / 5;
+		int shellW = screenW * 4 / 5;
+		shellH = (shellH >= WindowConstant.MIN_WINDOW_HEIGHT) ? shellH : WindowConstant.MIN_WINDOW_HEIGHT;
+		shellW = (shellW >= WindowConstant.MIN_WINDOW_WIDTH) ? shellW : WindowConstant.MIN_WINDOW_WIDTH;
+		
+		BUTTON_WIDTH_1 = ((shellW * 8 / 100) > WindowConstant.MIN_BUTTON_WIDTH_1) ? (shellW * 8 / 100) : WindowConstant.MIN_BUTTON_WIDTH_1;
+		
+		COMBOBOX_WIDTH = (shellW - WindowConstant.LABEL_WIDTH *2 - BUTTON_WIDTH_1 * 2 - 70) / 2;
+		
+		URLTEXT_WIDTH = shellW - WindowConstant.LABEL_WIDTH - BUTTON_WIDTH_1 * 2 - 50 ;
+		
+		FILE_PATH_WIDTH = URLTEXT_WIDTH - WindowConstant.FILE_CHOOSE_BUTTON_WIDTH -10;
+		
+		HEADER_OR_BODY_TEXT_WIDTH = (shellW - WindowConstant.LABEL_WIDTH * 2 - 40) / 2;
+		
+		HEADER_OR_BODY_TEXT_HEIGHT = (shellH - 200) * 4 / 10;
+		
+		RESPONSE_TEXT_WIDTH = shellW - WindowConstant.LABEL_WIDTH - 30;
+		
+		RESPONSE_TEXT_HEIGHT = (shellH - 200) * 6 / 10;
+		
+        shell.setSize(shellW, shellH);
         shell.setLocation(((screenW - shellW) / 2), ((screenH - shellH) / 2));
 	}
 	
