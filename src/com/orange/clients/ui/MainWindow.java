@@ -212,12 +212,13 @@ public class MainWindow {
 			@Override
 			public void widgetSelected(SelectionEvent arg0) {
 				String targetText = methodCombo.getText();
-				if(targetText.equals(WindowConstant.REQUEST_GET)){
-					bodyText.setEnabled(false);
-					fileChooseButton.setEnabled(false);
-				}else{
+				if(targetText.equals(WindowConstant.REQUEST_POST)
+						|| targetText.equals(WindowConstant.REQUEST_PUT)){
 					bodyText.setEnabled(true);
 					fileChooseButton.setEnabled(true);
+				}else{
+					bodyText.setEnabled(false);
+					fileChooseButton.setEnabled(false);
 				}
 			}
 		});
@@ -339,7 +340,7 @@ public class MainWindow {
 				}
 			}
 		});
-		methodCombo.select(0);
+		methodCombo.select(1);
 	}
 	
 	private void initWindow(){
