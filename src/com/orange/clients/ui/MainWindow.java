@@ -43,10 +43,10 @@ public class MainWindow {
 	private Display display;
 	private Tray tray;
 	private Color mainColor;
-	private Image image = new Image(display, "icons/http.png");
-	private Image showView = new Image(display, "icons/showview.png");
-	private Image hide = new Image(display, "icons/hide.png");
-	private Image exit = new Image(display, "icons/exit.png");
+	private Image image = new Image(display, WindowConstant.ICON_HTTP);
+	private Image showView = new Image(display, WindowConstant.ICON_SHOWVIEW);
+	private Image hide = new Image(display, WindowConstant.ICON_HIDE);
+	private Image exit = new Image(display, WindowConstant.ICON_EXIT);
 	private Combo methodCombo;
 	private Combo protocolCombo;
 	private Text headerText;

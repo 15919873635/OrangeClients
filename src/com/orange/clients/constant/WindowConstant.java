@@ -44,4 +44,9 @@ public class WindowConstant {
 	
 	public final static String REQUEST_HTTP = "HTTP";
 	public final static String REQUEST_HTTPS = "HTTPS";
+	
+	public final static String ICON_HTTP = "icons/http.png";
+	public final static String ICON_HIDE = "icons/hide.png";
+	public final static String ICON_EXIT = "icons/exit.png";
+	public final static String ICON_SHOWVIEW = "icons/showview.png";
 }
