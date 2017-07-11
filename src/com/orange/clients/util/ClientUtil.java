@@ -10,4 +10,12 @@ public class ClientUtil {
 	public static int getScreenHeight(){
 		return Toolkit.getDefaultToolkit().getScreenSize().height;
 	}
+	
+	public static boolean isJSONArray(String targetUri){
+		return targetUri.startsWith("{") && targetUri.endsWith("}");
+	}
+	
+	public static boolean isJAONObject(String targetUri){
+		return targetUri.startsWith("[") && targetUri.endsWith("]");
+	}
 }

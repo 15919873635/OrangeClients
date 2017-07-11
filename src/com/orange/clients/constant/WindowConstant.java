@@ -40,6 +40,7 @@ public class WindowConstant {
 	public final static String REQUEST_GET = "GET";
 	public final static String REQUEST_POST = "POST"; 
 	public final static String REQUEST_PUT = "PUT"; 
+	public final static String REQUEST_OPTIONS = "OPTIONS";
 	
 	public final static String REQUEST_HTTP = "HTTP";
 	public final static String REQUEST_HTTPS = "HTTPS";

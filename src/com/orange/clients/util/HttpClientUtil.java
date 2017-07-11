@@ -14,6 +14,7 @@ import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpOptions;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
 import org.apache.http.entity.ContentType;
@@ -31,11 +32,44 @@ import net.sf.json.JSONObject;
 public class HttpClientUtil {
 	private static final Logger logger = Logger.getLogger(HttpClientUtil.class);
 	private static final Map<String,String> baseHeaderMap = new HashMap<String,String>();
+	private static RequestConfig requestConfig;
 	static{
 		baseHeaderMap.put("accept","*/*");
 		baseHeaderMap.put("content-type","application/json");
 		baseHeaderMap.put("accept-encoding","UTF-8");
 		baseHeaderMap.put("user-agent","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.59 Safari/537.36");
+		requestConfig = RequestConfig.custom()  
+								     .setSocketTimeout(15000)  
+								     .setConnectTimeout(15000)  
+								     .setConnectionRequestTimeout(15000)  
+								     .build();
+	}
+	
+	public static String sendOptionsRequest(String postUrl,Map<String,String> customHeaderMap){
+		String respContent = "";
+		HttpOptions httpOptions = new HttpOptions(postUrl);
+		CloseableHttpClient httpClient = null;
+		CloseableHttpResponse response = null;
+		HttpEntity entity = null;
+		httpClient = HttpClients.createDefault();
+		try{
+			Map<String,String> newHeaderMapper = new HashMap<String,String>();
+			newHeaderMapper.putAll(baseHeaderMap);
+			if(customHeaderMap != null && customHeaderMap.size() > 0){
+				newHeaderMapper.putAll(customHeaderMap);
+			}
+			Set<String> keys = newHeaderMapper.keySet();
+			for(String key : keys){
+				httpOptions.setHeader(key, newHeaderMapper.get(key));
+			}
+			httpOptions.setConfig(requestConfig); 
+			response = httpClient.execute(httpOptions);  
+			entity = response.getEntity();
+			respContent = EntityUtils.toString(entity, "UTF-8");
+		}catch (Exception e) {
+			logger.error("send Http Request to:"+postUrl+" ,has errors:"+e.getMessage());
+		}
+		return respContent;
 	}
 	
 	/**
@@ -45,12 +79,6 @@ public class HttpClientUtil {
 	 */
 	public static String sendGetRequest(String postUrl,Map<String,String> customHeaderMap){
 		String respContent = "";
-		RequestConfig requestConfig = RequestConfig.custom()  
-	            .setSocketTimeout(15000)  
-	            .setConnectTimeout(15000)  
-	            .setConnectionRequestTimeout(15000)  
-	            .build(); 
-		
 		HttpGet httpGet = null;
 		CloseableHttpClient httpClient = null;
 		CloseableHttpResponse response = null;
@@ -93,12 +121,6 @@ public class HttpClientUtil {
 	 */
 	public static String sendPostRequest(String postUrl,Map<String,Object> bodyContent,Map<String,String> customHeaderMap){
 		String respContent = "";
-		RequestConfig requestConfig = RequestConfig.custom()  
-	            .setSocketTimeout(15000)  
-	            .setConnectTimeout(15000)  
-	            .setConnectionRequestTimeout(15000)  
-	            .build(); 
-		
 		HttpPost httpPost = null;
 		CloseableHttpClient httpClient = null;
 		CloseableHttpResponse response = null;
@@ -203,12 +225,6 @@ public class HttpClientUtil {
 	 */
 	public static String sendPutRequest(String postUrl,Map<String,Object> bodyContent,Map<String,String> customHeaderMap){
 		String respContent = "";
-		RequestConfig requestConfig = RequestConfig.custom()  
-	            .setSocketTimeout(15000)  
-	            .setConnectTimeout(15000)  
-	            .setConnectionRequestTimeout(15000)  
-	            .build(); 
-		
 		HttpPut httpPut = null;
 		CloseableHttpClient httpClient = null;
 		CloseableHttpResponse response = null;

@@ -118,6 +118,7 @@ public class MainWindow {
 		int methodComboLeft = methodLabel.getBounds().x + methodLabel.getBounds().width + 10;
 		methodCombo = new Combo(shell, SWT.NONE | SWT.DROP_DOWN | SWT.READ_ONLY);
 		methodCombo.setBounds(methodComboLeft, 10, COMBOBOX_WIDTH, WindowConstant.BUTTON_HEIGHT);
+		methodCombo.add(WindowConstant.REQUEST_OPTIONS);
 		methodCombo.add(WindowConstant.REQUEST_GET);
 		methodCombo.add(WindowConstant.REQUEST_POST);
 		methodCombo.add(WindowConstant.REQUEST_PUT);
@@ -246,7 +247,7 @@ public class MainWindow {
 				String response = "";
 				String filePaths = filePathLabel.getText();
 				if(StringUtils.isNotBlank(urltext) && protocol.equals(WindowConstant.REQUEST_HTTP)){	
-					if(StringUtils.isNotBlank(headertext) && headertext.startsWith("{") && headertext.endsWith("}")){
+					if(StringUtils.isNotBlank(headertext) && ClientUtil.isJSONArray(headertext)){
 						headerMapper = new HashMap<String,String>();
 						JSONObject headerJSON = JSONObject.fromObject(headertext);
 						if(!headerJSON.isNullObject() && !headerJSON.isEmpty()){
@@ -261,7 +262,9 @@ public class MainWindow {
 					}
 					if(!urltext.startsWith(WindowConstant.REQUEST_HTTP) &&  !urltext.startsWith(WindowConstant.REQUEST_HTTP.toLowerCase()))
 						urltext = WindowConstant.REQUEST_HTTP + "://" + urltext;
-					if(method.equals(WindowConstant.REQUEST_GET))
+					if(method.equals(WindowConstant.REQUEST_OPTIONS))
+						response = HttpClientUtil.sendOptionsRequest(urltext, headerMapper);
+					else if(method.equals(WindowConstant.REQUEST_GET))
 						response = HttpClientUtil.sendGetRequest(urltext, headerMapper);
 					else if(method.equals(WindowConstant.REQUEST_POST)){
 						Map<String,Object> bodyMap = new HashMap<String,Object>();
