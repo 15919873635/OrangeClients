@@ -232,8 +232,8 @@ public class MainWindow {
 				filePathLabel.setText("");
 				dialog.setFileName("");
 				copyResponseText2Clipboard.setEnabled(false);
-				protocolCombo.setText(WindowConstant.REQUEST_HTTP);
-				methodCombo.setText(WindowConstant.REQUEST_GET);
+				protocolCombo.select(0);
+				methodCombo.select(1);
 			}
 		});
 		sendButton.addSelectionListener(new SelectionAdapter() {
