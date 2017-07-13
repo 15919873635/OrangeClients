@@ -4,12 +4,10 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Shell;
 
+import com.alibaba.fastjson.JSONObject;
 import com.orange.clients.constant.WindowConstant;
 import com.orange.clients.util.ClientUtil;
 import com.orange.clients.util.HttpClientUtil;
-
-import net.sf.json.JSONArray;
-import net.sf.json.JSONObject;
 
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Menu;
@@ -18,6 +16,7 @@ import org.eclipse.swt.widgets.MenuItem;
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 import org.apache.commons.lang.ArrayUtils;
 import org.apache.commons.lang.StringUtils;
@@ -250,11 +249,10 @@ public class MainWindow {
 				if(StringUtils.isNotBlank(urltext) && protocol.equals(WindowConstant.REQUEST_HTTP)){	
 					if(StringUtils.isNotBlank(headertext) && ClientUtil.isJSONArray(headertext)){
 						headerMapper = new HashMap<String,String>();
-						JSONObject headerJSON = JSONObject.fromObject(headertext);
-						if(!headerJSON.isNullObject() && !headerJSON.isEmpty()){
-							JSONArray headers = headerJSON.names();
-							for(int index = 0 ;index < headers.size() ; index ++){
-								String headerKey = headers.getString(index);
+						JSONObject headerJSON = JSONObject.parseObject(headertext);
+						if(!headerJSON.isEmpty()){
+							Set<String> headers = headerJSON.keySet();
+							for(String headerKey : headers){
 								String headerVal = headerJSON.getString(headerKey);
 								if(StringUtils.isNotBlank(headerKey) && StringUtils.isNotBlank(headerVal))
 									headerMapper.put(headerKey, headerVal);

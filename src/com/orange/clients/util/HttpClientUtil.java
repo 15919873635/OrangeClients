@@ -26,8 +26,7 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.apache.log4j.Logger;
 
-import net.sf.json.JSONArray;
-import net.sf.json.JSONObject;
+import com.alibaba.fastjson.JSONObject;
 
 public class HttpClientUtil {
 	private static final Logger logger = Logger.getLogger(HttpClientUtil.class);
@@ -147,13 +146,12 @@ public class HttpClientUtil {
 					String body = (String)bodyContent.get("body");
 					if(body != null){
 						if(body.startsWith("{") && body.endsWith("}")){
-				            JSONObject bodyJson = JSONObject.fromObject(body);
-				            if(!bodyJson.isNullObject() && !bodyJson.isEmpty()){
-				            	JSONArray jsonArray = bodyJson.names();
-				            	if(jsonArray.isArray() && !jsonArray.isEmpty()){
+				            JSONObject bodyJson = JSONObject.parseObject(body);
+				            if(!bodyJson.isEmpty()){
+				            	Set<String> jsonArray = bodyJson.keySet();
+				            	if(!jsonArray.isEmpty()){
 				            		List<NameValuePair> params = new ArrayList<NameValuePair>();
-				            		for(int index = 0 ; index < jsonArray.size() ; index ++){
-				            			String indexName = jsonArray.getString(index);
+				            		for(String indexName : jsonArray){
 				            			params.add(new BasicNameValuePair(indexName,bodyJson.getString(indexName))); 
 				            		}
 				            		requestEntity = new UrlEncodedFormEntity(params, Consts.UTF_8);
@@ -169,12 +167,11 @@ public class HttpClientUtil {
 					String body = (String)bodyContent.get("body");
 					if(body != null && body.length() > 0){
 						if(body.startsWith("{") && body.endsWith("}")){
-				            JSONObject bodyJson = JSONObject.fromObject(body);
-				            if(!bodyJson.isNullObject() && !bodyJson.isEmpty()){
-				            	JSONArray jsonArray = bodyJson.names();
-				            	if(jsonArray.isArray() && !jsonArray.isEmpty()){
-				            		for(int index = 0 ; index < jsonArray.size() ; index ++){
-				            			String indexName = jsonArray.getString(index);
+				            JSONObject bodyJson = JSONObject.parseObject(body);
+				            if(!bodyJson.isEmpty()){
+				            	Set<String> jsonArray = bodyJson.keySet();
+				            	if(!jsonArray.isEmpty()){
+				            		for(String indexName : jsonArray){
 				            			builder.addTextBody(indexName, bodyJson.getString(indexName),ContentType.APPLICATION_JSON);
 				            		}
 				            	}
@@ -251,13 +248,12 @@ public class HttpClientUtil {
 					String body = (String)bodyContent.get("body");
 					if(body != null){
 						if(body.startsWith("{") && body.endsWith("}")){
-				            JSONObject bodyJson = JSONObject.fromObject(body);
-				            if(!bodyJson.isNullObject() && !bodyJson.isEmpty()){
-				            	JSONArray jsonArray = bodyJson.names();
-				            	if(jsonArray.isArray() && !jsonArray.isEmpty()){
+				            JSONObject bodyJson = JSONObject.parseObject(body);
+				            if(!bodyJson.isEmpty()){
+				            	Set<String> jsonArray = bodyJson.keySet();
+				            	if(!jsonArray.isEmpty()){
 				            		List<NameValuePair> params = new ArrayList<NameValuePair>();
-				            		for(int index = 0 ; index < jsonArray.size() ; index ++){
-				            			String indexName = jsonArray.getString(index);
+				            		for(String indexName : jsonArray){
 				            			params.add(new BasicNameValuePair(indexName,bodyJson.getString(indexName))); 
 				            		}
 				            		requestEntity = new UrlEncodedFormEntity(params, Consts.UTF_8);
@@ -273,12 +269,11 @@ public class HttpClientUtil {
 					String body = (String)bodyContent.get("body");
 					if(body != null && body.length() > 0){
 						if(body.startsWith("{") && body.endsWith("}")){
-				            JSONObject bodyJson = JSONObject.fromObject(body);
-				            if(!bodyJson.isNullObject() && !bodyJson.isEmpty()){
-				            	JSONArray jsonArray = bodyJson.names();
-				            	if(jsonArray.isArray() && !jsonArray.isEmpty()){
-				            		for(int index = 0 ; index < jsonArray.size() ; index ++){
-				            			String indexName = jsonArray.getString(index);
+				            JSONObject bodyJson = JSONObject.parseObject(body);
+				            if(!bodyJson.isEmpty()){
+				            	Set<String> jsonArray = bodyJson.keySet();
+				            	if(!jsonArray.isEmpty()){
+				            		for(String indexName : jsonArray){
 				            			ContentType contentType = ContentType.create("application/x-www-form-urlencoded", Consts.UTF_8);
 				            			builder.addTextBody(indexName, bodyJson.getString(indexName),contentType);
 				            		}
