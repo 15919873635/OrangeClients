@@ -145,7 +145,7 @@ public class HttpClientUtil {
 				if(fileCount == 0){
 					String body = (String)bodyContent.get("body");
 					if(body != null){
-						if(body.startsWith("{") && body.endsWith("}")){
+						if(ClientUtil.isJSONObject(body)){
 				            JSONObject bodyJson = JSONObject.parseObject(body);
 				            if(!bodyJson.isEmpty()){
 				            	Set<String> jsonArray = bodyJson.keySet();
@@ -166,7 +166,7 @@ public class HttpClientUtil {
 					builder.setCharset(Consts.UTF_8);
 					String body = (String)bodyContent.get("body");
 					if(body != null && body.length() > 0){
-						if(body.startsWith("{") && body.endsWith("}")){
+						if(ClientUtil.isJSONObject(body)){
 				            JSONObject bodyJson = JSONObject.parseObject(body);
 				            if(!bodyJson.isEmpty()){
 				            	Set<String> jsonArray = bodyJson.keySet();
@@ -247,7 +247,7 @@ public class HttpClientUtil {
 				if(fileCount == 0){
 					String body = (String)bodyContent.get("body");
 					if(body != null){
-						if(body.startsWith("{") && body.endsWith("}")){
+						if(ClientUtil.isJSONObject(body)){
 				            JSONObject bodyJson = JSONObject.parseObject(body);
 				            if(!bodyJson.isEmpty()){
 				            	Set<String> jsonArray = bodyJson.keySet();
@@ -268,7 +268,7 @@ public class HttpClientUtil {
 					builder.setCharset(Consts.UTF_8);
 					String body = (String)bodyContent.get("body");
 					if(body != null && body.length() > 0){
-						if(body.startsWith("{") && body.endsWith("}")){
+						if(ClientUtil.isJSONObject(body)){
 				            JSONObject bodyJson = JSONObject.parseObject(body);
 				            if(!bodyJson.isEmpty()){
 				            	Set<String> jsonArray = bodyJson.keySet();

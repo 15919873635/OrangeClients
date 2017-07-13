@@ -15,7 +15,7 @@ public class ClientUtil {
 		return targetUri.startsWith("{") && targetUri.endsWith("}");
 	}
 	
-	public static boolean isJAONObject(String targetUri){
+	public static boolean isJSONObject(String targetUri){
 		return targetUri.startsWith("[") && targetUri.endsWith("]");
 	}
 }
