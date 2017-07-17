@@ -38,9 +38,9 @@ public class HttpClientUtil {
 		baseHeaderMap.put("accept-encoding","UTF-8");
 		baseHeaderMap.put("user-agent","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.59 Safari/537.36");
 		requestConfig = RequestConfig.custom()  
-								     .setSocketTimeout(15000)  
-								     .setConnectTimeout(15000)  
-								     .setConnectionRequestTimeout(15000)  
+								     .setSocketTimeout(30000)  
+								     .setConnectTimeout(30000)
+								     .setConnectionRequestTimeout(30000)
 								     .build();
 	}
 	
