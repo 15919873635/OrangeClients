@@ -37,7 +37,7 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.events.SelectionAdapter;
 
-public class MainWindow {
+public class HttpWindow {
 	protected Shell shell;
 	private Display display;
 	private Tray tray;

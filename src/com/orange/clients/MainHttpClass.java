@@ -2,15 +2,15 @@ package com.orange.clients;
 
 import org.apache.log4j.Logger;
 
-import com.orange.clients.ui.MainWindow;
+import com.orange.clients.ui.HttpWindow;
 
-public class MainClass {
+public class MainHttpClass {
 
-	public static Logger logger = Logger.getLogger(MainClass.class);
+	public static Logger logger = Logger.getLogger(MainHttpClass.class);
 	
 	public static void main(String[] args) {
 		try {
-			MainWindow window = new MainWindow();
+			HttpWindow window = new HttpWindow();
 			window.open();
 		} catch (Exception e) {
 			logger.error(e.getMessage());
