@@ -1,9 +1,5 @@
 package com.orange.clients.ui;
 
-import java.io.File;
-
-import org.apache.commons.lang.ArrayUtils;
-import org.apache.commons.lang.StringUtils;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.MenuDetectEvent;
 import org.eclipse.swt.events.MenuDetectListener;
@@ -15,7 +11,6 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
@@ -28,6 +23,7 @@ import com.orange.clients.constant.WindowConstant;
 import com.orange.clients.util.ClientUtil;
 import org.eclipse.swt.widgets.Tree;
 import org.eclipse.swt.widgets.TreeItem;
+import org.eclipse.swt.widgets.Table;
 
 public class FtpWindow {
 	protected Shell shell;
@@ -49,6 +45,8 @@ public class FtpWindow {
 	private Text text_1;
 	private Text text_2;
 	private Text text_3;
+	private Table table;
+	private Table table_1;
 	
 	/**
 	 * Open the window.
@@ -123,7 +121,20 @@ public class FtpWindow {
 		btnNewButton.setText("Connect");
 		
 		Tree tree = new Tree(shell, SWT.BORDER);
-		tree.setBounds(0, 45, 358, 404);
+		tree.setBounds(0, 45, 358, 201);
+		
+		Tree tree_1 = new Tree(shell, SWT.BORDER);
+		tree_1.setBounds(396, 45, 367, 201);
+		
+		table = new Table(shell, SWT.BORDER | SWT.FULL_SELECTION);
+		table.setBounds(0, 252, 358, 149);
+		table.setHeaderVisible(true);
+		table.setLinesVisible(true);
+		
+		table_1 = new Table(shell, SWT.BORDER | SWT.FULL_SELECTION);
+		table_1.setBounds(396, 252, 367, 149);
+		table_1.setHeaderVisible(true);
+		table_1.setLinesVisible(true);
 		for (int i = 0; i < 3; i++)  
         {
             TreeItem temp = new TreeItem(tree, SWT.NONE);  
@@ -133,7 +144,7 @@ public class FtpWindow {
 	}
 	
 	private void initWindow(){
-		shell.setText(WindowConstant.MAIN_WINDOW_NAME);
+		shell.setText(WindowConstant.MAIN_FTP_WINDOW);
 		shell.setBackground(mainColor);
 		shell.setImage(image);
 		int screenH = (int)ClientUtil.getScreenHeight();

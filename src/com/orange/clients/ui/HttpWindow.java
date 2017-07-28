@@ -342,7 +342,7 @@ public class HttpWindow {
 	}
 	
 	private void initWindow(){
-		shell.setText(WindowConstant.MAIN_WINDOW_NAME);
+		shell.setText(WindowConstant.MAIN_HTTP_WINDOW);
 		shell.setBackground(mainColor);
 		shell.setImage(image);
 		int screenH = (int)ClientUtil.getScreenHeight();
