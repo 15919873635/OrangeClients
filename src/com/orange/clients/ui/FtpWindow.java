@@ -26,6 +26,8 @@ import org.eclipse.swt.widgets.TrayItem;
 
 import com.orange.clients.constant.WindowConstant;
 import com.orange.clients.util.ClientUtil;
+import org.eclipse.swt.widgets.Tree;
+import org.eclipse.swt.widgets.TreeItem;
 
 public class FtpWindow {
 	protected Shell shell;
@@ -37,13 +39,16 @@ public class FtpWindow {
 	private Image hide = new Image(display, WindowConstant.ICON_HIDE);
 	private Image exit = new Image(display, WindowConstant.ICON_EXIT);
 	private Combo protocolCombo;
-	private Text urlText;
 	private Cursor cursor;
 	
 	private int SHEELH;
 	private int SHEELW;
 	private int BUTTON_WIDTH_1;
 	private int URLTEXT_WIDTH;
+	private Text text;
+	private Text text_1;
+	private Text text_2;
+	private Text text_3;
 	
 	/**
 	 * Open the window.
@@ -85,53 +90,46 @@ public class FtpWindow {
 		
 		int methodLabelLeft = protocolCombo.getBounds().x + protocolCombo.getBounds().width + 10;
 		Label methodLabel = new Label(shell, SWT.NONE);
-		methodLabel.setBounds(methodLabelLeft, 13, WindowConstant.LABEL_WIDTH, 17);
-		methodLabel.setText(WindowConstant.MAIN_WINDOW_LABEL_METHOD);
+		methodLabel.setBounds(0, 10, WindowConstant.LABEL_WIDTH, 17);
+		methodLabel.setText("Host:");
 		methodLabel.setBackground(mainColor);
 		
-		Label urlLabel = new Label(shell, SWT.NONE);
-		urlLabel.setBounds(0, 48, WindowConstant.LABEL_WIDTH, 17);
-		urlLabel.setText(WindowConstant.MAIN_WINDOW_LABEL_URL);
-		urlLabel.setBackground(mainColor);
+		text = new Text(shell, SWT.BORDER);
+		text.setBounds(61, 7, 112, 23);
 		
-		int urlTextLeft = urlLabel.getBounds().x + urlLabel.getBounds().width + 10;
-		urlText = new Text(shell, SWT.BORDER);
-		urlText.setBounds(urlTextLeft, 45, URLTEXT_WIDTH, WindowConstant.BUTTON_HEIGHT);
+		Label lblNewLabel = new Label(shell, SWT.NONE);
+		lblNewLabel.setBounds(190, 10, 42, 17);
+		lblNewLabel.setText("User");
 		
-		Label fileLabel = new Label(shell, SWT.NONE);
-		fileLabel.setBounds(0, 80, WindowConstant.LABEL_WIDTH, 17);
-		fileLabel.setText(WindowConstant.MAIN_WINDOW_LABEL_FILES);
-		fileLabel.setBackground(mainColor);
+		text_1 = new Text(shell, SWT.BORDER);
+		text_1.setBounds(238, 7, 105, 23);
 		
-		int fileChooseButtonLeft = fileLabel.getBounds().x + fileLabel.getBounds().width + 10;
-		Button fileChooseButton = new Button(shell, SWT.NONE);
-		fileChooseButton.setBounds(fileChooseButtonLeft, 75, WindowConstant.FILE_CHOOSE_BUTTON_WIDTH, WindowConstant.BUTTON_HEIGHT);
-		fileChooseButton.setText(WindowConstant.MAIN_WINDOW_BUTTON_CHOOSE_FILE);
-		fileChooseButton.setEnabled(false);
+		Label lblNewLabel_1 = new Label(shell, SWT.NONE);
+		lblNewLabel_1.setBounds(354, 10, 61, 17);
+		lblNewLabel_1.setText("Password");
 		
-		FileDialog dialog = new FileDialog (shell, SWT.OPEN|SWT.MULTI);
-		dialog.setFilterNames (new String [] {"All Files (*.*)"});
-		dialog.setFilterExtensions (new String [] {"*.*"}); //Windows wild cards
-		dialog.setFilterPath ("c:\\");
+		text_2 = new Text(shell, SWT.BORDER);
+		text_2.setBounds(421, 7, 96, 23);
 		
-		urlText.setFocus();
-		fileChooseButton.addSelectionListener(new SelectionAdapter() {
-			@Override
-			public void widgetSelected(SelectionEvent arg0) {
-				dialog.open();
-				String[] fileNames = dialog.getFileNames();
-				String path = dialog.getFilterPath();
-				String chooseFilePaths = "";
-				if(ArrayUtils.isNotEmpty(fileNames)){
-					for(String fileName : fileNames){
-						chooseFilePaths += path + File.separator + fileName+";";
-					}
-				}
-				if(StringUtils.isNotBlank(chooseFilePaths)){
-					chooseFilePaths = chooseFilePaths.substring(0, chooseFilePaths.length() - 1);
-				}
-			}
-		});
+		Label lblNewLabel_2 = new Label(shell, SWT.NONE);
+		lblNewLabel_2.setBounds(523, 10, 35, 17);
+		lblNewLabel_2.setText("Port");
+		
+		text_3 = new Text(shell, SWT.BORDER);
+		text_3.setBounds(564, 7, 96, 23);
+		
+		Button btnNewButton = new Button(shell, SWT.NONE);
+		btnNewButton.setBounds(683, 3, 80, 27);
+		btnNewButton.setText("Connect");
+		
+		Tree tree = new Tree(shell, SWT.BORDER);
+		tree.setBounds(0, 45, 358, 404);
+		for (int i = 0; i < 3; i++)  
+        {
+            TreeItem temp = new TreeItem(tree, SWT.NONE);  
+            temp.setText("root-" + (char) ('a' + i));  
+            new TreeItem(temp, SWT.NONE).setText("sub of " + temp.getText());  
+        }  
 	}
 	
 	private void initWindow(){
