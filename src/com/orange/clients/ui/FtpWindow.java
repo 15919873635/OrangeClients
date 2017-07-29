@@ -5,7 +5,6 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Cursor;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Button;
-import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
@@ -35,8 +34,10 @@ public class FtpWindow {
 	private Text userNameText;
 	private Text userPasswordText;
 	private Text portText;
-	private Table table;
-	private Table table_1;
+	private Table CommandTable;
+	private Table localDirectoryTable;
+	private Table remoteDirectoryTable;
+	private Table bottomTable;
 	
 	private int BUTTON_WIDTH_1;
 	private int TEXT_WIDTH;
@@ -113,24 +114,35 @@ public class FtpWindow {
 		connectButton.setText("Connect");
 		connectButton.setCursor(cursor);
 		
-		Tree tree = new Tree(shell, SWT.BORDER);
-		tree.setBounds(0, 45, 358, 201);
+		CommandTable = new Table(shell, SWT.BORDER);
+		CommandTable.setHeaderVisible(true);
+		CommandTable.setLinesVisible(true);
+		CommandTable.setBounds(0, 45, SHEELW, 200);
 		
-		Tree tree_1 = new Tree(shell, SWT.BORDER);
-		tree_1.setBounds(396, 45, 367, 201);
+		Tree leftTree = new Tree(shell, SWT.BORDER);
+		leftTree.setBounds(0, 250, SHEELW / 2 - 10, 200);
 		
-		table = new Table(shell, SWT.BORDER | SWT.FULL_SELECTION);
-		table.setBounds(0, 252, 358, 149);
-		table.setHeaderVisible(true);
-		table.setLinesVisible(true);
+		Tree rightTree = new Tree(shell, SWT.BORDER);
+		rightTree.setBounds(SHEELW / 2, 250, SHEELW / 2 - 10, 200);
 		
-		table_1 = new Table(shell, SWT.BORDER | SWT.FULL_SELECTION);
-		table_1.setBounds(396, 252, 367, 149);
-		table_1.setHeaderVisible(true);
-		table_1.setLinesVisible(true);
+		localDirectoryTable = new Table(shell, SWT.BORDER);
+		localDirectoryTable.setBounds(0, 455, SHEELW / 2 - 10, 200);
+		localDirectoryTable.setHeaderVisible(true);
+		localDirectoryTable.setLinesVisible(true);
+		
+		remoteDirectoryTable = new Table(shell, SWT.BORDER);
+		remoteDirectoryTable.setBounds(SHEELW / 2, 455, SHEELW / 2 - 10, 200);
+		remoteDirectoryTable.setHeaderVisible(true);
+		remoteDirectoryTable.setLinesVisible(true);
+		
+		bottomTable = new Table(shell, SWT.BORDER);
+		bottomTable.setBounds(0, 660, SHEELW, 130);
+		bottomTable.setHeaderVisible(true);
+		bottomTable.setLinesVisible(true);
+		
 		for (int i = 0; i < 3; i++)  
         {
-            TreeItem temp = new TreeItem(tree, SWT.NONE);  
+            TreeItem temp = new TreeItem(leftTree, SWT.NONE);  
             temp.setText("root-" + (char) ('a' + i));  
             new TreeItem(temp, SWT.NONE).setText("sub of " + temp.getText());  
         }  
