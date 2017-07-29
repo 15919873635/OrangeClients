@@ -4,6 +4,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Cursor;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
@@ -16,6 +17,8 @@ import com.orange.clients.util.ClientUtil;
 import org.eclipse.swt.widgets.Tree;
 import org.eclipse.swt.widgets.TreeItem;
 import org.eclipse.swt.widgets.Table;
+import org.eclipse.swt.widgets.TableColumn;
+import org.eclipse.swt.widgets.TableItem;
 
 public class FtpWindow {
 	protected Shell shell;
@@ -30,17 +33,23 @@ public class FtpWindow {
 	
 	private int SHEELH;
 	private int SHEELW;
+	private Tree leftTree;
+	private Tree rightTree;
 	private Text hostText;
 	private Text userNameText;
 	private Text userPasswordText;
 	private Text portText;
-	private Table CommandTable;
+	private Table commandTable;
 	private Table localDirectoryTable;
 	private Table remoteDirectoryTable;
 	private Table bottomTable;
+	private Button connectButton;
 	
 	private int BUTTON_WIDTH_1;
 	private int TEXT_WIDTH;
+	private int LOCAL_DIRECTORY_TABLE_HEADER_WIDTH;
+	private int REMOTE_DIRECTORY_TABLE_HEADER_WIDTH;
+	private int TABLE_TREE_HEIGHT;
 	/**
 	 * Open the window.
 	 */
@@ -71,7 +80,6 @@ public class FtpWindow {
 	}
 	
 	private void initWinContent(){
-		
 		Label hostLabel = new Label(shell, SWT.NONE);
 		hostLabel.setBounds(5, 13, WindowConstant.LABEL_WIDTH, 17);
 		hostLabel.setText("Host:");
@@ -93,7 +101,7 @@ public class FtpWindow {
 		int userPasswordLabelLeft = userNameText.getBounds().x + userNameText.getBounds().width + 10;
 		Label userPasswordLabel = new Label(shell, SWT.NONE);
 		userPasswordLabel.setBounds(userPasswordLabelLeft, 13, WindowConstant.LABEL_WIDTH, 17);
-		userPasswordLabel.setText("Password:");
+		userPasswordLabel.setText("Pass:");
 		
 		int userPasswordTextLeft = userPasswordLabel.getBounds().x + userPasswordLabel.getBounds().width + 10;
 		userPasswordText = new Text(shell, SWT.BORDER);
@@ -109,36 +117,65 @@ public class FtpWindow {
 		portText.setBounds(portTextLeft, 10, TEXT_WIDTH, WindowConstant.BUTTON_HEIGHT);
 		
 		int connectButtonLeft = portText.getBounds().x + portText.getBounds().width + 10;
-		Button connectButton = new Button(shell, SWT.NONE);
+		connectButton = new Button(shell, SWT.NONE);
 		connectButton.setBounds(connectButtonLeft, 10, BUTTON_WIDTH_1, WindowConstant.BUTTON_HEIGHT);
 		connectButton.setText("Connect");
 		connectButton.setCursor(cursor);
 		
-		CommandTable = new Table(shell, SWT.BORDER);
-		CommandTable.setHeaderVisible(true);
-		CommandTable.setLinesVisible(true);
-		CommandTable.setBounds(0, 45, SHEELW, 200);
+		commandTable = new Table(shell, SWT.BORDER);
+		commandTable.setHeaderVisible(false);
+		commandTable.setLinesVisible(false);
+		commandTable.setBounds(0, 45, SHEELW, WindowConstant.FTP_COMPOSITE_HEIGHT);
 		
-		Tree leftTree = new Tree(shell, SWT.BORDER);
-		leftTree.setBounds(0, 250, SHEELW / 2 - 10, 200);
+		int leftTreeTop = commandTable.getBounds().y + commandTable.getBounds().height + 5;
+		leftTree = new Tree(shell, SWT.BORDER);
+		leftTree.setBounds(0, leftTreeTop, SHEELW / 2 - 10, TABLE_TREE_HEIGHT);
 		
-		Tree rightTree = new Tree(shell, SWT.BORDER);
-		rightTree.setBounds(SHEELW / 2, 250, SHEELW / 2 - 10, 200);
+		rightTree = new Tree(shell, SWT.BORDER);
+		rightTree.setBounds(SHEELW / 2, leftTreeTop, SHEELW / 2 - 10, TABLE_TREE_HEIGHT);
 		
-		localDirectoryTable = new Table(shell, SWT.BORDER);
-		localDirectoryTable.setBounds(0, 455, SHEELW / 2 - 10, 200);
+		// 表格布局  
+        GridData gridData = new org.eclipse.swt.layout.GridData();  
+        gridData.horizontalAlignment = SWT.FILL;  
+        gridData.grabExcessHorizontalSpace = true;  
+        gridData.grabExcessVerticalSpace = true;  
+        gridData.verticalAlignment = SWT.FILL;  
+        
+        int directoryTableTop = leftTree.getBounds().y + leftTree.getBounds().height + 5;
+		localDirectoryTable = new Table(shell, SWT.BORDER|SWT.MULTI);
+		localDirectoryTable.setBounds(0, directoryTableTop, SHEELW / 2 - 10, TABLE_TREE_HEIGHT);
 		localDirectoryTable.setHeaderVisible(true);
-		localDirectoryTable.setLinesVisible(true);
+		localDirectoryTable.setLinesVisible(false);
+		localDirectoryTable.setLayoutData(gridData);// 设置表格布局  
+		
+		String[] localDirectoryTableHeaders = new String[]{"FileName","FileSize","FileType","LastModify"};
+		for(int index = 0; index < localDirectoryTableHeaders.length ; index ++){
+			String headerName = localDirectoryTableHeaders[index];
+			TableColumn fileName = new TableColumn(localDirectoryTable, SWT.NONE);
+			fileName.setText(headerName);
+			fileName.setMoveable(true);
+			fileName.setWidth(LOCAL_DIRECTORY_TABLE_HEADER_WIDTH);
+		}
 		
 		remoteDirectoryTable = new Table(shell, SWT.BORDER);
-		remoteDirectoryTable.setBounds(SHEELW / 2, 455, SHEELW / 2 - 10, 200);
+		remoteDirectoryTable.setBounds(SHEELW / 2, directoryTableTop, SHEELW / 2 - 10, TABLE_TREE_HEIGHT);
 		remoteDirectoryTable.setHeaderVisible(true);
-		remoteDirectoryTable.setLinesVisible(true);
+		remoteDirectoryTable.setLinesVisible(false);
 		
+		String[] remoteDirectoryTableHeaders = new String[]{"FileName","FileSize","FileType","LastModify","Auth","Owner"};
+		for(int index = 0; index < remoteDirectoryTableHeaders.length ; index ++){
+			String headerName = remoteDirectoryTableHeaders[index];
+			TableColumn fileName = new TableColumn(remoteDirectoryTable, SWT.NONE);
+			fileName.setText(headerName);
+			fileName.setMoveable(true);
+			fileName.setWidth(REMOTE_DIRECTORY_TABLE_HEADER_WIDTH);
+		}
+		
+		int bottomTableTop = remoteDirectoryTable.getBounds().y + remoteDirectoryTable.getBounds().height + 5;
 		bottomTable = new Table(shell, SWT.BORDER);
-		bottomTable.setBounds(0, 660, SHEELW, 130);
-		bottomTable.setHeaderVisible(true);
-		bottomTable.setLinesVisible(true);
+		bottomTable.setBounds(0, bottomTableTop, SHEELW, WindowConstant.FTP_COMPOSITE_HEIGHT);
+		bottomTable.setHeaderVisible(false);
+		bottomTable.setLinesVisible(false);
 		
 		for (int i = 0; i < 3; i++)  
         {
@@ -163,6 +200,10 @@ public class FtpWindow {
 		BUTTON_WIDTH_1 = ((SHEELW * 8 / 100) > WindowConstant.MIN_BUTTON_WIDTH_1) ? (SHEELW * 8 / 100) : WindowConstant.MIN_BUTTON_WIDTH_1;
 		
 		TEXT_WIDTH = ((SHEELW * 80 / 100) - 4 * WindowConstant.LABEL_WIDTH) / 4;
+		LOCAL_DIRECTORY_TABLE_HEADER_WIDTH = (SHEELW / 2 - 20) / 4;
+		REMOTE_DIRECTORY_TABLE_HEADER_WIDTH = (SHEELW / 2 - 20) / 6;
+		
+		TABLE_TREE_HEIGHT = (SHEELH - 50 - 2 * WindowConstant.FTP_COMPOSITE_HEIGHT) / 2;
 		
         shell.setSize(SHEELW, SHEELH);
         shell.setLocation((screenW - SHEELW) / 2, (screenH - SHEELH) / 2);

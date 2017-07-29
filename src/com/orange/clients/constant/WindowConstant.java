@@ -8,6 +8,7 @@ public class WindowConstant {
 	public final static int MIN_BUTTON_WIDTH_1 = 50;
 	public final static int FILE_CHOOSE_BUTTON_WIDTH = 105;
 	public final static int COPY_RESPONSE_BUTTON_WIDTH = 115;
+	public final static int FTP_COMPOSITE_HEIGHT = 150;
 	
 	public final static int LABEL_WIDTH = 55; 
 	public final static int LABEL_WIDTH_2 = 60;
