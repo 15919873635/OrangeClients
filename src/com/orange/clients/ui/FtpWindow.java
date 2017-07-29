@@ -1,10 +1,6 @@
 package com.orange.clients.ui;
 
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.MenuDetectEvent;
-import org.eclipse.swt.events.MenuDetectListener;
-import org.eclipse.swt.events.SelectionAdapter;
-import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Cursor;
 import org.eclipse.swt.graphics.Image;
@@ -12,12 +8,9 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.widgets.Menu;
-import org.eclipse.swt.widgets.MenuItem;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Tray;
-import org.eclipse.swt.widgets.TrayItem;
 
 import com.orange.clients.constant.WindowConstant;
 import com.orange.clients.util.ClientUtil;
@@ -34,20 +27,19 @@ public class FtpWindow {
 	private Image showView = new Image(display, WindowConstant.ICON_SHOWVIEW);
 	private Image hide = new Image(display, WindowConstant.ICON_HIDE);
 	private Image exit = new Image(display, WindowConstant.ICON_EXIT);
-	private Combo protocolCombo;
 	private Cursor cursor;
 	
 	private int SHEELH;
 	private int SHEELW;
-	private int BUTTON_WIDTH_1;
-	private int URLTEXT_WIDTH;
-	private Text text;
-	private Text text_1;
-	private Text text_2;
-	private Text text_3;
+	private Text hostText;
+	private Text userNameText;
+	private Text userPasswordText;
+	private Text portText;
 	private Table table;
 	private Table table_1;
 	
+	private int BUTTON_WIDTH_1;
+	private int TEXT_WIDTH;
 	/**
 	 * Open the window.
 	 */
@@ -73,52 +65,53 @@ public class FtpWindow {
 		tray = display.getSystemTray();
 		mainColor = new Color(display, WindowConstant.MAIN_BACkGROUND_COLOR);
 		cursor = new Cursor(display, SWT.CURSOR_HAND);
-		initTray();
 		initWindow();
 		initWinContent();
 	}
 	
 	private void initWinContent(){
-		protocolCombo = new Combo(shell, SWT.NONE | SWT.DROP_DOWN | SWT.READ_ONLY);
-//		protocolCombo.setBounds(protocolComboLeft, 10, COMBOBOX_WIDTH, WindowConstant.BUTTON_HEIGHT);
-		protocolCombo.add(WindowConstant.REQUEST_HTTP);
-		protocolCombo.add(WindowConstant.REQUEST_HTTPS);
-		protocolCombo.setText(WindowConstant.REQUEST_HTTP);
-		protocolCombo.setCursor(cursor);
 		
-		int methodLabelLeft = protocolCombo.getBounds().x + protocolCombo.getBounds().width + 10;
-		Label methodLabel = new Label(shell, SWT.NONE);
-		methodLabel.setBounds(0, 10, WindowConstant.LABEL_WIDTH, 17);
-		methodLabel.setText("Host:");
-		methodLabel.setBackground(mainColor);
+		Label hostLabel = new Label(shell, SWT.NONE);
+		hostLabel.setBounds(5, 13, WindowConstant.LABEL_WIDTH, 17);
+		hostLabel.setText("Host:");
+		hostLabel.setBackground(mainColor);
 		
-		text = new Text(shell, SWT.BORDER);
-		text.setBounds(61, 7, 112, 23);
+		int hostTextLeft = hostLabel.getBounds().x + hostLabel.getBounds().width + 10;
+		hostText = new Text(shell, SWT.BORDER);
+		hostText.setBounds(hostTextLeft, 10, TEXT_WIDTH, WindowConstant.BUTTON_HEIGHT);
 		
-		Label lblNewLabel = new Label(shell, SWT.NONE);
-		lblNewLabel.setBounds(190, 10, 42, 17);
-		lblNewLabel.setText("User");
+		int userNameLabelLeft = hostText.getBounds().x + hostText.getBounds().width + 10;
+		Label userNameLabel = new Label(shell, SWT.NONE);
+		userNameLabel.setBounds(userNameLabelLeft, 13, WindowConstant.LABEL_WIDTH, 17);
+		userNameLabel.setText("User:");
 		
-		text_1 = new Text(shell, SWT.BORDER);
-		text_1.setBounds(238, 7, 105, 23);
+		int userNameTextLeft = userNameLabel.getBounds().x + userNameLabel.getBounds().width + 10;
+		userNameText = new Text(shell, SWT.BORDER);
+		userNameText.setBounds(userNameTextLeft, 10, TEXT_WIDTH, WindowConstant.BUTTON_HEIGHT);
 		
-		Label lblNewLabel_1 = new Label(shell, SWT.NONE);
-		lblNewLabel_1.setBounds(354, 10, 61, 17);
-		lblNewLabel_1.setText("Password");
+		int userPasswordLabelLeft = userNameText.getBounds().x + userNameText.getBounds().width + 10;
+		Label userPasswordLabel = new Label(shell, SWT.NONE);
+		userPasswordLabel.setBounds(userPasswordLabelLeft, 13, WindowConstant.LABEL_WIDTH, 17);
+		userPasswordLabel.setText("Password:");
 		
-		text_2 = new Text(shell, SWT.BORDER);
-		text_2.setBounds(421, 7, 96, 23);
+		int userPasswordTextLeft = userPasswordLabel.getBounds().x + userPasswordLabel.getBounds().width + 10;
+		userPasswordText = new Text(shell, SWT.BORDER);
+		userPasswordText.setBounds(userPasswordTextLeft, 10, TEXT_WIDTH, WindowConstant.BUTTON_HEIGHT);
 		
-		Label lblNewLabel_2 = new Label(shell, SWT.NONE);
-		lblNewLabel_2.setBounds(523, 10, 35, 17);
-		lblNewLabel_2.setText("Port");
+		int portLabelLeft = userPasswordText.getBounds().x + userPasswordText.getBounds().width + 10;
+		Label portLabel = new Label(shell, SWT.NONE);
+		portLabel.setBounds(portLabelLeft, 13, WindowConstant.LABEL_WIDTH, 17);
+		portLabel.setText("Port:");
 		
-		text_3 = new Text(shell, SWT.BORDER);
-		text_3.setBounds(564, 7, 96, 23);
+		int portTextLeft = portLabel.getBounds().x + portLabel.getBounds().width + 10;
+		portText = new Text(shell, SWT.BORDER);
+		portText.setBounds(portTextLeft, 10, TEXT_WIDTH, WindowConstant.BUTTON_HEIGHT);
 		
-		Button btnNewButton = new Button(shell, SWT.NONE);
-		btnNewButton.setBounds(683, 3, 80, 27);
-		btnNewButton.setText("Connect");
+		int connectButtonLeft = portText.getBounds().x + portText.getBounds().width + 10;
+		Button connectButton = new Button(shell, SWT.NONE);
+		connectButton.setBounds(connectButtonLeft, 10, BUTTON_WIDTH_1, WindowConstant.BUTTON_HEIGHT);
+		connectButton.setText("Connect");
+		connectButton.setCursor(cursor);
 		
 		Tree tree = new Tree(shell, SWT.BORDER);
 		tree.setBounds(0, 45, 358, 201);
@@ -157,51 +150,10 @@ public class FtpWindow {
 		
 		BUTTON_WIDTH_1 = ((SHEELW * 8 / 100) > WindowConstant.MIN_BUTTON_WIDTH_1) ? (SHEELW * 8 / 100) : WindowConstant.MIN_BUTTON_WIDTH_1;
 		
-		
-		URLTEXT_WIDTH = SHEELW - WindowConstant.LABEL_WIDTH - BUTTON_WIDTH_1 * 2 - 50 ;
+		TEXT_WIDTH = ((SHEELW * 80 / 100) - 4 * WindowConstant.LABEL_WIDTH) / 4;
 		
         shell.setSize(SHEELW, SHEELH);
         shell.setLocation((screenW - SHEELW) / 2, (screenH - SHEELH) / 2);
-	}
-	
-	private void initTray(){
-		final Menu trayMenu = new Menu(shell,SWT.POP_UP);
-		final MenuItem showOrHideItem = new MenuItem(trayMenu, SWT.PUSH);
-		showOrHideItem.setText(WindowConstant.MAIN_WINDOW_HIDE);
-		showOrHideItem.setImage(hide);
-		showOrHideItem.addSelectionListener(new SelectionAdapter() {
-			@Override
-			public void widgetSelected(SelectionEvent arg0) {
-				if(shell.isVisible()){
-					showOrHideItem.setText(WindowConstant.MAIN_WINDOW_SHOW);
-					showOrHideItem.setImage(showView);
-					shell.setVisible(false);
-				}else{
-					showOrHideItem.setText(WindowConstant.MAIN_WINDOW_HIDE);
-					showOrHideItem.setImage(hide);
-					shell.setVisible(true);
-				}
-			}
-		});
-		new MenuItem(trayMenu, SWT.SEPARATOR);
-		final MenuItem exitItem = new MenuItem(trayMenu, SWT.PUSH);
-		exitItem.setText(WindowConstant.MAIN_WINDOW_EXIT);
-		exitItem.setImage(exit);
-		exitItem.addSelectionListener(new SelectionAdapter() {
-			@Override
-			public void widgetSelected(SelectionEvent arg0) {
-				closeWindow();
-			}
-		});
-		TrayItem item = new TrayItem(tray, SWT.NONE);
-		item.setImage(image);
-		item.setToolTipText(WindowConstant.MAIN_WINDOW_TRAY_TOOLTIP);
-		item.addMenuDetectListener(new MenuDetectListener() {
-			@Override
-			public void menuDetected(MenuDetectEvent arg0) {
-				trayMenu.setVisible(true);
-			}
-		});
 	}
 	
 	private void closeWindow(){

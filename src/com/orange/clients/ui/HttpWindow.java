@@ -96,7 +96,7 @@ public class HttpWindow {
 	
 	private void initWinContent(){
 		Label protocolLabel = new Label(shell, SWT.NONE);
-		protocolLabel.setBounds(0, 13, WindowConstant.LABEL_WIDTH, 17);
+		protocolLabel.setBounds(5, 13, WindowConstant.LABEL_WIDTH, 17);
 		protocolLabel.setText(WindowConstant.MAIN_WINDOW_LABEL_PROTOCOL);
 		protocolLabel.setBackground(mainColor);
 
