@@ -155,7 +155,6 @@ public class FtpWindow {
 		rightTree.setBounds(SHEELW / 2, leftTreeTop, SHEELW / 2 - 10, TABLE_TREE_HEIGHT);
 		rightTree.setCursor(cursor);
 		
-		
 		// 表格布局  
         GridData gridData = new org.eclipse.swt.layout.GridData();  
         gridData.horizontalAlignment = SWT.FILL;  
@@ -224,7 +223,7 @@ public class FtpWindow {
 //				String userPass = userPasswordText.getText();
 //				String serverPort = portText.getText();
 				String ftpServerHost = "localhost";
-				String userName = "lnbest";
+				String userName = "lining";
 				String userPass = "lining007";
 				String serverPort = "21";
 				

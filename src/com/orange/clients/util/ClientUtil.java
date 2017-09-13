@@ -12,10 +12,10 @@ public class ClientUtil {
 	}
 	
 	public static boolean isJSONArray(String targetUri){
-		return targetUri.startsWith("{") && targetUri.endsWith("}");
+		return targetUri.startsWith("[") && targetUri.endsWith("]");
 	}
 	
 	public static boolean isJSONObject(String targetUri){
-		return targetUri.startsWith("[") && targetUri.endsWith("]");
+		return targetUri.startsWith("{") && targetUri.endsWith("}");
 	}
 }

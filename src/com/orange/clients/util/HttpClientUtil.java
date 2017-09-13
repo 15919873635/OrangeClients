@@ -1,6 +1,7 @@
 package com.orange.clients.util;
 
 import java.io.File;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -133,7 +134,7 @@ public class HttpClientUtil {
 			}
 			Set<String> keys = newHeaderMapper.keySet();
 			for(String key : keys){
-				httpPost.setHeader(key, newHeaderMapper.get(key));
+				httpPost.setHeader(key, URLEncoder.encode(newHeaderMapper.get(key),"UTF-8"));
 			}
 			HttpEntity requestEntity = null;
 			if(bodyContent != null && bodyContent.size() > 0){
