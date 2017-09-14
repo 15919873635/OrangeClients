@@ -29,7 +29,7 @@ import org.tmatesoft.svn.core.wc.SVNWCUtil;
 
 import com.orange.clients.constant.ErrorCodeConst;
 import com.orange.clients.constant.SVNCodeConst;
-import com.orange.clients.util.SystemUtil;
+import com.orange.clients.util.BaseClientUtil;
 
 public class SvnServiceImpl implements SvnService {
 	
@@ -51,7 +51,7 @@ public class SvnServiceImpl implements SvnService {
 	        SVNClientManager clientManager = SVNClientManager.newInstance(options, authManager);
 	        StringBuilder commitMessage = new StringBuilder();
 	        commitMessage.append("@author:").append(userName).append("\n")
-	                     .append("@date:").append(SystemUtil.getCurrentDate()).append("\n");
+	                     .append("@date:").append(BaseClientUtil.getCurrentDate()).append("\n");
 	        clientManager.getCommitClient().setIgnoreExternals(false);
 	        clientManager.getCommitClient().doDelete(
         		new SVNURL[]{SVNURL.parseURIEncoded(repositoryUrl)},
@@ -101,7 +101,7 @@ public class SvnServiceImpl implements SvnService {
 	        SVNProperties svnProperties = new SVNProperties();
 	        StringBuilder commitMessage = new StringBuilder();
 	        commitMessage.append("@author:").append(userName).append("\n")
-	                     .append("@date:").append(SystemUtil.getCurrentDate()).append("\n");
+	                     .append("@date:").append(BaseClientUtil.getCurrentDate()).append("\n");
 	        clientManager.getCommitClient().setIgnoreExternals(false);
 	        clientManager.getCommitClient().doImport(
         		fileOrDirectory,
@@ -150,7 +150,7 @@ public class SvnServiceImpl implements SvnService {
 	        SVNClientManager clientManager = SVNClientManager.newInstance(options, authManager);
 	        StringBuilder commitMessage = new StringBuilder();
 	        commitMessage.append("@author:").append(userName).append("\n")
-	                     .append("@date:").append(SystemUtil.getCurrentDate()).append("\n");
+	                     .append("@date:").append(BaseClientUtil.getCurrentDate()).append("\n");
 	        clientManager.getCommitClient().doMkDir(
         		new SVNURL[]{SVNURL.parseURIEncoded(repositoryUrl)},
         		commitMessage.toString()
@@ -171,7 +171,7 @@ public class SvnServiceImpl implements SvnService {
 			ISVNAuthenticationManager authManager = SVNWCUtil.createDefaultAuthenticationManager(userName, pwd);
 			DefaultSVNOptions options = SVNWCUtil.createDefaultOptions(true);  
 	        SVNClientManager clientManager = SVNClientManager.newInstance(options, authManager);
-			String nameAndSuffix = SystemUtil.getgetResourceNameAndSuffix(repositoryUrl);
+			String nameAndSuffix = BaseClientUtil.getgetResourceNameAndSuffix(repositoryUrl);
 	        StringBuilder checkoutFileDir = new StringBuilder(basicDownloadDir);
 	        checkoutFileDir.append("/").append(UUID.randomUUID().toString());
 	        File checkoutFile = new File(checkoutFileDir.toString());
@@ -253,7 +253,7 @@ public class SvnServiceImpl implements SvnService {
 			ISVNAuthenticationManager authManager = SVNWCUtil.createDefaultAuthenticationManager(userName, pwd);			
 			DefaultSVNOptions options = SVNWCUtil.createDefaultOptions(true);  
 	        SVNClientManager clientManager = SVNClientManager.newInstance(options, authManager);
-	        String nameAndSuffix = SystemUtil.getgetResourceNameAndSuffix(repositoryUrl);
+	        String nameAndSuffix = BaseClientUtil.getgetResourceNameAndSuffix(repositoryUrl);
 	        StringBuilder checkoutFileDir = new StringBuilder(basicDownloadDir);
 	        checkoutFileDir.append("/").append(UUID.randomUUID().toString());
 	        File checkoutFile = new File(checkoutFileDir.toString());
