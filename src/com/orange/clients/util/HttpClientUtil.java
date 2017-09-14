@@ -20,6 +20,7 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
+import org.apache.http.entity.mime.HttpMultipartMode;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
@@ -165,6 +166,7 @@ public class HttpClientUtil {
 				}else{
 					MultipartEntityBuilder builder = MultipartEntityBuilder.create();
 					builder.setCharset(Consts.UTF_8);
+					builder.setMode(HttpMultipartMode.BROWSER_COMPATIBLE);
 					String body = (String)bodyContent.get("body");
 					if(body != null && body.length() > 0){
 						if(ClientUtil.isJSONObject(body)){
@@ -267,6 +269,7 @@ public class HttpClientUtil {
 				}else{
 					MultipartEntityBuilder builder = MultipartEntityBuilder.create();
 					builder.setCharset(Consts.UTF_8);
+					builder.setMode(HttpMultipartMode.BROWSER_COMPATIBLE);
 					String body = (String)bodyContent.get("body");
 					if(body != null && body.length() > 0){
 						if(ClientUtil.isJSONObject(body)){
