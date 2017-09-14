@@ -15,6 +15,11 @@ public class WindowConstant {
 	
 	public final static int BUTTON_HEIGHT = 25;
 	
+	public final static String MAIN_CLIENT_WINDOW = "Clients Window";
+	public final static String MAIN_CLIENT_MENU_HTTP = "HTTP";
+	public final static String MAIN_CLIENT_MENU_FTP = "FTP";
+	public final static String MAIN_CLIENT_MENU_SVN = "SVN";
+	
 	public final static String MAIN_HTTP_WINDOW = "Request Send Window"; 
 	public final static String MAIN_FTP_WINDOW = "FTP Client Window";
 	public final static String MAIN_WINDOW_BUTTON_SEND = "Send";
