@@ -147,7 +147,7 @@ public class HttpClientUtil {
 				if(fileCount == 0){
 					String body = (String)bodyContent.get("body");
 					if(body != null){
-						if(ClientUtil.isJSONObject(body)){
+						if(BaseClientUtil.isJSONObject(body)){
 				            JSONObject bodyJson = JSONObject.parseObject(body);
 				            if(!bodyJson.isEmpty()){
 				            	Set<String> jsonArray = bodyJson.keySet();
@@ -169,7 +169,7 @@ public class HttpClientUtil {
 					builder.setMode(HttpMultipartMode.BROWSER_COMPATIBLE);
 					String body = (String)bodyContent.get("body");
 					if(body != null && body.length() > 0){
-						if(ClientUtil.isJSONObject(body)){
+						if(BaseClientUtil.isJSONObject(body)){
 				            JSONObject bodyJson = JSONObject.parseObject(body);
 				            if(!bodyJson.isEmpty()){
 				            	Set<String> jsonArray = bodyJson.keySet();
@@ -250,7 +250,7 @@ public class HttpClientUtil {
 				if(fileCount == 0){
 					String body = (String)bodyContent.get("body");
 					if(body != null){
-						if(ClientUtil.isJSONObject(body)){
+						if(BaseClientUtil.isJSONObject(body)){
 				            JSONObject bodyJson = JSONObject.parseObject(body);
 				            if(!bodyJson.isEmpty()){
 				            	Set<String> jsonArray = bodyJson.keySet();
@@ -272,7 +272,7 @@ public class HttpClientUtil {
 					builder.setMode(HttpMultipartMode.BROWSER_COMPATIBLE);
 					String body = (String)bodyContent.get("body");
 					if(body != null && body.length() > 0){
-						if(ClientUtil.isJSONObject(body)){
+						if(BaseClientUtil.isJSONObject(body)){
 				            JSONObject bodyJson = JSONObject.parseObject(body);
 				            if(!bodyJson.isEmpty()){
 				            	Set<String> jsonArray = bodyJson.keySet();

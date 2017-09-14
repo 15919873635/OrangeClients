@@ -6,7 +6,7 @@ import org.eclipse.swt.widgets.Shell;
 
 import com.alibaba.fastjson.JSONObject;
 import com.orange.clients.constant.WindowConstant;
-import com.orange.clients.util.ClientUtil;
+import com.orange.clients.util.BaseClientUtil;
 import com.orange.clients.util.HttpClientUtil;
 
 import org.eclipse.swt.widgets.Label;
@@ -247,7 +247,7 @@ public class HttpWindow {
 				String response = "";
 				String filePaths = filePathLabel.getText();
 				if(StringUtils.isNotBlank(urltext) && protocol.equals(WindowConstant.REQUEST_HTTP)){	
-					if(StringUtils.isNotBlank(headertext) && ClientUtil.isJSONArray(headertext)){
+					if(StringUtils.isNotBlank(headertext) && BaseClientUtil.isJSONArray(headertext)){
 						headerMapper = new HashMap<String,String>();
 						JSONObject headerJSON = JSONObject.parseObject(headertext);
 						if(!headerJSON.isEmpty()){
@@ -345,8 +345,8 @@ public class HttpWindow {
 		shell.setText(WindowConstant.MAIN_HTTP_WINDOW);
 		shell.setBackground(mainColor);
 		shell.setImage(image);
-		int screenH = (int)ClientUtil.getScreenHeight();
-		int screenW = (int)ClientUtil.getScreenWidth();
+		int screenH = (int)BaseClientUtil.getScreenHeight();
+		int screenW = (int)BaseClientUtil.getScreenWidth();
 		
 		SHEELH = screenH * 4 / 5;
 		SHEELW = screenW * 4 / 5;

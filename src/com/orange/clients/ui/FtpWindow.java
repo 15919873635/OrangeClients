@@ -29,7 +29,7 @@ import org.eclipse.swt.widgets.Tray;
 import com.orange.clients.constant.WindowConstant;
 import com.orange.clients.service.FtpOperation;
 import com.orange.clients.service.RemoteFileInfo;
-import com.orange.clients.util.ClientUtil;
+import com.orange.clients.util.BaseClientUtil;
 import org.eclipse.swt.widgets.Tree;
 import org.eclipse.swt.widgets.TreeItem;
 import org.eclipse.swt.widgets.Table;
@@ -304,8 +304,8 @@ public class FtpWindow {
 		shell.setText(WindowConstant.MAIN_FTP_WINDOW);
 		shell.setBackground(mainColor);
 		shell.setImage(image);
-		int screenH = (int)ClientUtil.getScreenHeight();
-		int screenW = (int)ClientUtil.getScreenWidth();
+		int screenH = (int)BaseClientUtil.getScreenHeight();
+		int screenW = (int)BaseClientUtil.getScreenWidth();
 		
 		SHEELH = screenH * 4 / 5;
 		SHEELW = screenW * 4 / 5;

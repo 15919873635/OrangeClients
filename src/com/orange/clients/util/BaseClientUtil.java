@@ -2,7 +2,7 @@ package com.orange.clients.util;
 
 import java.awt.Toolkit;
 
-public class ClientUtil {
+public class BaseClientUtil {
 	public static int getScreenWidth(){
 		return Toolkit.getDefaultToolkit().getScreenSize().width;
 	}
