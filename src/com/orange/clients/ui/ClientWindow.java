@@ -235,9 +235,9 @@ public class ClientWindow {
 		URLTEXT_WIDTH = SHEELW - WindowConstant.LABEL_WIDTH - BUTTON_WIDTH_1 * 2 - 50 ;
 		FILE_PATH_WIDTH = URLTEXT_WIDTH - WindowConstant.FILE_CHOOSE_BUTTON_WIDTH -10;
 		HEADER_OR_BODY_TEXT_WIDTH = (SHEELW - WindowConstant.LABEL_WIDTH * 2 - 40) / 2;
-		HEADER_OR_BODY_TEXT_HEIGHT = (SHEELH - 200) * 4 / 10;
+		HEADER_OR_BODY_TEXT_HEIGHT = (SHEELH - 250) * 4 / 10;
 		RESPONSE_TEXT_WIDTH = SHEELW - WindowConstant.LABEL_WIDTH - 30;
-		RESPONSE_TEXT_HEIGHT = (SHEELH - 200) * 6 / 10;
+		RESPONSE_TEXT_HEIGHT = (SHEELH - 250) * 6 / 10;
 		
 		Label protocolLabel = new Label(httpComposite, SWT.NONE);
 		protocolLabel.setBounds(0, 13, WindowConstant.LABEL_WIDTH, 17);
@@ -342,8 +342,8 @@ public class ClientWindow {
 		responseText.setBounds(responseTextLeft, responseTextTop, RESPONSE_TEXT_WIDTH, RESPONSE_TEXT_HEIGHT);
 		
 		int copyResponseTextLeft = (SHEELW - WindowConstant.COPY_RESPONSE_BUTTON_WIDTH) / 2;
-		int copyResponseTextTop = SHEELH - WindowConstant.BUTTON_HEIGHT - 40;
-		Button copyResponseText2Clipboard = new Button(shell, SWT.NONE);
+		int copyResponseTextTop = SHEELH - WindowConstant.BUTTON_HEIGHT - 90;
+		Button copyResponseText2Clipboard = new Button(httpComposite, SWT.NONE);
 		copyResponseText2Clipboard.setBounds(copyResponseTextLeft, copyResponseTextTop, WindowConstant.COPY_RESPONSE_BUTTON_WIDTH, WindowConstant.BUTTON_HEIGHT);
 		copyResponseText2Clipboard.setText(WindowConstant.MAIN_WINDOW_BUTTON_COPY_RESPONSE);
 		copyResponseText2Clipboard.setEnabled(false);
