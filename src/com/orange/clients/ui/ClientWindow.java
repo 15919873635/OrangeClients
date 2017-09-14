@@ -205,7 +205,7 @@ public class ClientWindow {
 	
 	protected void initTabFolder(){
 		tabFolder = new TabFolder(shell, SWT.NONE);
-		tabFolder.setBounds(0, 5, SHEELW,SHEELH - 50);
+		tabFolder.setBounds(0, 5, SHEELW, SHEELH - 50);
 		
 		tabHttpItem = new TabItem(tabFolder, SWT.NONE);
 		tabHttpItem.setText(WindowConstant.MAIN_CLIENT_MENU_HTTP);
@@ -240,7 +240,7 @@ public class ClientWindow {
 		RESPONSE_TEXT_HEIGHT = (SHEELH - 200) * 6 / 10;
 		
 		Label protocolLabel = new Label(httpComposite, SWT.NONE);
-		protocolLabel.setBounds(5, 13, WindowConstant.LABEL_WIDTH, 17);
+		protocolLabel.setBounds(0, 13, WindowConstant.LABEL_WIDTH, 17);
 		protocolLabel.setText(WindowConstant.MAIN_WINDOW_LABEL_PROTOCOL);
 		protocolLabel.setBackground(mainColor);
 
@@ -338,7 +338,7 @@ public class ClientWindow {
 		
 		int responseTextLeft = responseLabel.getBounds().x + responseLabel.getBounds().width + 5;
 		int responseTextTop = bodyText.getBounds().y + bodyText.getBounds().height + 10;
-		responseText = new Text(shell, SWT.BORDER  | SWT.WRAP | SWT.MULTI | SWT.READ_ONLY);
+		responseText = new Text(httpComposite, SWT.BORDER  | SWT.WRAP | SWT.MULTI | SWT.READ_ONLY);
 		responseText.setBounds(responseTextLeft, responseTextTop, RESPONSE_TEXT_WIDTH, RESPONSE_TEXT_HEIGHT);
 		
 		int copyResponseTextLeft = (SHEELW - WindowConstant.COPY_RESPONSE_BUTTON_WIDTH) / 2;
