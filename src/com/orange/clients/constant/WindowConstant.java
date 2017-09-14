@@ -20,8 +20,6 @@ public class WindowConstant {
 	public final static String MAIN_CLIENT_MENU_FTP = "FTP";
 	public final static String MAIN_CLIENT_MENU_SVN = "SVN";
 	
-	public final static String MAIN_HTTP_WINDOW = "Request Send Window"; 
-	public final static String MAIN_FTP_WINDOW = "FTP Client Window";
 	public final static String MAIN_WINDOW_BUTTON_SEND = "Send";
 	public final static String MAIN_WINDOW_BUTTON_RESET = "Clear";
 	public final static String MAIN_WINDOW_BUTTON_CHOOSE_FILE = "Choose Files...";
@@ -39,7 +37,7 @@ public class WindowConstant {
 	public final static String MAIN_WINDOW_SHOW = "Show Window";
 	public final static String MAIN_WINDOW_EXIT = "Exit";
 	
-	public final static String MAIN_WINDOW_TRAY_TOOLTIP = "Http Request Client";
+	public final static String MAIN_WINDOW_TRAY_TOOLTIP = "Clients";
 	
 	
 	public final static RGB MAIN_BACkGROUND_COLOR = new RGB(240, 240, 240);
