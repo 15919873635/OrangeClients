@@ -131,6 +131,15 @@ public class ClientWindow {
 	private int TABLE_TREE_HEIGHT;
 	private String currentDirectory;
 	private FtpOperation ftpOperation;
+	
+	/**
+	 * SVN Tab相关
+	 */
+	private Tree svnListTree;
+	private Table svnFileTable;
+	private int SVN_TREE_WIDTH;
+	private int SVN_FILE_TABLE_WIDTH;
+	
 	/**
 	 * Open the window.
 	 */
@@ -684,6 +693,14 @@ public class ClientWindow {
 	}
 	
 	/**
+	 * 初始化SVN Tab
+	 */
+	protected void initSVNTab() {
+		SVN_TREE_WIDTH = SHEELW * 30;
+		SVN_TREE_WIDTH = SHEELW * 65;
+	}
+	
+	/**
 	 * Create contents of the window.
 	 */
 	protected void initWindow() {
@@ -697,6 +714,8 @@ public class ClientWindow {
 		initHttpTab();
 		//初始化FTP Tab
 		initFtpTab();
+		//初始化SVN Tab
+		initSVNTab();
 	}
 
 	private void initTray(){
