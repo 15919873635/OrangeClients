@@ -1,0 +1,1 @@
+nohup java -Djava.security.egd=file:/dev/./urandom -Djava.ext.dirs=lib -cp .\bin com.orange.clients.MainClientClass >/dev/null 2>&1 & 
